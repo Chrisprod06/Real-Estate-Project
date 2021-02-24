@@ -1,44 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Property | APM Smart Houses</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: EstateAgency
-    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
-
-<body>
-
-  <!--Navbar-->
+  <!--Header-->
   <?php
+    $title = "Property | APM Smart Houses";
     include_once "includes/header.inc.php";
   ?>
 
@@ -317,53 +281,56 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-lg-4">
-              <div class="property-contact">
-                <form class="form-a">
-                  <div class="row">
-                    <div class="col-md-12 mb-1">
-                      <div class="form-group">
-                        <input type="text" class="form-control form-control-lg form-control-a" id="inputName"
-                          placeholder="Name *" required>
+
+            <?php
+              if(!isset($_SESSION['userID'])){
+                  echo '<div class="col-md-12 col-lg-4">
+                  <div class="property-contact">
+                    <form class="form-a">
+                      <div class="row">
+                         <p>Please Login to send a message about this property!</p>              
+                        <div class="col-md-12">
+                          <a href = "login.php" class="btn btn-a">Login</a>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-12 mb-1">
-                      <div class="form-group">
-                        <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1"
-                          placeholder="Email *" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-1">
-                      <div class="form-group">
-                        <input type="text" class="form-control form-control-lg form-control-a" id="inputPhone"
-                          placeholder="Phone *" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-1">
-                      <div class="form-group">
-                        <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45"
-                          rows="8" required></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <b>By submitting the form, I accept the terms of service and the privacy policy.</b>
-                    </div>
-                    <div class="col-md-12">
-                      <a href="url">Terms of Service</a>
-                    </div>
-                    <div class="col-md-12">
-                      <input type="checkbox" id="agreed" name="agreed"
-                             unchecked>
-                      <label for="scales">I accept</label>
-                    </div>
-                   
-                    <div class="col-md-12">
-                      <button type="submit" class="btn btn-a">Send Message</button>
-                    </div>
+                    </form>
                   </div>
-                </form>
-              </div>
-            </div>
+                </div>'; 
+                
+              }else{
+
+                echo' <div class="col-md-12 col-lg-4">
+                <div class="property-contact">
+                  <form class="form-a">
+                    <div class="row">
+                      <div class="col-md-12 mb-1">
+                        <div class="form-group">
+                          <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45"
+                            rows="8" required></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <b>By submitting the form, I accept the terms of service and the privacy policy.</b>
+                      </div>
+                      <div class="col-md-12">
+                        <a href="url">Terms of Service</a>
+                      </div>
+                      <div class="col-md-12">
+                        <input type="checkbox" id="agreed" name="agreed"
+                               unchecked>
+                        <label for="scales">I accept</label>
+                      </div>
+                     
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-a">Send Message</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>';              
+              }          
+            ?>
+            
           </div>
         </div>
       </div>

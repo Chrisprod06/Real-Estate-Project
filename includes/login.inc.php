@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_SESSION['submitLogin'])){
+if (isset($_POST['submitLogin'])){
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
