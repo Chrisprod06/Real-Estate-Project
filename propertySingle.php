@@ -243,9 +243,7 @@
             <div class="col-md-6 col-lg-4">
               <div class="property-agent">
                 <h4 class="title-agent">The Company</h4>
-                <p class="color-text-a">
-                  Leave us your email and phone and we will get to you as soon as possible.
-                </p>
+                
                 <ul class="list-unstyled">
                   <li class="d-flex justify-content-between">
                     <strong>Office:</strong>
@@ -287,9 +285,11 @@
                   echo '<div class="col-md-12 col-lg-4">
                   <div class="property-contact">
                     <form class="form-a">
-                      <div class="row">
-                         <p>Please Login to send a message about this property!</p>              
-                        <div class="col-md-12">
+                      <div class="row text-center mt-4">
+                        <p class="color-text-a">
+                        Please login to send a message about this property.
+                        </p>            
+                        <div class="col-md-12 mt-5">
                           <a href = "login.php" class="btn btn-a">Login</a>
                         </div>
                       </div>
@@ -305,7 +305,7 @@
                     <div class="row">
                       <div class="col-md-12 mb-1">
                         <div class="form-group">
-                          <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45"
+                          <textarea id="textMessage" class="form-control" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
                             rows="8" required></textarea>
                         </div>
                       </div>

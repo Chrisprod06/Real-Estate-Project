@@ -26,7 +26,7 @@ function loginUser($conn, $email, $password){
         $_SESSION['telephone'] = $userIDExists['phoneNo'];
         $_SESSION['email'] = $userIDExists['email'];
         $_SESSION['role'] = $userIDExists['role'];
-        header('Location: ../index.php');
+        header('Location: ../login.php?error=none');
         exit();
         
     //}
