@@ -34,11 +34,11 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="includes/delnews.inc.php" method="post">
         <h2 class="text-center">Unsubscribe from newsletter</h2>       
         <p class="text-center">We are sorry to see you go!</p>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Unsubscribe</button>
+            <button type="submit" value="sumbit" class="btn btn-primary btn-block">Unsubscribe</button>
         </div>
               
     </form>

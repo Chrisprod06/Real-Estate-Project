@@ -59,19 +59,19 @@
             </div>
             <div class="w-body-a">
               <div class="w-body-a">
-                <form class="form-a contactForm" action="" method="post" role="form">
+                <form class="form-a contactForm" action="includes/regnews.inc.php" method="post" role="form">
                   <div id="sendmessage">You are subscribed succesfully. Thank you!</div>
                   <div id="errormessage"></div>
                   <div class="row">
                     <div class="col-md-12 mb-3">
                       <div class="form-group">
-                        <input name="email" type="email" class="form-control form-control-lg form-control-a"
+                        <input name="email" type="email" value="email" class="form-control form-control-lg form-control-a"
                           placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
                         <div class="validation"></div>
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <button type="submit" class="btn btn-a">Subscribe</button>
+                      <button type="submit" value="submit" class="btn btn-a">Subscribe</button>
                     </div>
                   </div>
                 </form>
