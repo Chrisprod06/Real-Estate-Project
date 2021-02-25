@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['sumbit']))
+if(isset($_POST['submit']))
 {
 	include_once "dbh.inc.php";
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
@@ -27,10 +27,12 @@ if(isset($_POST['sumbit']))
 		{
 			mysqli_stmt_bind_param($stmt,"s", $email);
 			mysqli_stmt_execute($stmt);
+			mysqli_stmt_close($stmt);
 		}
 
 		
 		header("Location: ../index.php?entry=success");
+		exit();
 	}
 }
 
@@ -38,5 +40,6 @@ else
 {
 
 	header("Location: ../index.php?entry=error");
+	exit();
 
 }
