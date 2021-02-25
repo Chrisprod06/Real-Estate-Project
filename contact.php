@@ -13,7 +13,7 @@
           <div class="title-single-box">
             <h1 class="title-single">Contact US</h1>
             <span class="color-text-a">
-              <p class = "text-justify"> Need help? Leave your message down below or send us an Email. You may also find us at our offices. Also you can message us to our socia media. We would love to help you out!
+              <p class = "text-justify"> Need help? Leave your message down below or send us an Email. Also you can message us to our socia media. We would love to help you out!
             </p>
             </span>
           </div>
@@ -42,13 +42,27 @@
         <div class="col-sm-12 section-t8">
           <div class="row">
             <div class="col-md-7">
-              <form class="form-a contactForm" action="" method="post" role="form">
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-                <div class="row">                 
+             <?php
+              if(!isset($_SESSION['userID'])){
+                echo '<div class="col-md-12 col-lg-10">
+                <div class="property-contact">
+                  <form class="form-a">
+                    <div class="row text-center mt-4">
+                      Please login in order to send us a message about any inquiry you may have.
+                      </p>            
+                      <div class="col-md-12 mt-5">
+                        <a href = "login.php" class="btn btn-a">Login</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>';              
+              }else{
+                echo ' <form class="form-a contactForm" action="" method="post" role="form">
+                <div class="row">           
                   <div class="col-md-12 mb-3">
                     <div class="form-group">
-                      <input type="url" name="subject" class="form-control form-control-lg form-control-a"
+                      <input type="text" name="subject" class="form-control form-control-lg form-control-a"
                         placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
                       <div class="validation"></div>
                     </div>
@@ -75,7 +89,11 @@
                     <button type="submit" class="btn btn-a">Send Message</button>
                   </div>
                 </div>
-              </form>
+              </form>';
+              }
+
+             
+             ?>
             </div>
             <div class="col-md-5 section-md-t3">
               <div class="icon-box section-b2">
