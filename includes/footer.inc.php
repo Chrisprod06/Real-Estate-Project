@@ -65,14 +65,14 @@
                   <div class="row">
                     <div class="col-md-12 mb-3">
                       <div class="form-group">
-                        <input name="email" type="email" value="email" class="form-control form-control-lg form-control-a"
+                        <input name="email" type="email" class="form-control form-control-lg form-control-a"
                           placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
                         <div class="validation"></div>
                       </div>
                     </div>
                     <div class="col-md-12">
                     
-                      <input name = "submit" type="submit" value="submit" class="btn btn-a">Subscribe</input>
+                      <input name = "submit" type="submit" value="Subscribe" class="btn btn-a"></input>
                     </div>
                   </div>
                 </form>
