@@ -71,7 +71,8 @@
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <button name = "submit" type="submit" value="submit" class="btn btn-a">Subscribe</button>
+                    
+                      <input name = "submit" type="submit" value="Subscribe" class="btn btn-a"></input>
                     </div>
                   </div>
                 </form>
@@ -133,3 +134,5 @@
     </div>
   </footer>
   <!--/ Footer End /-->
+
+  

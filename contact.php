@@ -1,7 +1,7 @@
 
   <<!--Navbar-->
   <?php
-    $title = "Contact Us| APM Smart Houses";
+    $title = "Contact Us | APM Smart Houses";
     include_once "includes/header.inc.php";
   ?>
 
@@ -58,42 +58,25 @@
                 </div>
               </div>';              
               }else{
-                echo ' <form class="form-a contactForm" action="" method="post" role="form">
-                <div class="row">           
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <input type="text" name="subject" class="form-control form-control-lg form-control-a"
-                        placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <textarea name="message" class="form-control" name="message" cols="45" rows="8"
-                        data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                   <div class="col-md-12">
-                      <b>By submitting the form, I accept the terms of service and the privacy policy.</b>
-                    </div>
-                    <div class="col-md-12">
-                      <a href="url">Terms of Service</a>
-                    </div>
-                  <div class="col-md-12">
-                      <input type="checkbox" id="agreed" name="agreed"
-                             unchecked>
-                      <label for="scales">I agree</label>
-                    </div>
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-a">Send Message</button>
-                  </div>
+                echo'
+                <div class="col-md-12 col-lg-10">
+                <form class = "form-a" action="includes/contactUs.inc.php" method = "POST">
+                <div class="form-group">
+                  <input class = "form-control" type="text" name = "subject" placeholder="Enter subject">
                 </div>
-              </form>';
-              }
+                <div class="form-group">
+                <textarea id="message" class="form-control" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
+                            rows="8" required></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class = "btn btn-a" value = "Send Message" name = "submit">
+                </div>
+             </form>
+             </div>';
+              }            
+             ?>
 
              
-             ?>
             </div>
             <div class="col-md-5 section-md-t3">
               <div class="icon-box section-b2">
