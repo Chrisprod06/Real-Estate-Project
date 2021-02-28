@@ -70,10 +70,12 @@
                         <div class="validation"></div>
                       </div>
                     </div>
-                    <div class="col-md-12">
-                    
+                    <div class="from-group">
+                    <div class="col-md-12">                   
                       <input name = "submit" type="submit" value="Subscribe" class="btn btn-a"></input>
                     </div>
+                    </div>
+                    
                   </div>
                 </form>
               </div>
