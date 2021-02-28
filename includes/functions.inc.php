@@ -61,8 +61,8 @@
 
         //Prepare and send email
         //change emails to correct
-        $emailTo = 'email1@localhost';
-        $headers = 'Message From: '.$emailFrom.' with subject: '.$subject;
+        $emailTo = 'chrisprodromou06@gmail.com';
+        $headers = 'From: '.$emailFrom;
         $emailText = 'You have received a new message from'. ' Name:'.$firstname." ".$lastname.'.\n\n'.$message;
         
         if(mail($emailTo,$subject,$emailText,$headers)){

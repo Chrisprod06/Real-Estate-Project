@@ -9,12 +9,12 @@ if(isset($_POST['submit'])){
     $firstname =$_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
     $telephone = $_SESSION['telephone'];
-    $emailFrom = $_SESSION['email'];
+    $emailFrom = 'chrisprodromou06@gmail.com';
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
     //Function to send email
-    //sendEmail($userID,$firstname,$lastname,$telephone,$emailFrom,$subject,$message);
+    sendEmail($userID,$firstname,$lastname,$telephone,$emailFrom,$subject,$message);
     //Function to insert inquiry data in database
     addContactUsInquiry($conn,$userID,$subject,$message);
 
