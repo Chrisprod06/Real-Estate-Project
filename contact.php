@@ -25,7 +25,7 @@
                 <a href="index.html">Home</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                Contact
+                Contact Us
               </li>
             </ol>
           </nav>
