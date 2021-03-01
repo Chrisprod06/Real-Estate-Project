@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Simple Login Form</title>
+<title>Reset Password | APM Smart Houses</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
@@ -37,19 +37,19 @@
     <form action="/examples/actions/confirmation.php" method="post">
         <h2 class="text-center">Change Password</h2>       
         <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email" required="required">
+            <input type="text" class="form-control" name = "selector">
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" placeholder="Verification Code" required="required">
+            <input type="text" class="form-control" name = "validator">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" name = "pass" class="form-control" placeholder="Password" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Re-enter Password" required="required">
+            <input type="password" name = "rePass" class="form-control" placeholder="Re-enter Password" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+            <button type="submit" name = "submitResetPassword" class="btn btn-a">Change Password</button>
         </div>
               
     </form>

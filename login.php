@@ -59,7 +59,7 @@
 
         <div class="clearfix">
             
-            <a href="renewPassword.php" class="pull-right">Forgot Password?</a>
+            <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
             <a href="register.php" class="pull-left">Create Account</a>
         </div>        
     </form>
