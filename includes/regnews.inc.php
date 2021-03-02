@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	if($statement->execute()){
 		print "You have subscribed successfully!";
 	}else{
-		print $conn->error; //show mysql error if any
+		print "Something went wrong";
 	}
 }
 ?>
