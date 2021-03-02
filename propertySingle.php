@@ -308,19 +308,7 @@
                           <textarea id="textMessage" class="form-control" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
                             rows="8" required></textarea>
                         </div>
-                      </div>
-                      <div class="col-md-12">
-                        <b>By submitting the form, I accept the terms of service and the privacy policy.</b>
-                      </div>
-                      <div class="col-md-12">
-                        <a href="url">Terms of Service</a>
-                      </div>
-                      <div class="col-md-12">
-                        <input type="checkbox" id="agreed" name="agreed"
-                               unchecked>
-                        <label for="scales">I accept</label>
-                      </div>
-                     
+                      </div>                      
                       <div class="col-md-12">
                         <button type="submit" class="btn btn-a">Send Message</button>
                       </div>
