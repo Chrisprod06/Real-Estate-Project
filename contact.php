@@ -71,31 +71,39 @@
                 <div class="form-group">
                   <input type="submit" class = "btn btn-a" value = "Send Message" name = "submit">
                 </div>
-                if(isset($_GET["error"])){
-                  if($_GET["error"] == "stmtFailed"){
-                    echo "<p class = "text-danger text-center lead">Something went wrong. Please start again.</p>";
-                  }
-                }else if(isset($_GET["mail"])) {
-                  if($_GET["mail"] == "send" ){
-                    <script>
-                    $(document).ready(function(){
-                      Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Email has been sent succesfuly!",
-                        showConfirmButton: false,
-                        timer: 1500                 
-                      }).then(function() {
-                        window.location.href = "index.php";
-                      })
-                    });                 
-                    </script>
-                  }else if($_GET["mail"] == "notSend") {
-                    echo "<p class = "text-danger text-center lead">Something went wrong. Please start again.</p>";
-                  }
-                }
              </form>
              </div>';
+             if(isset($_GET["error"])){
+              if($_GET["error"] == "stmtFailed"){
+                echo "<p class = 'text-danger text-center lead'>Something went wrong. Please start again.</p>";
+              }
+            }else if(isset($_GET["mail"])) {
+              if($_GET["mail"] == "send" ){
+                echo'<script>
+                $(document).ready(function(){
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Message has been sent succesfuly!",
+                    showConfirmButton: false,
+                    timer: 1500                 
+                  })
+                });                 
+                </script>';
+              }else if($_GET["mail"] == "notSend") {
+                echo '<script>
+                $(document).ready(function(){
+                  Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Email has not been send. Please try again.",
+                    showConfirmButton: false,
+                    timer: 1500                 
+                  })
+                });                 
+                </script>';
+              }
+            }
               }            
              ?>
 
