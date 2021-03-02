@@ -25,7 +25,7 @@
                 <a href="index.html">Home</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                Contact
+                Contact Us
               </li>
             </ol>
           </nav>
@@ -60,19 +60,53 @@
               }else{
                 echo'
                 <div class="col-md-12 col-lg-10">
-                <form class = "form-a" action="includes/contactUs.inc.php" method = "POST">
-                <div class="form-group">
-                  <input class = "form-control" type="text" name = "subject" placeholder="Enter subject">
+                  <div class="property-contact">
+                    <form class = "form-a" action="includes/contactUs.inc.php" method = "POST">
+                      <div class="form-group">
+                        <input class = "form-control" id = "subject" type="text" name = "subject" placeholder="Enter subject" required>
+                      </div>
+                      <div class="form-group">
+                      <textarea id="message" class="form-control" id = "message" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
+                                  rows="8" required></textarea>
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" class = "btn btn-a" value = "Send Message" name = "submit">
+                      </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                <textarea id="message" class="form-control" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
-                            rows="8" required></textarea>
-                </div>
-                <div class="form-group">
-                  <input type="submit" class = "btn btn-a" value = "Send Message" name = "submit">
-                </div>
-             </form>
+               
              </div>';
+             if(isset($_GET["error"])){
+              if($_GET["error"] == "stmtFailed"){
+                echo "<p class = 'text-danger text-center lead'>Something went wrong. Please start again.</p>";
+              }
+            }else if(isset($_GET["mail"])) {
+              if($_GET["mail"] == "send" ){
+                echo'<script>
+                $(document).ready(function(){
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Message has been sent succesfuly!",
+                    showConfirmButton: false,
+                    timer: 1500                 
+                  })
+                });                 
+                </script>';
+              }else if($_GET["mail"] == "notSend") {
+                echo '<script>
+                $(document).ready(function(){
+                  Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Email has not been send. Please try again.",
+                    showConfirmButton: false,
+                    timer: 1500                 
+                  })
+                });                 
+                </script>';
+              }
+            }
               }            
              ?>
 

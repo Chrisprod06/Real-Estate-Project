@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 
     //Function to send email
     sendEmail($userID,$firstname,$lastname,$telephone,$emailFrom,$subject,$message);
-    //Function to insert inquiry data in database
+    //Function to insert inquiry data i7n database
     addContactUsInquiry($conn,$userID,$subject,$message);
 
 

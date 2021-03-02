@@ -5,19 +5,18 @@
     function loginUser($conn, $email, $password){
         
         $userIDExists = emailExists($conn,$email);
-
         if($userIDExists === false){
             header('location: ../login.php?error=wrongLogin');
             exit();
         }
 
-        //$passwordHashed = $userIDExists['password'];
-        //$checkPassword = password_verify($password,$passwordHashed);
+        $passwordHashed = $userIDExists['password'];
+        $checkPassword = password_verify($password,$passwordHashed);
 
-        //if($checkPassword === false){
-            //header("Location: ../login.php?error=wrongPassword");
-            //exit();
-        //}else if($checkPassword === true){
+        if($checkPassword === false){
+            header("Location: ../login.php?error=wrongPassword");
+            exit();
+        }else if($checkPassword === true){
             session_start();
             $_SESSION['userID'] = $userIDExists['userID'];
             $_SESSION['firstname'] = $userIDExists['firstname'];
@@ -30,6 +29,7 @@
             
         //}
     }
+}
 
     //Function to check if user exists in database
     function emailExists($conn, $email){
