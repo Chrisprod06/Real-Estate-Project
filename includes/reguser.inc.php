@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $password = $_POST['password'];
     $rePassword = $_POST['rePassword'];
 	$role = 2;
-	$useractive = 1;
+	$useractive = 0;
 
 
 	//Error Handlers
@@ -41,10 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         exit();
 	}
 
+	$hashedPassword = password_hash($password,PASSWORD_DEFAULT);
 	//In the statement use the names of the variables from the database
 	$statement = $conn->prepare("INSERT INTO users (firstname,lastname,phoneNo,email,password,role,userActive) VALUES(?, ?, ?, ?, ?, ?, ?)"); //prepare sql insert query
 	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
-	$statement->bind_param('ssissii', $firstname,$lastname,$telephone,$email,$password,$role,$useractive); //bind values and execute insert query
+	$statement->bind_param('ssissii', $firstname,$lastname,$telephone,$email,$hashedPassword,$role,$useractive); //bind values and execute insert query
 	
 	if($statement->execute()){
 		header('location: ../register.php?error=none');

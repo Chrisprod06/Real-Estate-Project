@@ -8,6 +8,7 @@
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="css/style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <style>
@@ -92,7 +93,7 @@
             <input name= "rePassword" type="password" class="form-control" placeholder="Re-enter Password" required="required">
         </div>
         <div class="form-group">
-            <button name= "submit" type="submit" class="btn btn-primary btn-block">Register</button>
+            <button name= "submit" type="submit" class="btn btn-a">Register</button>
         </div>
               
     </form>
