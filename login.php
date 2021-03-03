@@ -17,7 +17,7 @@
     <form action="includes/login.inc.php" method="POST">
         <h2 class="text-center">Login</h2>       
         <div class="form-group">
-            <input type="email" name = "email" class="form-control" placeholder="Email" required="required">
+            <input type="email" name = "email" class="form-control" placeholder="Email" required="required" value =>
         </div>
         <div class="form-group">
             <input type="password" name = "pass" class="form-control" placeholder="Password" required="required">
