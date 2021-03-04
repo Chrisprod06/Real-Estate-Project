@@ -19,7 +19,7 @@
     <form action="includes/login.inc.php" method="POST">
         <h2 class="text-center">Login</h2>       
         <div class="form-group">
-            <input type="email" name = "email" class="form-control" placeholder="Email" required="required" value =>
+            <input type="email" name = "email" class="form-control" placeholder="Email" required value =>
         </div>
         <div class="form-group">
             <input type="password" name = "pass" class="form-control" placeholder="Password" required="required">
@@ -31,13 +31,16 @@
         <?php
             if(isset($_GET['error'])){
                 if($_GET['error'] == 'wrongLogin'){
-                    echo '<p class = "text-danger text-center lead">This user does not exist.</p>';
+                    echo '<p class = "text-danger text-center ">This user does not exist.</p>';
                 }
                 else if ($_GET['error'] == 'wrongPassword'){
-                    echo '<p class = "text-danger text-center lead">The password you have entered is incorrect.</p>';
+                    echo '<p class = "text-danger text-center ">The password you have entered is incorrect.</p>';
                 }
                 else if ($_GET['error'] == 'stmtFailed'){
-                    echo '<p >Something went wrong. Please try again.</p>';
+                    echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
+                }
+                else if ($_GET['error'] == 'tryAgainReset'){
+                    echo '<p class = "text-danger text-center " >Reset password request went wrong. Please try again.</p>';
                 }
                 else if ($_GET['error'] == 'none' ){
                     echo '

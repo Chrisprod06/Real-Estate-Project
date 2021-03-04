@@ -10,11 +10,11 @@ if(isset($_POST['submitResetPassword'])){
     //error handlers
 
     if(empty($password) || empty($repeatPassword)){
-       header("Location: ../adminModule/loginAdmin.php?error=tryAgainReset");
+       header("Location: ../resetPassword.php?error=stmtFailed");
        exit();
 
     }else if($password!=$repeatPassword){
-        header("Location:../createNewPasword?error=passwordDontMatch");
+        header("Location: ../resetPassword.php?error=passwordDontMatch");
         exit();
     }
 
@@ -26,7 +26,7 @@ if(isset($_POST['submitResetPassword'])){
     $stmt = mysqli_init($conn);
 
     if(!mysqli_prepare($stmt,$sql)){
-        header("Location:../createNewPassword.php?error=stmtFailed");
+        header("Location: ../resetPassword.php?error=stmtFailed");
         exit();
     }else{
         mysqli_stmt_bind_param($stmt, "ss",$selector,$currentDate);
@@ -34,14 +34,14 @@ if(isset($_POST['submitResetPassword'])){
         
         $result = mysqli_stmt_get_result($stmt);
         if(!$row = mysqli_fetch_assoc($result)){
-            header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
+            header("Location: ../login.php?error=tryAgainReset");
             exit();
         }else{
             $tokenBinary = hex2bin($validator);
             $tokenCheck = password_verify($tokenBinary,$row['passwordResetToken']);
 
             if($tokenCheck === false){
-                header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
+                header("Location: ../login.php?error=tryAgainReset");
                 exit();
             }else if ($tokenCheck === true){
 
@@ -51,21 +51,21 @@ if(isset($_POST['submitResetPassword'])){
                 $stmt = mysqli_init($conn);
 
                 if(!mysqli_prepare($stmt,$sql)){
-                    header("Location:../createNewPassword.php?error=stmtFailed");
+                    header("Location: ../resetPassword.php?error=stmtFailed");
                     exit();
                 }else{
                     mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
                     if(!$row = mysqli_fetch_assoc($result)){
-                        header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
+                        header("Location: ../login.php?error=tryAgainReset");
                         exit();
                     }else{
                         $sql = 'UPDATE users SET password =? WHERE email=?;';
                         $stmt = mysqli_init($conn);
 
                 if(!mysqli_prepare($stmt,$sql)){
-                    header("Location:../createNewPassword.php?error=stmtFailed");
+                    header("Location: ../resetPassword.php?error=stmtFailed");
                     exit();
                 }else{
                     $newHashedPassword = password_hash($password,PASSWORD_DEFAULT);
@@ -76,12 +76,12 @@ if(isset($_POST['submitResetPassword'])){
                     $stmt = mysqli_init($conn);
                 
                     if(!mysqli_prepare($stmt,$sql)){
-                        header("Location:../resetPasswordRequest.php?error=stmtFailed");
+                        header("Location: ../resetPassword.php?error=stmtFailed");
                         exit();
                     }else{
                         mysqli_stmt_bind_param($stmt, "s",$tokenEmail);
                         mysqli_stmt_execute($stmt);
-                        header("location:../adminModule/loginAdmin.php?resetPassword=success");
+                        header("location:../login.php?resetPassword=success");
                         
                     }
 
@@ -98,6 +98,6 @@ if(isset($_POST['submitResetPassword'])){
 
 
 }else{
-    header("Location: ../includes/createNewPassword.php");
+    header("Location: ../resetPassword.php");
     exit();
 }
