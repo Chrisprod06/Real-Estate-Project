@@ -59,7 +59,7 @@
             </div>
             <div class="w-body-a">
               <div class="w-body-a">
-               <form class="form-a contactForm" action="includes/regnews.inc.php" method="post" role="form">
+                <form class="form-a contactForm" action="includes/regnews.inc.php" method="post" role="form">
                   <div id="sendmessage">You are subscribed succesfully. Thank you!</div>
                   <div id="errormessage"></div>
                   <div class="row">
@@ -71,9 +71,9 @@
                       </div>
                     </div>
                     <div class="from-group">
-                    <div class="col-md-12">                   
-                      <input name = "submit" type="submit" value="Subscribe" class="btn btn-a"></input>
-                    </div>
+                      <div class="col-md-12">                   
+                        <input name = "submit" type="submit" value="Subscribe" class="btn btn-a"></input>
+                      </div>
                     </div>
                     
                   </div>

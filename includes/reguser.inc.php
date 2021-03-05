@@ -43,16 +43,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 	$hashedPassword = password_hash($password,PASSWORD_DEFAULT);
 	//In the statement use the names of the variables from the database
-	$statement = $conn->prepare("INSERT INTO users (firstname,lastname,phoneNo,email,password,role,userActive) VALUES(?, ?, ?, ?, ?, ?, ?)"); //prepare sql insert query
+	$sql = 'INSERT INTO users (firstname,lastname,phoneNo,email,password,role,userActive) VALUES(?, ?, ?, ?, ?, ?, ?);';
+	$stmt = mysqli_stmt_init( $conn);
+	mysqli_stmt_prepare($stmt,$sql);
 	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
-	$statement->bind_param('ssissii', $firstname,$lastname,$telephone,$email,$hashedPassword,$role,$useractive); //bind values and execute insert query
+	mysqli_stmt_bind_param($stmt,'ssissii', $firstname,$lastname,$telephone,$email,$hashedPassword,$role,$useractive); //bind values and execute insert query
 	
-	if($statement->execute()){
+	if(mysqli_stmt_execute($stmt)){
 		header('location: ../register.php?error=none');
         exit();
 	}else{
 		header('location: ../register.php?error=stmtfailed');
         exit();
 	}
+
+	mysqli_stmt_close($stmt);
 }
 ?>
