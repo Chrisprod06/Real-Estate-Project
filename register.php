@@ -37,41 +37,7 @@
 </head>
 <body>
 <div class="login-form">
-    <?php
-        if(isset($_GET['error']))
-        {
-            if($_GET['error'] == 'emptyinput')
-            {
-            echo "<p><center>Fill in all the fields!</center></p>";
-            }
-
-            if($_GET['error'] == 'emailExists')
-            {
-            echo "<p><center>User already exists!</center></p>";
-            }
-            
-            if($_GET['error'] == 'passworddontmatch')
-            {
-            echo "<p><center>The passwords must match!</center></p>";
-            }
-
-            if($_GET['error'] == 'invalidemail')
-            {
-                echo "<p><center>The email you have entered is invalid!</center></p>";
-            }
-            
-            if($_GET['error'] == 'stmtfailed')
-            {
-                echo "<p><center>Something went wrong, try again!</center></p>";
-            }
-
-            if($_GET['error'] == 'none')
-            {
-                echo "<p><center>Your account is created!</center></p>";
-            }
-                        
-        }
-    ?>
+   
     <form action="includes/reguser.inc.php" method="post">
         <h2 class="text-center">Create an account</h2>
         <div class="form-group">
@@ -92,6 +58,57 @@
         <div class="form-group">
             <input name= "rePassword" type="password" class="form-control" placeholder="Re-enter Password" required="required">
         </div>
+        <!--PHP script to display-->
+        <?php
+        if(isset($_GET['error']))
+        {
+            if($_GET['error'] == 'emptyinput')
+            {          
+            echo '<p class = "text-danger text-center " >Fill in all the fields!</p>';
+
+            }
+
+            if($_GET['error'] == 'emailExists')
+            {
+            echo '<p class = "text-danger text-center " >User already exists!</p>';
+            }
+            
+            if($_GET['error'] == 'passworddontmatch')
+            {
+            echo '<p class = "text-danger text-center " >The passwords must match!</p>';
+            }
+
+            if($_GET['error'] == 'invalidemail')
+            {
+                echo '<p class = "text-danger text-center " >The email you have entered is invalid!</p>';
+            }
+            
+            if($_GET['error'] == 'stmtfailed')
+            {
+                echo '<p class = "text-danger text-center " >Something went wrong, try again!</p>';
+            }
+
+            if($_GET['error'] == 'none')
+            {
+                echo '
+                <script>
+                $(document).ready(function(){
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Account created Succesfully!",
+                    showConfirmButton: false,
+                    timer: 1500                 
+                  }).then(function() {
+                    window.location.href = "login.php";
+                  })
+                });                 
+                </script>
+                ';
+            }
+                        
+        }
+    ?>
         <div class="form-group">
             <button name= "submit" type="submit" class="btn btn-a">Register</button>
         </div>
@@ -100,5 +117,15 @@
     
     <p class="text-center">Already have an account? <a href="login.php">Log in</a></p>
 </div>
+<!--Sweet Alert-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/scrollreveal/scrollreveal.min.js"></script>
 </body>
 </html>                                		
