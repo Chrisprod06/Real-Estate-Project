@@ -12,11 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $email = $_POST['email'];
     $password = $_POST['password'];
     $rePassword = $_POST['rePassword'];
+	$token = $_POST['token'];
 	$role = 2;
 	$useractive = 0;
 
 
 	//Error Handlers
+	if($token ==5){
+		echo 'test';
+	}else{
+		echo 'notest';
+	}
 	if($password != $rePassword)
 	{
 		header('location: ../register.php?error=passworddontmatch');
@@ -40,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		header('location: ../register.php?error=invalidemail');
         exit();
 	}
-
+	
 	$hashedPassword = password_hash($password,PASSWORD_DEFAULT);
 	//In the statement use the names of the variables from the database
 	$sql = 'INSERT INTO users (firstname,lastname,phoneNo,email,password,role,userActive) VALUES(?, ?, ?, ?, ?, ?, ?);';
