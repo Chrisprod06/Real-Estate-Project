@@ -18,11 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 	//Error Handlers
-	if($token ==5){
-		echo 'test';
-	}else{
-		echo 'notest';
-	}
+	
 	if($password != $rePassword)
 	{
 		header('location: ../register.php?error=passworddontmatch');
@@ -54,7 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	mysqli_stmt_prepare($stmt,$sql);
 	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
 	mysqli_stmt_bind_param($stmt,'ssissii', $firstname,$lastname,$telephone,$email,$hashedPassword,$role,$useractive); //bind values and execute insert query
-	
+	if($token ==5){
+		echo 'test';
+		exit();
+	}else{
+		echo 'notest';
+		exit();
+	}
 	if(mysqli_stmt_execute($stmt)){
 		header('location: ../login.php?error=none');
         exit();
