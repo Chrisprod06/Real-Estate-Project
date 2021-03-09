@@ -1,0 +1,1 @@
+[08-Mar-2021 10:55:16 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home4/destinih/public_html/realestate2021/includes/header.inc.php on line 2

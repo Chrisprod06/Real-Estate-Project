@@ -50,10 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	mysqli_stmt_bind_param($stmt,'ssissii', $firstname,$lastname,$telephone,$email,$hashedPassword,$role,$useractive); //bind values and execute insert query
 	
 	if(mysqli_stmt_execute($stmt)){
-		header('location: ../register.php?error=none');
+		header('location: ../login.php?error=none');
         exit();
 	}else{
-		header('location: ../register.php?error=stmtfailed');
+		header('location: ../login.php?error=stmtFailed');
         exit();
 	}
 
