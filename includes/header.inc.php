@@ -179,6 +179,16 @@ session_start();
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
+              <label for="heating">Heating</label>
+              <select class="form-control form-control-lg form-control-a" id="heating" name="heating">
+                <option value="any">Any</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
               <label for="furniture">Furniture</label>
               <select class="form-control form-control-lg form-control-a" id="furniture" name="furniture">
                 <option value="any">Any</option>
@@ -201,7 +211,7 @@ session_start();
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="price">Maximum Rent Per Month</label>
+              <label for="price">Maximum Rent</label>
               <select class="form-control form-control-lg form-control-a" id="price" name = "maxRent">
                 <option value="any">Any</option>
                 <option value="300eu">€300</option>
@@ -214,7 +224,7 @@ session_start();
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="price">Maximum Selling Price</label>
+              <label for="price">Maximum Price</label>
               <select class="form-control form-control-lg form-control-a" id="price" name = "maxPrice">
                 <option value="any" >Any</option>
                 <option value="100k">$100,000</option>
