@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     session_start();
     $email = $_SESSION['email'];
 
-    $sql = 'DELETE FROM newsletter ;';
+    $sql = 'DELETE FROM newsletter where email = email ;';
 	$stmt = mysqli_stmt_init( $conn);
 	mysqli_stmt_prepare($stmt,$sql);
 	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
