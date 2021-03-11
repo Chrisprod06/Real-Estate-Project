@@ -9,19 +9,27 @@ if (isset($_POST['submitSearch'])) {
     //Prepare query
     if (!empty($_POST['type'])) {
         $type = $_POST['type'];
-        $query[] = "type='$type'";
+        if ($type !== 'allType') {
+            $query[] = "type='$type'";
+        }
     }
     if (!empty($_POST['category'])) {
         $category = $_POST['category'];
-        $query[] = "category='$category'";
+        if ($category !== 'allCategory') {
+            $query[] = "category='$category'";
+        }
     }
     if (!empty($_POST['city'])) {
         $city = $_POST['city'];
-        $query[] = "town='$city'";
+        if ($city !== 'allCites') {
+            $query[] = "town='$city'";
+        }
     }
     if (!empty($_POST['region'])) {
         $region = $_POST['region'];
-        $query[] = "area='$region'";
+        if ($region !== 'allRegions') {
+            $query[] = "area='$region'";
+        }
     }
     if (!empty($_POST['squarem'])) {
         $sqm = $_POST['squarem'];
@@ -39,11 +47,15 @@ if (isset($_POST['submitSearch'])) {
     }
     if (!empty($_POST['bedrooms'])) {
         $bedrooms = $_POST['bedrooms'];
-        $query[] = "bedrooms=$bedrooms";
+        if ($bedrooms !== 'any') {
+            $query[] = "bedrooms='$bedrooms'";
+        }
     }
     if (!empty($_POST['bathrooms'])) {
         $bathrooms = $_POST['bathrooms'];
-        $query[] = "bathrooms=$bathrooms";
+        if ($bathrooms !== 'any') {
+            $query[] = "bathrooms='$bathrooms'";
+        }
     }
     if (!empty($_POST['parking'])) {
         $parking = $_POST['parking'];
@@ -114,10 +126,10 @@ if (isset($_POST['submitSearch'])) {
 
     //Get data and load them into an array
     $searchquery = implode(' AND ', $query);
-    $getsearch = "SELECT * FROM properties $where $searchquery";
+    $getsearch = "SELECT * FROM properties $where $searchquery;";
     $ressearch = mysqli_query($conn, $getsearch);
     if (mysqli_num_rows($ressearch) === 0) {
-        echo 'Nothing Found';
+        echo 'No result';
     } else {
         $searchProperties = array();
         while ($r = $ressearch->fetch_assoc()) {

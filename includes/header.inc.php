@@ -61,7 +61,7 @@ session_start();
             <div class="form-group">
               <label for="Type">Type</label>
               <select class="form-control form-control-lg form-control-a" id="Type" name="type">
-                <option value="allCategories">All Types</option>
+                <option value="allTypes">All Types</option>
                 <option value="flat">Flat</option>
                 <option value="house">House</option>
 
@@ -72,7 +72,7 @@ session_start();
             <div class="form-group">
               <label for="Category">Category</label>
               <select class="form-control form-control-lg form-control-a" id="Category" name="category">
-                <option value="allType">All Categories</option>
+                <option value="allCategories">All Categories</option>
                 <option value="forRentShort">For Rent - Short Term</option>
                 <option value="forRentLong">For Rent - Long Term</option>
                 <option value="forSale">For Sale</option>
