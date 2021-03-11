@@ -1,23 +1,10 @@
 <?php
+session_start();
 
 if (isset($_POST['submitSearch'])) {
     //Get variables
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
-
-
-    $type = $_POST['type'];
-    $category = $_POST['category'];
-    $city = $_POST['city'];
-    $region = $_POST['region'];
-    $sqm = $_POST['squarem'];
-    $bedrooms = $_POST['bedrooms'];
-    $bathrooms = $_POST['bathrooms'];
-    $parking = $_POST['parking'];
-    $furniture = $_POST['furniture'];
-    $maxYears = $_POST['maxYear'];
-    $maxRent = $_POST['maxRent'];
-    $maxPrice = $_POST['maxPrice'];
 
     //Prepare query
     if (!empty($_POST['type'])) {
@@ -55,7 +42,7 @@ if (isset($_POST['submitSearch'])) {
         $query[] = "bedrooms=$bedrooms";
     }
     if (!empty($_POST['bathrooms'])) {
-        $bedrooms = $_POST['bathrooms'];
+        $bathrooms = $_POST['bathrooms'];
         $query[] = "bathrooms=$bathrooms";
     }
     if (!empty($_POST['parking'])) {
@@ -95,23 +82,59 @@ if (isset($_POST['submitSearch'])) {
             $query[] = "dateOfBuild<= DATE_SUB(CURDATE(),INTERVAL 10 YEAR)";
         }
     }
-    if(!empty($_POST['maxRent'])){
+    if (!empty($_POST['maxRent'])) {
         $maxRent = $_POST['maxRent'];
-        if($maxRent === '300eu'){
+        if ($maxRent === '300eu') {
             $query[] = "rentPrice<=300";
-        }else if($maxRent === '400eu'){
+        } else if ($maxRent === '400eu') {
             $query[] = "rentPrice<=400";
-        }
-        else if($maxRent === '500eu'){
+        } else if ($maxRent === '500eu') {
             $query[] = "rentPrice<=400";
-        }
-        else if($maxRent === '700eu'){
+        } else if ($maxRent === '700eu') {
             $query[] = "rentPrice<=700";
-        }
-        else if($maxRent === '1000eu'){
+        } else if ($maxRent === '1000eu') {
             $query[] = "rentPrice<=1000";
         }
+    }
+    if (!empty($_POST['maxPrice'])) {
+        $maxPrice = $_POST['maxPrice'];
+        if ($maxPrice === '100k') {
+            $query[] = "totalPrice<=100000";
+        } else if ($maxPrice === '150k') {
+            $query[] = "totalPrice<=150000";
+        } else if ($maxPrice === '200k') {
+            $query[] = "totalPrice<=200000";
+        }
+    }
+    if (!empty($query)) {
+        $where = "WHERE";
+    } else {
+        $where = "";
+    }
 
+    //Get data and load them into an array
+    $searchquery = implode(' AND ', $query);
+    $getsearch = "SELECT * FROM properties $where $searchquery";
+    $ressearch = mysqli_query($conn, $getsearch);
+    if (mysqli_num_rows($ressearch) === 0) {
+        echo 'Nothing Found';
+    } else {
+        $searchProperties = array();
+        while ($r = $ressearch->fetch_assoc()) {
+            $searchProperties[] = array(
+                'city' => $row['town'],
+                'addr' => $row['address'],
+                'categ' => $row['category'],
+                'totPrice' => $row['totalPrice'],
+                'renPrice' => $row['rentPrice'],
+                'area' => $row['squarem'],
+                'baths' => $row['bathrooms'],
+                'beds' => $row['bedrooms'],
+                'furnished' => $row['furniture']
+            );
+        }
+        $_SESSION['properties'] = $searchProperties;
+        header('Location: ../searchProperties.php');
     }
 } else {
     header("Location: ../index.php");

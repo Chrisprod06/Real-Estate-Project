@@ -54,7 +54,7 @@ session_start();
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a" action="search.inc.php" method="POST">
+      <form class="form-a" action="includes/search.inc.php" method="POST">
         <div class="row">
 
           <div class="col-md-6 mb-2">

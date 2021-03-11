@@ -1,4 +1,3 @@
-<!--Header-->
 <?php
 $title = "Home | APM Smart Houses";
 include_once "includes/header.inc.php";
