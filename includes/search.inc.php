@@ -9,19 +9,19 @@ if (isset($_POST['submitSearch'])) {
     //Prepare query
     if (!empty($_POST['type'])) {
         $type = $_POST['type'];
-        if ($type !== 'allType') {
+        if ($type !== 'allTypes') {
             $query[] = "type='$type'";
         }
     }
     if (!empty($_POST['category'])) {
         $category = $_POST['category'];
-        if ($category !== 'allCategory') {
+        if ($category !== 'allCategories') {
             $query[] = "category='$category'";
         }
     }
     if (!empty($_POST['city'])) {
         $city = $_POST['city'];
-        if ($city !== 'allCites') {
+        if ($city !== 'allCities') {
             $query[] = "town='$city'";
         }
     }
@@ -59,26 +59,32 @@ if (isset($_POST['submitSearch'])) {
     }
     if (!empty($_POST['parking'])) {
         $parking = $_POST['parking'];
-        if ($parking == 'yes') {
-            $query[] = "parking=1";
-        } else if ($parking = 'no') {
-            $query[] = "parking=0";
+        if ($parking !== 'any') {
+            if ($parking == 'yes') {
+                $query[] = "parking=1";
+            } else if ($parking = 'no') {
+                $query[] = "parking=0";
+            }
         }
     }
     if (!empty($_POST['heating'])) {
         $heating = $_POST['heating'];
-        if ($heating == 'yes') {
-            $query[] = "heating=1";
-        } else if ($heating = 'no') {
-            $query[] = "heating=0";
+        if ($heating !== 'any') {
+            if ($heating == 'yes') {
+                $query[] = "heating=1";
+            } else if ($heating = 'no') {
+                $query[] = "heating=0";
+            }
         }
     }
     if (!empty($_POST['furniture'])) {
         $furniture = $_POST['furniture'];
-        if ($furniture == 'yes') {
-            $query[] = "furniture=1";
-        } else if ($furniture = 'no') {
-            $query[] = "furniture=0";
+        if ($furniture !== 'any') {
+            if ($furniture == 'yes') {
+                $query[] = "furniture=1";
+            } else if ($furniture = 'no') {
+                $query[] = "furniture=0";
+            }
         }
     }
 
@@ -120,31 +126,35 @@ if (isset($_POST['submitSearch'])) {
     }
     if (!empty($query)) {
         $where = "WHERE";
+        $searchquery = implode(' AND ', $query);
     } else {
         $where = "";
+        $searchquery = "";
     }
 
     //Get data and load them into an array
-    $searchquery = implode(' AND ', $query);
+    
     $getsearch = "SELECT * FROM properties $where $searchquery;";
     $ressearch = mysqli_query($conn, $getsearch);
     if (mysqli_num_rows($ressearch) === 0) {
-        echo 'No result';
+        echo $getsearch;
     } else {
         $searchProperties = array();
-        while ($r = $ressearch->fetch_assoc()) {
+        while ($row = mysqli_fetch_assoc($ressearch)) {
             $searchProperties[] = array(
                 'city' => $row['town'],
                 'addr' => $row['address'],
                 'categ' => $row['category'],
                 'totPrice' => $row['totalPrice'],
-                'renPrice' => $row['rentPrice'],
                 'area' => $row['squarem'],
                 'baths' => $row['bathrooms'],
                 'beds' => $row['bedrooms'],
                 'furnished' => $row['furniture']
+                
             );
+            
         }
+        
         $_SESSION['properties'] = $searchProperties;
         header('Location: ../searchProperties.php');
     }

@@ -28,8 +28,8 @@ include_once "includes/header.inc.php";
 
 
                     //Present data
-                    if (!empty($_SESSION['searchProperties'])) {
-                        foreach ($_SESSION['searchProperties'] as $row) {
+                    if (isset($_SESSION['properties'])) {
+                        foreach ($_SESSION['properties'] as $row) {
                             //Prepare data
                             if ($row['categ'] === 'forSale') {
                                 $categ = 'Sale';
@@ -81,7 +81,7 @@ include_once "includes/header.inc.php";
                                        </li>
                                        <li>
                                            <h4 class="card-info-title">Furnished</h4>
-                                           <span>' . $furnished . '</span>
+                                           <span>' . $row["furnished"] . '</span>
                                        </li>
                                    </ul>
                                </div>
