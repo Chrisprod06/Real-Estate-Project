@@ -291,10 +291,10 @@ session_start();
             }
           } else {
             echo "<li class='nav-item'>
-                     <a class='nav-link' href='login.php'>Login</a>
+                     <a data-toggle='modal' class='nav-link' href='#login'>Login</a>
                   </li>";
             echo "<li class='nav-item'>
-                    <a class='nav-link' href='register.php'>Register</a>
+                    <a data-toggle='modal' class='nav-link' href='#register'>Register</a>
                   </li>";
           }
           ?>
@@ -310,8 +310,173 @@ session_start();
         </ul>
       </div>
       <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true"></span>
+        <span class="fa fa-search" aria-hidden="true"> Search Property</span>
       </button>
     </div>
   </nav>
   <!--/ Nav End /-->
+
+  <!-- Login Modal HTML -->
+	<div id="login" class="modal fade">
+		<div class="modal-dialog ">
+			<div class="modal-content ">
+				<form action="includes/login.inc.php" method="POST">
+					<div class="modal-header">
+						<h4 class="modal-title">Login</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+          <div class="form-group">
+            <input type="email" name = "email" class="form-control" placeholder="Email" required value =>
+        </div>
+        <div class="form-group">
+            <input type="password" name = "pass" class="form-control" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+        
+        </div>
+        <!--Error messages-->
+        <?php
+            if(isset($_GET['error'])){
+                if($_GET['error'] == 'wrongLogin'){
+                    echo '<p class = "text-danger text-center ">This user does not exist.</p>';
+                }
+                else if ($_GET['error'] == 'wrongPassword'){
+                    echo '<p class = "text-danger text-center ">The password you have entered is incorrect.</p>';
+                }
+                else if ($_GET['error'] == 'stmtFailed'){
+                    echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
+                }
+                else if ($_GET['error'] == 'tryAgainReset'){
+                    echo '<p class = "text-danger text-center " >Reset password request went wrong. Please try again.</p>';
+                }
+                else if ($_GET['error'] == 'none' ){
+                    echo '
+                    <script>
+                    $(document).ready(function(){
+                      Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Login Successful!",
+                        showConfirmButton: false,
+                        timer: 1500                 
+                      }).then(function() {
+                        window.location.href = "index.php";
+                      })
+                    });                 
+                    </script>
+                    ';
+                }
+            }
+        ?>
+
+        <div class="clearfix">
+            
+            <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
+            <a href="register.php" class="pull-left">Create Account</a>
+        </div>        
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-a" value ="Login" name = "submitLogin"></input>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+  <!-- Register Modal HTML -->
+	<div id="register" class="modal fade">
+		<div class="modal-dialog ">
+			<div class="modal-content ">
+				<form action="includes/reguser.inc.php" method="POST">
+					<div class="modal-header">
+						<h4 class="modal-title">Register</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+          <div class="form-group">
+            <input name= "firstname" type="text" class="form-control" placeholder="Firstname" required="required">
+        </div>
+        <div class="form-group">
+            <input name= "lastname" type="text" class="form-control" placeholder="Lastname" required="required">
+        </div>       
+        <div class="form-group">
+            <input name= "email" type="email" class="form-control" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+            <input name= "telephone" type="tel" class="form-control" placeholder="Telephone" required="required">
+        </div>
+        <div class="form-group">
+            <input name= "password" type="password" class="form-control" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <input name= "rePassword" type="password" class="form-control" placeholder="Re-enter Password" required="required">
+        </div>
+        <!--PHP script to display-->
+        <?php
+        if(isset($_GET['error']))
+        {
+            if($_GET['error'] == 'emptyinput')
+            {          
+            echo '<p class = "text-danger text-center " >Fill in all the fields!</p>';
+
+            }
+
+            if($_GET['error'] == 'emailExists')
+            {
+            echo '<p class = "text-danger text-center " >User already exists!</p>';
+            }
+            
+            if($_GET['error'] == 'passworddontmatch')
+            {
+            echo '<p class = "text-danger text-center " >The passwords must match!</p>';
+            }
+
+            if($_GET['error'] == 'invalidemail')
+            {
+                echo '<p class = "text-danger text-center " >The email you have entered is invalid!</p>';
+            }
+            
+            if($_GET['error'] == 'stmtfailed')
+            {
+                echo '<p class = "text-danger text-center " >Something went wrong, try again!</p>';
+            }
+
+            if($_GET['error'] == 'none')
+            {
+                echo '
+                <script>
+                $(document).ready(function(){
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Account created Succesfully!",
+                    showConfirmButton: false,
+                    timer: 1500                 
+                  }).then(function() {
+                    window.location.href = "login.php";
+                  })
+                });                 
+                </script>
+                ';
+            }
+                        
+        }
+    ?>
+             
+        <div class="clearfix">
+            
+            
+            <a href="register.php" class="pull-left">Already have an account? Log in</a>
+        </div>        
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-a" value ="Register" name = "submit"></input>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+  

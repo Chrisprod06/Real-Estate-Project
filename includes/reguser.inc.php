@@ -21,6 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	
 	if($password != $rePassword)
 	{
+		if($token =='5'){
+		echo 'Passwords don\'t match';
+		exit();}
 		header('location: ../register.php?error=passworddontmatch');
         exit();
 	}
@@ -28,6 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$select = mysqli_query($conn, "SELECT `email` FROM `users` WHERE `email` = '".$_POST['email']."'") or exit(mysqli_error($conn));
 	if(mysqli_num_rows($select)) 
 	{
+		if($token =='5'){
+		echo 'Email already exists';
+		exit();}
     	header('location: ../register.php?error=emailExists');
     	exit();
 	}
@@ -39,6 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 
 	if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
+		if($token =='5'){
+		echo 'Please enter a valid email';
+		exit();}
 		header('location: ../register.php?error=invalidemail');
         exit();
 	}
@@ -50,17 +59,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	mysqli_stmt_prepare($stmt,$sql);
 	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
 	mysqli_stmt_bind_param($stmt,'ssissii', $firstname,$lastname,$telephone,$email,$hashedPassword,$role,$useractive); //bind values and execute insert query
-	if($token ==5){
+	
+	if(mysqli_stmt_execute($stmt)){
+	if($token =='5'){
 		echo 'test';
 		exit();
-	}else{
-		echo 'notest';
-		exit();
 	}
-	if(mysqli_stmt_execute($stmt)){
 		header('location: ../login.php?error=none');
         exit();
 	}else{
+	if($token =='5'){
+		echo 'no test';
+		exit();
+	}
 		header('location: ../login.php?error=stmtFailed');
         exit();
 	}

@@ -137,7 +137,7 @@ if (isset($_POST['submitSearch'])) {
     $getsearch = "SELECT * FROM properties $where $searchquery;";
     $ressearch = mysqli_query($conn, $getsearch);
     if (mysqli_num_rows($ressearch) === 0) {
-        echo $getsearch;
+        header("Location: ../searchProperties.php?properties=none");
     } else {
         $searchProperties = array();
         while ($row = mysqli_fetch_assoc($ressearch)) {
@@ -157,6 +157,7 @@ if (isset($_POST['submitSearch'])) {
         
         $_SESSION['properties'] = $searchProperties;
         header('Location: ../searchProperties.php');
+        exit();
     }
 } else {
     header("Location: ../index.php");
