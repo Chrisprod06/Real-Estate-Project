@@ -267,7 +267,7 @@ session_start();
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="beforeAndAfter.php">Before And After</a>
+            <a class="nav-link" href="renovationGrid.php">Before And After</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
