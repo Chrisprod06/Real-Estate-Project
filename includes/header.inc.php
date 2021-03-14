@@ -88,7 +88,7 @@ $_SESSION['lastVisitedPage'] = $res;
           <div class="col-md-6 mb-2">
             <div class="form-group">
               <label for="Category">Category</label>
-              <select class="form-control form-control-lg form-control-a" id="Category" name="category">
+              <select class="form-control form-control-lg form-control-a" id="Category" name="category" onchange="setPriceRange()">
                 <option value="allCategories">All Categories</option>
                 <option value="forRentShort">For Rent - Short Term</option>
                 <option value="forRentLong">For Rent - Long Term</option>
@@ -176,15 +176,15 @@ $_SESSION['lastVisitedPage'] = $res;
             <label for="features">Features</label>
             <div class="form-group" id='features' name="features">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="parking" name="parking" value="parking">
                 <label class="form-check-label" for="inlineCheckbox1">Parking</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Furniture</label>
+                <input class="form-check-input" type="checkbox" id="furniture" value="furniture" name="furniture">
+                <label class="form-check-label" for="furniture">Furniture</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <input class="form-check-input" type="checkbox" id="heating" name="heating" value="heating">
                 <label class="form-check-label" for="inlineCheckbox3">Heating</label>
               </div>
             </div>
@@ -192,10 +192,23 @@ $_SESSION['lastVisitedPage'] = $res;
           <div class="col-md-12   mb-2">
             <label for="priceRange">Price Range</label>
             <div class="form-group" id='priceRange' name="priceRange">
-            <input type="text" class="js-range-slider" name="my_range" value="" />
+              <input type="text" class="js-range-slider" name="rangePrice" value="" />
 
             </div>
           </div>
+          <script>
+            var custom_values = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 700000, 80000, 90000, 100000, 150000, 2000000, 250000, 300000, 350000, 400000, 450000, 500000, 600000, 700000, 800000, 900000, 1000000];
+            var my_from = custom_values.indexOf(0);
+            var my_to = custom_values.indexOf(1000000);
+            $(".js-range-slider").ionRangeSlider({
+              skin: "modern",
+              type: "double",
+              min: my_from,
+              max: my_to,
+              grid: true,
+              values: custom_values
+            });
+          </script>
           <div class="col-md-12">
             <button type="submit" class="btn btn-b" name="submitSearch">Search Property</button>
           </div>
@@ -203,16 +216,7 @@ $_SESSION['lastVisitedPage'] = $res;
       </form>
     </div>
   </div>
-  <script>
-      $(".js-range-slider").ionRangeSlider({
-        type: "double",
-        min: 0,
-        max: 500000,
-        
-        grid: true
-    });
 
-  </script>
   <!--/ Form Search End /-->
 
   <!--/ Nav Star /-->
@@ -293,7 +297,7 @@ $_SESSION['lastVisitedPage'] = $res;
   <div id="login" class="modal fade">
     <div class="modal-dialog ">
       <div class="modal-content ">
-        <form action="includes/login.inc.php" method="POST">
+        <form id = "loginForm"action="includes/login.inc.php" method="POST">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -310,7 +314,6 @@ $_SESSION['lastVisitedPage'] = $res;
             </div>
             <!--Error messages-->
             <?php
-
             if (isset($_GET['error'])) {
               if ($_GET['error'] == 'wrongLogin') {
                 echo '<p class = "text-danger text-center ">This user does not exist.</p>';
@@ -348,7 +351,7 @@ $_SESSION['lastVisitedPage'] = $res;
           </div>
           <div class="modal-footer">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-a" value="Login" name="submitLogin"></input>
+            <input type="submit" class="btn btn-a" value="Login" name="submit"></input>
           </div>
         </form>
       </div>

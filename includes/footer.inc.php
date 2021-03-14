@@ -156,3 +156,9 @@
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#login').modal('show');
+  });
+</script>
