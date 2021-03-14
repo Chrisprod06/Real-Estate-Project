@@ -1,8 +1,8 @@
 <?php
 session_start();
 $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-$escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
-$res=preg_replace('/\?[^?]*$/', '', $escaped_url);
+$escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+$res = preg_replace('/\?[^?]*$/', '', $escaped_url);
 $_SESSION['lastVisitedPage'] = $res;
 ?>
 
@@ -26,18 +26,29 @@ $_SESSION['lastVisitedPage'] = $res;
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" >
-  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css" >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+
+  <!--Range Slider-->
+
+  <!--Plugin CSS file with desired skin-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+
+  <!--jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--Plugin JavaScript file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
 
 
 
@@ -121,7 +132,7 @@ $_SESSION['lastVisitedPage'] = $res;
               </select>
             </div>
           </div>
-          
+
           <div class="col-md-6 mb-2">
             <div class="form-group">
               <label for="bedrooms">Bedrooms</label>
@@ -161,62 +172,47 @@ $_SESSION['lastVisitedPage'] = $res;
               </select>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="squarem">Area</label>
-              <select class="form-control form-control-lg form-control-a" id="squarem" name="squarem">
-                <option value="any">Any</option>
-                <option value="sqm50_100">50-100</option>
-                <option value="sqm100_150">100-150</option>
-                <option value="sqm150_200">150-200</option>
-                <option value="sqm200_300">200-300</option>
-                <option value="sqm300+">300+</option>
-              </select>
+          <div class="col-md-12   mb-2">
+            <label for="features">Features</label>
+            <div class="form-group" id='features' name="features">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Parking</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Furniture</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Heating</label>
+              </div>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="features">Features</label>
-              <select  multiple data class=" selectpicker form-control form-control-lg form-control-a" id="features" name="features">
-                <option value="any">Any</option>
-                <option value="parking">Parking</option>
-                <option value="heating">Heating</option>
-                <option value="furniture">Furniture</option>
-              </select>
-            </div>
-          </div>
-          
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="MaxYear">Maximum Years</label>
-              <select class="form-control form-control-lg form-control-a" id="MaxYear" name=maxYear>
-                <option value="any">Any</option>
-                <option value="twoYears">2</option>
-                <option value="fiveYears">5</option>
-                <option value="sevenYears">7</option>
-                <option value="tenYears">10</option>
-              </select>
-            </div>
-          </div>
-         
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="price">Maximum Price</label>
-              <select class="form-control form-control-lg form-control-a" id="price" name = "maxPrice">
-                <option value="any" >Any</option>
-                <option value="100k">$100,000</option>
-                <option value="150k">$150,000</option>
-                <option value="200k">$200,000</option>
-              </select>
+          <div class="col-md-12   mb-2">
+            <label for="priceRange">Price Range</label>
+            <div class="form-group" id='priceRange' name="priceRange">
+            <input type="text" class="js-range-slider" name="my_range" value="" />
+
             </div>
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b" name = "submitSearch">Search Property</button>
+            <button type="submit" class="btn btn-b" name="submitSearch">Search Property</button>
           </div>
         </div>
       </form>
     </div>
   </div>
+  <script>
+      $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 500000,
+        
+        grid: true
+    });
+
+  </script>
   <!--/ Form Search End /-->
 
   <!--/ Nav Star /-->
@@ -294,42 +290,38 @@ $_SESSION['lastVisitedPage'] = $res;
   <!--/ Nav End /-->
 
   <!-- Login Modal HTML -->
-	<div id="login" class="modal fade">
-		<div class="modal-dialog ">
-			<div class="modal-content ">
-				<form action="includes/login.inc.php" method="POST">
-					<div class="modal-header">
-						<h4 class="modal-title">Login</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">
-          <div class="form-group">
-            <input type="email" name = "email" class="form-control" placeholder="Email" required value =>
-        </div>
-        <div class="form-group">
-            <input type="password" name = "pass" class="form-control" placeholder="Password" required="required">
-        </div>
-        <div class="form-group">
-        
-        </div>
-        <!--Error messages-->
-        <?php
-        
-            if(isset($_GET['error'])){
-                if($_GET['error'] == 'wrongLogin'){
-                    echo '<p class = "text-danger text-center ">This user does not exist.</p>';
-                }
-                else if ($_GET['error'] == 'wrongPassword'){
-                    echo '<p class = "text-danger text-center ">The password you have entered is incorrect.</p>';
-                }
-                else if ($_GET['error'] == 'stmtFailed'){
-                    echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
-                }
-                else if ($_GET['error'] == 'tryAgainReset'){
-                    echo '<p class = "text-danger text-center " >Reset password request went wrong. Please try again.</p>';
-                }
-                else if ($_GET['error'] == 'none' ){
-                    echo '
+  <div id="login" class="modal fade">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <form action="includes/login.inc.php" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title">Login</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email" required value=>
+            </div>
+            <div class="form-group">
+              <input type="password" name="pass" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+
+            </div>
+            <!--Error messages-->
+            <?php
+
+            if (isset($_GET['error'])) {
+              if ($_GET['error'] == 'wrongLogin') {
+                echo '<p class = "text-danger text-center ">This user does not exist.</p>';
+              } else if ($_GET['error'] == 'wrongPassword') {
+                echo '<p class = "text-danger text-center ">The password you have entered is incorrect.</p>';
+              } else if ($_GET['error'] == 'stmtFailed') {
+                echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
+              } else if ($_GET['error'] == 'tryAgainReset') {
+                echo '<p class = "text-danger text-center " >Reset password request went wrong. Please try again.</p>';
+              } else if ($_GET['error'] == 'none') {
+                echo '
                     <script>
                     $(document).ready(function(){
                       Swal.fire({
@@ -344,85 +336,77 @@ $_SESSION['lastVisitedPage'] = $res;
                     });                 
                     </script>
                     ';
-                }
+              }
             }
-        ?>
+            ?>
 
-        <div class="clearfix">
-            
-            <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
-            <a href="register.php" class="pull-left">Create Account</a>
-        </div>        
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-a" value ="Login" name = "submitLogin"></input>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+            <div class="clearfix">
+
+              <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
+              <a href="register.php" class="pull-left">Create Account</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
+            <input type="submit" class="btn btn-a" value="Login" name="submitLogin"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Register Modal HTML -->
-	<div id="register" class="modal fade">
-		<div class="modal-dialog ">
-			<div class="modal-content ">
-				<form action="includes/reguser.inc.php" method="POST">
-					<div class="modal-header">
-						<h4 class="modal-title">Register</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">
-          <div class="form-group">
-            <input name= "firstname" type="text" class="form-control" placeholder="Firstname" required="required">
-        </div>
-        <div class="form-group">
-            <input name= "lastname" type="text" class="form-control" placeholder="Lastname" required="required">
-        </div>       
-        <div class="form-group">
-            <input name= "email" type="email" class="form-control" placeholder="Email" required="required">
-        </div>
-        <div class="form-group">
-            <input name= "telephone" type="tel" class="form-control" placeholder="Telephone" required="required">
-        </div>
-        <div class="form-group">
-            <input name= "password" type="password" class="form-control" placeholder="Password" required="required">
-        </div>
-        <div class="form-group">
-            <input name= "rePassword" type="password" class="form-control" placeholder="Re-enter Password" required="required">
-        </div>
-        <!--PHP script to display-->
-        <?php
-        if(isset($_GET['error']))
-        {
-            if($_GET['error'] == 'emptyinput')
-            {          
-            echo '<p class = "text-danger text-center " >Fill in all the fields!</p>';
+  <div id="register" class="modal fade">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <form action="includes/reguser.inc.php" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title">Register</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input name="firstname" type="text" class="form-control" placeholder="Firstname" required="required">
+            </div>
+            <div class="form-group">
+              <input name="lastname" type="text" class="form-control" placeholder="Lastname" required="required">
+            </div>
+            <div class="form-group">
+              <input name="email" type="email" class="form-control" placeholder="Email" required="required">
+            </div>
+            <div class="form-group">
+              <input name="telephone" type="tel" class="form-control" placeholder="Telephone" required="required">
+            </div>
+            <div class="form-group">
+              <input name="password" type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+              <input name="rePassword" type="password" class="form-control" placeholder="Re-enter Password" required="required">
+            </div>
+            <!--PHP script to display-->
+            <?php
+            if (isset($_GET['error'])) {
+              if ($_GET['error'] == 'emptyinput') {
+                echo '<p class = "text-danger text-center " >Fill in all the fields!</p>';
+              }
 
-            }
+              if ($_GET['error'] == 'emailExists') {
+                echo '<p class = "text-danger text-center " >User already exists!</p>';
+              }
 
-            if($_GET['error'] == 'emailExists')
-            {
-            echo '<p class = "text-danger text-center " >User already exists!</p>';
-            }
-            
-            if($_GET['error'] == 'passworddontmatch')
-            {
-            echo '<p class = "text-danger text-center " >The passwords must match!</p>';
-            }
+              if ($_GET['error'] == 'passworddontmatch') {
+                echo '<p class = "text-danger text-center " >The passwords must match!</p>';
+              }
 
-            if($_GET['error'] == 'invalidemail')
-            {
+              if ($_GET['error'] == 'invalidemail') {
                 echo '<p class = "text-danger text-center " >The email you have entered is invalid!</p>';
-            }
-            
-            if($_GET['error'] == 'stmtfailed')
-            {
-                echo '<p class = "text-danger text-center " >Something went wrong, try again!</p>';
-            }
+              }
 
-            if($_GET['error'] == 'none')
-            {
+              if ($_GET['error'] == 'stmtfailed') {
+                echo '<p class = "text-danger text-center " >Something went wrong, try again!</p>';
+              }
+
+              if ($_GET['error'] == 'none') {
                 echo '
                 <script>
                 $(document).ready(function(){
@@ -438,24 +422,21 @@ $_SESSION['lastVisitedPage'] = $res;
                 });                 
                 </script>
                 ';
+              }
             }
-                        
-        }
-    ?>
-             
-        <div class="clearfix">
-            
-            
-            <a href="register.php" class="pull-left">Already have an account? Log in</a>
-        </div>        
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-a" value ="Register" name = "submit"></input>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-  
-  
+            ?>
+
+            <div class="clearfix">
+
+
+              <a href="register.php" class="pull-left">Already have an account? Log in</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
+            <input type="submit" class="btn btn-a" value="Register" name="submit"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
