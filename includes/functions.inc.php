@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //Functions used in login.inc.php
     //Function to login user
@@ -6,7 +7,13 @@
         
         $userIDExists = emailExists($conn,$email);
         if($userIDExists === false){
-            header('location: ../login.php?error=wrongLogin');
+            $_SESSION['lastVisitedPage'].='?error=wrongLogin';
+            header('location: '.$_SESSION['lastVisitedPage']);
+            echo "<script>
+        $(window).load(function(){
+            $('#login').modal('show');
+        });
+   </script>";
             exit();
         }
 
@@ -14,17 +21,19 @@
         $checkPassword = password_verify($password,$passwordHashed);
 
         if($checkPassword === false){
-            header("Location: ../login.php?error=wrongPassword");
+            $_SESSION['lastVisitedPage'].='?error=wrongPassword';
+            header('location: '.$_SESSION['lastVisitedPage']);
+            
             exit();
         }else if($checkPassword === true){
-            session_start();
             $_SESSION['userID'] = $userIDExists['userID'];
             $_SESSION['firstname'] = $userIDExists['firstname'];
             $_SESSION['lastname'] = $userIDExists['lastname'];
             $_SESSION['telephone'] = $userIDExists['phoneNo'];
             $_SESSION['email'] = $userIDExists['email'];
             $_SESSION['role'] = $userIDExists['role'];
-            header('Location: ../login.php?error=none');
+            $_SESSION['lastVisitedPage'].='?error=none';
+            header('location: '.$_SESSION['lastVisitedPage']);
             exit();
             
         //}
@@ -36,7 +45,8 @@
         $sql = "SELECT * FROM users WHERE email = ?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header('Location: ../login.php?error=stmtFailed');
+            $_SESSION['lastVisitedPage'].='?error=stmtFailed';
+            header('location: '.$_SESSION['lastVisitedPage']);
         }
 
         mysqli_stmt_bind_param($stmt,"s",$email);

@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submitLogin'])){
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
@@ -12,5 +12,5 @@ loginUser($conn,$email,$password);
 
 
 }else{
-    header("location: ../login.php");
+    header("location: ../index.php");
 }

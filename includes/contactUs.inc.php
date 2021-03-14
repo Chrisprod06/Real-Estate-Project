@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['submit'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $firstname =$_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
     $telephone = $_SESSION['telephone'];
-    $emailFrom = 'chrisprodromou06@gmail.com';
+    $emailFrom = $_SESSION['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 

@@ -1,6 +1,6 @@
 <?php
 //change to correct headers
-if(isset($_POST['submitResetPassword'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $selector = $_POST['selector'];
     $validator = $_POST['validator'];

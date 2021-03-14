@@ -1,5 +1,9 @@
 <?php
 session_start();
+$url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+$escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
+$res=preg_replace('/\?[^?]*$/', '', $escaped_url);
+$_SESSION['lastVisitedPage'] = $res;
 ?>
 
 
@@ -22,13 +26,15 @@ session_start();
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" >
+  
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css" >
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
@@ -87,7 +93,7 @@ session_start();
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
-                $sql = 'SELECT town FROM properties where category = forRentLongTerm OR category = forRentShortTerm OR category = forSale; ';
+                $sql = 'SELECT town FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -105,7 +111,7 @@ session_start();
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
-                $sql = 'SELECT area FROM properties where category = forRentLongTerm OR category = forRentShortTerm OR category = forSale; ';
+                $sql = 'SELECT area FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -115,19 +121,7 @@ session_start();
               </select>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="squarem">Square meters</label>
-              <select class="form-control form-control-lg form-control-a" id="squarem" name="squarem">
-                <option value="any">Any</option>
-                <option value="sqm50_100">50-100</option>
-                <option value="sqm100_150">100-150</option>
-                <option value="sqm150_200">150-200</option>
-                <option value="sqm200_300">200-300</option>
-                <option value="sqm300+">300+</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="col-md-6 mb-2">
             <div class="form-group">
               <label for="bedrooms">Bedrooms</label>
@@ -169,34 +163,29 @@ session_start();
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="parking">Parking</label>
-              <select class="form-control form-control-lg form-control-a" id="parking" name="parking">
+              <label for="squarem">Area</label>
+              <select class="form-control form-control-lg form-control-a" id="squarem" name="squarem">
                 <option value="any">Any</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="sqm50_100">50-100</option>
+                <option value="sqm100_150">100-150</option>
+                <option value="sqm150_200">150-200</option>
+                <option value="sqm200_300">200-300</option>
+                <option value="sqm300+">300+</option>
               </select>
             </div>
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="heating">Heating</label>
-              <select class="form-control form-control-lg form-control-a" id="heating" name="heating">
+              <label for="features">Features</label>
+              <select  multiple data class=" selectpicker form-control form-control-lg form-control-a" id="features" name="features">
                 <option value="any">Any</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="parking">Parking</option>
+                <option value="heating">Heating</option>
+                <option value="furniture">Furniture</option>
               </select>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="furniture">Furniture</label>
-              <select class="form-control form-control-lg form-control-a" id="furniture" name="furniture">
-                <option value="any">Any</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="col-md-6 mb-2">
             <div class="form-group">
               <label for="MaxYear">Maximum Years</label>
@@ -209,19 +198,7 @@ session_start();
               </select>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="price">Maximum Rent</label>
-              <select class="form-control form-control-lg form-control-a" id="price" name = "maxRent">
-                <option value="any">Any</option>
-                <option value="300eu">€300</option>
-                <option value="400eu">€400</option>
-                <option value="500eu">€500</option>
-                <option value="700eu">€700</option>
-                <option value="1000eu">€1000</option>
-              </select>
-            </div>
-          </div>
+         
           <div class="col-md-6 mb-2">
             <div class="form-group">
               <label for="price">Maximum Price</label>
@@ -337,6 +314,7 @@ session_start();
         </div>
         <!--Error messages-->
         <?php
+        
             if(isset($_GET['error'])){
                 if($_GET['error'] == 'wrongLogin'){
                     echo '<p class = "text-danger text-center ">This user does not exist.</p>';
@@ -479,4 +457,5 @@ session_start();
 			</div>
 		</div>
 	</div>
+  
   

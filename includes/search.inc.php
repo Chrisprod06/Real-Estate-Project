@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST['submitSearch'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Get variables
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';

@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['submitResetPasswordRequest'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     //Prepare variables needed
 

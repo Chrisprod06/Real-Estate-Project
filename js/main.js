@@ -148,3 +148,8 @@
 	});
 
 })(jQuery);
+
+/*Multiple Select */
+$(function () {
+    $('.selectpicker').selectpicker();
+});
