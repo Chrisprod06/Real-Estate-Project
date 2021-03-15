@@ -157,8 +157,15 @@
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
 
-<script>
-  $(document).ready(function() {
-    $('#login').modal('show');
-  });
-</script>
+<!--Script to show login modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'login' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#login").modal();
+  </script>
+<?php } ?>
+<!--Script to show register modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'register' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#register").modal();
+  </script>
+<?php } ?>

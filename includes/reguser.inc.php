@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo 'Passwords don\'t match';
 			exit();
 		}
-		$_SESSION['lastVisitedPage'] .= '?error=passworddontmatch';
+		$_SESSION['lastVisitedPage'] .= '?error=passworddontmatch&modal=register';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 		exit();
 	}
@@ -34,14 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo 'Email already exists';
 			exit();
 		}
-		$_SESSION['lastVisitedPage'] .= '?error=emailExists';
+		$_SESSION['lastVisitedPage'] .= '?error=emailExists&modal=register';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 
 		exit();
 	}
 
 	if (empty($firstname || $lastname || $telephone || $email || $password || $role  || $useractive)) {
-		$_SESSION['lastVisitedPage'] .= '?error=emptyinput';
+		$_SESSION['lastVisitedPage'] .= '?error=emptyinput&modal=register';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 
 		exit();
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo 'Please enter a valid email';
 			exit();
 		}
-		$_SESSION['lastVisitedPage'] .= '?error=invalidemail';
+		$_SESSION['lastVisitedPage'] .= '?error=invalidemail&modal=register';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 		exit();
 	}
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			exit();
 		}
 
-		$_SESSION['lastVisitedPage'] .= '?error=none';
+		$_SESSION['lastVisitedPage'] .= '?error=none&modal=register';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 		exit();
 	} else {
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo 'no test';
 			exit();
 		}
-		$_SESSION['lastVisitedPage'] .= '?error=stmtFailed';
+		$_SESSION['lastVisitedPage'] .= '?error=stmtFailed&modal=register';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 		exit();
 	}

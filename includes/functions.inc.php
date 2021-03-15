@@ -8,7 +8,7 @@ function loginUser($conn, $email, $password)
 
     $userIDExists = emailExists($conn, $email);
     if ($userIDExists === false) {
-        $_SESSION['lastVisitedPage'] .= '?error=wrongLogin';
+        $_SESSION['lastVisitedPage'] .= '?error=wrongLogin&modal=login';
         header('location: ' . $_SESSION['lastVisitedPage']);
         echo "<script>
         $(window).load(function(){
@@ -22,7 +22,7 @@ function loginUser($conn, $email, $password)
     $checkPassword = password_verify($password, $passwordHashed);
 
     if ($checkPassword === false) {
-        $_SESSION['lastVisitedPage'] .= '?error=wrongPassword';
+        $_SESSION['lastVisitedPage'] .= '?error=wrongPassword&modal=login';
         header('location: ' . $_SESSION['lastVisitedPage']);
 
         exit();
@@ -33,7 +33,7 @@ function loginUser($conn, $email, $password)
         $_SESSION['telephone'] = $userIDExists['phoneNo'];
         $_SESSION['email'] = $userIDExists['email'];
         $_SESSION['role'] = $userIDExists['role'];
-        $_SESSION['lastVisitedPage'] .= '?error=none';
+        $_SESSION['lastVisitedPage'] .= '?error=none&modal=login';
         header('location: ' . $_SESSION['lastVisitedPage']);
        
         exit();
