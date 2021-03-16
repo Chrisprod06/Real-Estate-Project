@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Get variables
     require_once 'dbh.inc.php';
@@ -19,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $_SESSION['renovations'] = $searchRenovations;
-        header('Location: ../renovationGrid.php');
-        exit();
+    header('Location: ../renovationGrid.php');
+    exit();
 
 } 
 

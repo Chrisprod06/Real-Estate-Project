@@ -245,7 +245,8 @@ $_SESSION['lastVisitedPage'] = $res;
           </li>
 
           <form class="nav-item" action="includes/renovation.inc.php" method="POST">
-            <a class="nav-link" href="renovationGrid.php">Before And After</a>
+            <!--<a class="nav-link"  href="renovationGrid.php">Before and After</a>-->
+            <button type="submit" class="nav-link" name="sumbit">Before and After</button>
           </form>
           
 

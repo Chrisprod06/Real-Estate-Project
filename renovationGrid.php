@@ -42,10 +42,11 @@ include_once "includes/header.inc.php";
         <div class="card-box-a card-shadow">
           
           <?php 
-            
+            if (isset($_SESSION['renovations'])) { 
+              foreach ($_SESSION['renovations'] as $row){
 
 
-          echo ' <div class="img-box-a">
+          echo /*' <div class="img-box-a">
             <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
           </div>
           <div class="card-overlay">
@@ -87,9 +88,10 @@ include_once "includes/header.inc.php";
                 </ul>
               </div>
             </div>
-          </div>'; 
-            
-          
+          </div>'*/ 'TEST!!!'; 
+              }
+              }
+              
            ?>
 
 
