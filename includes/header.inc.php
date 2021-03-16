@@ -243,9 +243,12 @@ $_SESSION['lastVisitedPage'] = $res;
           <li class="nav-item">
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
-          <li class="nav-item">
+
+          <form class="nav-item" action="includes/renovation.inc.php" method="POST">
             <a class="nav-link" href="renovationGrid.php">Before And After</a>
-          </li>
+          </form>
+          
+
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
           </li>

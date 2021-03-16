@@ -40,7 +40,12 @@ include_once "includes/header.inc.php";
       </div>
       <div class="col-md-4">
         <div class="card-box-a card-shadow">
-          <div class="img-box-a">
+          
+          <?php 
+            
+
+
+          echo ' <div class="img-box-a">
             <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
           </div>
           <div class="card-overlay">
@@ -82,7 +87,12 @@ include_once "includes/header.inc.php";
                 </ul>
               </div>
             </div>
-          </div>
+          </div>'; 
+            
+          
+           ?>
+
+
         </div>
       </div>
     </div>
