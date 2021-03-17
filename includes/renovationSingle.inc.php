@@ -13,6 +13,7 @@ $search = array();
 while ($row = mysqli_fetch_assoc($setQuery)) 
 {
 
+  $search[] = array(
   
   'propID'=> $row['propertyID'],
   'city' => $row['town'],
