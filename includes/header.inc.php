@@ -244,7 +244,7 @@ $_SESSION['lastVisitedPage'] = $res;
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
 
-          <!--Script for the form below so that the link can "sumbit" the form.  
+          <!--Script for the forms below so that the link can "sumbit" the form.  
           Button that doesn't require the use of the script below
           <button type="submit" class="nav-link" name="sumbit">Before and After</button>-->
           
@@ -253,7 +253,12 @@ $_SESSION['lastVisitedPage'] = $res;
           { 
             document.forms["myform"].submit();
           }
+          function submitform2()
+          { 
+            document.forms["myform2"].submit();
+          }
           </script>
+
 
           <form id="myform" class="nav-item" action="includes/renovation.inc.php" method="POST">
             <a class="nav-link"  href="javascript: submitform()">Before and After</a>
@@ -273,9 +278,9 @@ $_SESSION['lastVisitedPage'] = $res;
                         <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
                       </li>";
             } else if ($_SESSION['role'] == 2) {
-              echo "<li class='nav-item'>
-                        <a class='nav-link' href='login.php'>Favorites</a>
-                     </li>";
+              echo "<form id='myform2' class='nav-item' action='includes/favorite.inc.php' method='POST'>
+                    <a class='nav-link'  href='javascript: submitform2()'>Favorites</a>
+                    </form>";
               echo "<li class='nav-item'>
                          <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
                       </li>";

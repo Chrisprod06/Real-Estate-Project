@@ -16,7 +16,7 @@ include_once "includes/header.inc.php";
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
               Renovations Grid
@@ -29,7 +29,7 @@ include_once "includes/header.inc.php";
 </section>
 <!--/ Intro Single End /-->
 
-<!--/ Property Grid Star /-->
+<!--/ Renovations Grid Star /-->
 <section class="property-grid grid">
   <div class="container">
     <div class="row">
