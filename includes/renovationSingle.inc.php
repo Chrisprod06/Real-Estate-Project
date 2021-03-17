@@ -22,7 +22,16 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   'area' => $row['squarem'],
   'baths' => $row['bathrooms'],
   'beds' => $row['bedrooms'],
-  'furnished' => $row['furniture']
+  'furnished' => $row['furniture'],
+  'types' => $row['type'],
+  'garage' => $row['parking'],
+  'dateBuild' => $row['dateOfBuild'],
+  'dateAvail' => $row['availableFrom'],
+  'floors' => $row['floor'],
+  'heat' => $row['heating'],
+  'priceSqm' => $row['pricePerSqm'],
+  'desc' => $row['propertyDecription'],
+  'amen' => $row['amenitiesDescription']
   ); 
 }  
 
