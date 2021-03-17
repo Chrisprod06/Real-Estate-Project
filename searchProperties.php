@@ -22,13 +22,11 @@ include_once "includes/header.inc.php";
 <section class="property-grid grid">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card-box-a card-shadow">
-                    <?php
+            <?php
 
 
-                    //Present data
-                    if (isset($_SESSION['properties'])) {
+                //Present data
+                if (isset($_SESSION['properties'])) {
                         foreach ($_SESSION['properties'] as $row) {
                             //Prepare data
                             if ($row['categ'] === 'forSale') {
@@ -44,7 +42,9 @@ include_once "includes/header.inc.php";
                             } else if ($row['furnished'] === '1') {
                                 $furnished = 'Yes';
                             }
-                            echo ' <div class="img-box-a">
+                            echo ' <div class="col-md-4">
+                            <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
                            <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
                        </div>
                        <div class="card-overlay">
@@ -57,7 +57,7 @@ include_once "includes/header.inc.php";
                                </div>
                                <div class="card-body-a">
                                    <div class="price-box d-flex">
-                                       <span class="price-a">' . $categ . '| €' . $row["totPrice"] . '</span>
+                                       <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
                                    </div>
                                    <a href="propertySingle.php" class="link-a">Click here to view
                                        <span class="ion-ios-arrow-forward"></span>
@@ -86,6 +86,8 @@ include_once "includes/header.inc.php";
                                    </ul>
                                </div>
                            </div>
+                       </div>
+                       </div>
                        </div>';
                         }
                         unset($_SESSION['properties']);
@@ -93,8 +95,7 @@ include_once "includes/header.inc.php";
 
 
                     ?>
-                </div>
-            </div>
+                
         </div>
         <div class="row">
             <div class="col-sm-12">

@@ -5,12 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
-
     
     $getQuery = "SELECT * from properties ";
     $setQuery = mysqli_query($conn, $getQuery);
 
-    
     $searchRenovations = array();
 
     while ($row = mysqli_fetch_assoc($setQuery)) 

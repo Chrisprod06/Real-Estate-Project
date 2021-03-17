@@ -38,41 +38,35 @@ include_once "includes/header.inc.php";
 
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card-box-a card-shadow">
+      <?php
+        if (isset($_SESSION['renovations'])) {
+          foreach ($_SESSION['renovations'] as $row) {
 
-          <?php
-          if (isset($_SESSION['renovations'])) {
-            foreach ($_SESSION['renovations'] as $row) {
+            if ($row['furnished'] === '0') {
+              $furnished = 'No';
+          } else if ($row['furnished'] === '1') {
+              $furnished = 'Yes';
+          }
 
-              if ($row['furnished'] === '0') {
-                $furnished = 'Yes';
-              } else if ($row['furnished'] === '1') {
-                $furnished = 'No';
-              }
-
-              if ($row['categ'] === 'forRenovation') {
-                $categ = 'Renovation';
-              } else if ($row['categ'] === 'forDecoration') {
-                $categ = 'Decoration';
-              }
-
-              
-
-              echo '<div class="img-box-a">
-                <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
-                </div>
+            if ($row['categ'] === 'forRenovation') {
+              $categ = 'Renovation';
+              echo '
+              <div class="col-md-4">
+                <div class="card-box-a card-shadow">
+                  <div class="img-box-a">
+                  <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+                  </div>
                   <div class="card-overlay">
                     <div class="card-overlay-a-content">
-                      <div class="card-header-a">
-                        <h2 class="card-title-a">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
                         <a href="#">' . $row["city"] . '
                         <br />' . $row["addr"] . '</a>
-                        </h2>
-                      </div>
+                      </h2>
+                    </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">' . $categ . '| €' . $row["totPrice"] . '</span>
+                      <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
                     </div>
                       <a href="propertySingle.php" class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
@@ -101,15 +95,65 @@ include_once "includes/header.inc.php";
                       </ul>
                     </div>
                   </div>
-                </div>';
+                  </div>
+                </div>
+              </div>';
+            } else if ($row['categ'] === 'forDecoration') {
+              $categ = 'Decoration';
+              echo '
+              <div class="col-md-4">
+                <div class="card-box-a card-shadow">
+                  <div class="img-box-a">
+                  <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+                  </div>
+                  <div class="card-overlay">
+                    <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#">' . $row["city"] . '
+                        <br />' . $row["addr"] . '</a>
+                      </h2>
+                    </div>
+                  <div class="card-body-a">
+                    <div class="price-box d-flex">
+                      <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
+                    </div>
+                      <a href="propertySingle.php" class="link-a">Click here to view
+                      <span class="ion-ios-arrow-forward"></span>
+                      </a>
+                  </div>
+                  <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-around">
+                      <li>
+                        <h4 class="card-info-title">Area</h4>
+                          <span>' . $row["area"] . 'm
+                            <sup>2</sup>
+                          </span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Bedrooms</h4>
+                        <span>' . $row["beds"] . '</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Bathrooms</h4>
+                        <span>' . $row["baths"] . '</span>
+                      </li>
+                      <li>
+                        <h4 class="card-info-title">Furnished</h4>
+                        <span>' . $furnished . '</span>
+                      </li>
+                      </ul>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>';
             }
           }
+        }
 
-          ?>
-
-
-        </div>
-      </div>
+      ?> 
+      
     </div>
     <div class="row">
       <div class="col-sm-12">
