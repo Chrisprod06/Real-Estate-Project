@@ -244,9 +244,19 @@ $_SESSION['lastVisitedPage'] = $res;
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
 
-          <form class="nav-item" action="includes/renovation.inc.php" method="POST">
-            <!--<a class="nav-link"  href="renovationGrid.php">Before and After</a>-->
-            <button type="submit" class="nav-link" name="sumbit">Before and After</button>
+          <!--Script for the form below so that the link can "sumbit" the form.  
+          Button that doesn't require the use of the script below
+          <button type="submit" class="nav-link" name="sumbit">Before and After</button>-->
+          
+          <script type="text/javascript">
+          function submitform()
+          { 
+            document.forms["myform"].submit();
+          }
+          </script>
+
+          <form id="myform" class="nav-item" action="includes/renovation.inc.php" method="POST">
+            <a class="nav-link"  href="javascript: submitform()">Before and After</a>
           </form>
           
 

@@ -46,7 +46,7 @@ include_once "includes/header.inc.php";
               foreach ($_SESSION['renovations'] as $row){
 
 
-          echo /*' <div class="img-box-a">
+          echo ' SP ' . $row["renID"] .''. $row["propID"] . ''/*' <div class="img-box-a"> 
             <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
           </div>
           <div class="card-overlay">
@@ -88,7 +88,7 @@ include_once "includes/header.inc.php";
                 </ul>
               </div>
             </div>
-          </div>'*/ 'TEST!!!'; 
+          </div>'*/ ;  
               }
               }
               
