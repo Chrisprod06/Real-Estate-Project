@@ -13,8 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     while ($row = mysqli_fetch_assoc($ressearch)) 
     {
 
-        $searchRenovations[] = 
-        array(
+        $searchRenovations[] = array(
             'renID' => $row['renovationID'],
             'propID' => $row['propertyID']
         );
