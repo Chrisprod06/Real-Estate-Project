@@ -5,12 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    $getsearch = "SELECT * FROM renovations;";
-    $ressearch = mysqli_query($conn, $getsearch);
+    $getQuery = "SELECT * from renovations where propertyID = (select propertyID from properties);";
+    $setQuery = mysqli_query($conn, $getQuery);
     
     $searchRenovations = array();
 
-    while ($row = mysqli_fetch_assoc($ressearch)) 
+    while ($row = mysqli_fetch_assoc($setQuery)) 
     {
 
         $searchRenovations[] = array(
