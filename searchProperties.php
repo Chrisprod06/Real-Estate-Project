@@ -39,9 +39,9 @@ include_once "includes/header.inc.php";
                                 $categ = 'Rent Short Term';
                             }
 
-                            if ($row['furnished'] === 0) {
+                            if ($row['furnished'] === '0') {
                                 $furnished = 'No';
-                            } else if ($row['furnished'] === 1) {
+                            } else if ($row['furnished'] === '1') {
                                 $furnished = 'Yes';
                             }
                             echo ' <div class="img-box-a">
@@ -81,7 +81,7 @@ include_once "includes/header.inc.php";
                                        </li>
                                        <li>
                                            <h4 class="card-info-title">Furnished</h4>
-                                           <span>' . $row["furnished"] . '</span>
+                                           <span>' . $furnished . '</span>
                                        </li>
                                    </ul>
                                </div>

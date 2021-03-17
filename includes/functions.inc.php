@@ -33,7 +33,7 @@ function loginUser($conn, $email, $password)
         $_SESSION['telephone'] = $userIDExists['phoneNo'];
         $_SESSION['email'] = $userIDExists['email'];
         $_SESSION['role'] = $userIDExists['role'];
-        $_SESSION['lastVisitedPage'] .= '?error=none&modal=login';
+        $_SESSION['lastVisitedPage'] .= '?error=none';
         header('location: ' . $_SESSION['lastVisitedPage']);
        
         exit();

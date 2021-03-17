@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $min = (int)$minString;
         $max = (int)$maxString;
 
-        $query[] = "totalPrice BETWEEN".$min."AND".$max;
+        $query[] = "totalPrice BETWEEN ".$min." AND ".$max;
         
     }
     if (!empty($query)) {
