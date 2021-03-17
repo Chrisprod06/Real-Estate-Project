@@ -45,9 +45,9 @@
   </section>
   <!--/ Intro Single End /-->
 
- <?php echo 'THIS IS THE ID OF THE PROPERTY: ' .$_GET['id']. ''; 
+ <?php echo 'THIS IS THE ID OF THE PROPERTY FROM THE URL: ' .$_GET['id']. ''; 
  
-  $id =    $_GET['id'];
+  $id =   $_GET['id'];
   require_once 'includes/dbh.inc.php';
 
   $getQuery = "SELECT * from properties WHERE propertyID=2;  ";
