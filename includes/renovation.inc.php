@@ -2,11 +2,14 @@
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Get variables
+
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    $getQuery = "SELECT * from renovations where propertyID = (select propertyID from properties);";
+    
+    $getQuery = "SELECT * from properties ";
     $setQuery = mysqli_query($conn, $getQuery);
+
     
     $searchRenovations = array();
 
@@ -14,10 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
 
         $searchRenovations[] = array(
-            'renID' => $row['renovationID'],
-            'propID' => $row['propertyID']
+
+        'city' => $row['town'],
+        'addr' => $row['address'],
+        'categ' => $row['category'],
+        'totPrice' => $row['totalPrice'],
+        'area' => $row['squarem'],
+        'baths' => $row['bathrooms'],
+        'beds' => $row['bedrooms'],
+        'furnished' => $row['furniture']
         );
-            
+        
     }
 
     $_SESSION['renovations'] = $searchRenovations;
