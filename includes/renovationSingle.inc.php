@@ -4,8 +4,8 @@ require_once 'includes/dbh.inc.php';
 
 echo 'THIS IS THE ID OF THE PROPERTY FROM THE URL: ' .$_GET['id']. ''; 
 
-$id =   $_GET['id'];
-$getQuery = "SELECT * from properties WHERE propertyID=2;  ";
+$id =  $_GET['id'];
+$getQuery = "SELECT * from properties WHERE propertyID=$id;  ";
 $setQuery = mysqli_query($conn, $getQuery);
 
 $search = array();
@@ -33,6 +33,3 @@ foreach ($search as $row){
   echo '<br>THIS IS THE category: ' .$row['categ']. '<br>';
 }
     
-
-
-?>

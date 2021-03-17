@@ -46,6 +46,7 @@
   <!--/ Intro Single End /-->
 
  <?php include_once "includes/renovationSingle.inc.php";
+       unset($search);
   ?>
 
 
