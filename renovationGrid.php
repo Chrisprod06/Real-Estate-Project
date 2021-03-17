@@ -38,6 +38,17 @@ include_once "includes/header.inc.php";
 
         </div>
       </div>
+      <script type="text/javascript">
+          function submitform()
+          { 
+            document.forms["myform"].submit();
+          }
+          function submitform2()
+          { 
+            document.forms["myform2"].submit();
+          }
+      </script>
+
       <?php
         if (isset($_SESSION['renovations'])) {
           foreach ($_SESSION['renovations'] as $row) {
@@ -68,7 +79,7 @@ include_once "includes/header.inc.php";
                     <div class="price-box d-flex">
                       <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
                     </div>
-                      <a href="propertySingle.php" class="link-a">Click here to view
+                      <a href="renovationSingle.php?id='.$row["propID"].'"  class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
                       </a>
                   </div>
@@ -118,7 +129,7 @@ include_once "includes/header.inc.php";
                     <div class="price-box d-flex">
                       <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
                     </div>
-                      <a href="propertySingle.php" class="link-a">Click here to view
+                      <a href="renovationSingle.php?id='.$row["propID"].'" class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
                       </a>
                   </div>

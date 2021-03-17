@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
 
         $searchRenovations[] = array(
-
+        
+        'propID'=> $row['propertyID'],
         'city' => $row['town'],
         'addr' => $row['address'],
         'categ' => $row['category'],

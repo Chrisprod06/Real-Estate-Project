@@ -155,7 +155,8 @@
                   <ul class="list">
                     <li class="d-flex justify-content-between">
                       <strong>Property ID:</strong>
-                      <span>1</span>
+                      <span><?php
+                      echo ''.$_GET['id'].''; ?></span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Location:</strong>
