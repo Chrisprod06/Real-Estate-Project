@@ -33,66 +33,82 @@ include_once "includes/header.inc.php";
 <section class="property-grid grid">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <div class="grid-option">
-          <form>
-            <select class="custom-select">
-              <option selected>All</option>
-              <option value="1">New to Old</option>
-              <option value="2">For Rent Short - Term</option>
-              <option value="3">For Rent Long - Term</option>
-              <option value="4">For Sale</option>
-            </select>
-          </form>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card-box-a card-shadow">
-          <div class="img-box-a">
-            <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
-          </div>
-          <div class="card-overlay">
-            <div class="card-overlay-a-content">
-              <div class="card-header-a">
-                <h2 class="card-title-a">
-                  <a href="#">Limassol
-                    <br />Ellados 14</a>
-                </h2>
-              </div>
-              <div class="card-body-a">
-                <div class="price-box d-flex">
-                  <span class="price-a">sale | $ 250.000</span>
-                </div>
-                <a href="propertySingle.php" class="link-a">Click here to view
-                  <span class="ion-ios-arrow-forward"></span>
-                </a>
-              </div>
-              <div class="card-footer-a">
-                <ul class="card-info d-flex justify-content-around">
-                  <li>
-                    <h4 class="card-info-title">Area</h4>
-                    <span>340m
-                      <sup>2</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <h4 class="card-info-title">Bedrooms</h4>
-                    <span>1</span>
-                  </li>
-                  <li>
-                    <h4 class="card-info-title">Bathrooms</h4>
-                    <span>1</span>
-                  </li>
-                  <li>
-                    <h4 class="card-info-title">Furnished</h4>
-                    <span>Yes</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+    //Script to get data
+    $sql = 'SELECT * FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+      //Present data
+      
+      while ($row = mysqli_fetch_assoc($result)) {
+          //Prepare data
+          if ($row['category'] === 'forSale') {
+            $categ = 'Sale';
+          } else if ($row['category'] === 'forRentLongTerm') {
+            $categ = 'Rent Long Term';
+          } else if ($row['category'] === 'forRentShortTerm') {
+            $categ = 'Rent Short Term';
+          }
+
+          if ($row['furniture'] === '0') {
+            $furnished = 'No';
+          } else if ($row['furniture'] === '1') {
+            $furnished = 'Yes';
+          }
+          echo ' <div class="col-md-4">
+                            <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                           <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+                       </div>
+                       <div class="card-overlay">
+                           <div class="card-overlay-a-content">
+                               <div class="card-header-a">
+                                   <h2 class="card-title-a">
+                                       <a href="#">' . $row["town"] . '
+                                           <br />' . $row["address"] . '</a>
+                                   </h2>
+                               </div>
+                               <div class="card-body-a">
+                                   <div class="price-box d-flex">
+                                       <span class="price-a">' . $categ . ' | €' . $row["totalPrice"] . '</span>
+                                   </div>
+                                   <a href="propertySingle.php" class="link-a">Click here to view
+                                       <span class="ion-ios-arrow-forward"></span>
+                                   </a>
+                               </div>
+                               <div class="card-footer-a">
+                                   <ul class="card-info d-flex justify-content-around">
+                                       <li>
+                                           <h4 class="card-info-title">Area</h4>
+                                           <span>' . $row["area"] . 'm
+                                               <sup>2</sup>
+                                           </span>
+                                       </li>
+                                       <li>
+                                           <h4 class="card-info-title">Bedrooms</h4>
+                                           <span>' . $row["bedrooms"] . '</span>
+                                       </li>
+                                       <li>
+                                           <h4 class="card-info-title">Bathrooms</h4>
+                                           <span>' . $row["bathrooms"] . '</span>
+                                       </li>
+                                       <li>
+                                           <h4 class="card-info-title">Furnished</h4>
+                                           <span>' . $furnished . '</span>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                       </div>
+                       </div>';
+        }
+        unset($_SESSION['properties']);
+      
+
+
+      ?>
+
     </div>
     <div class="row">
       <div class="col-sm-12">

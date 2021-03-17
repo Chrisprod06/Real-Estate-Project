@@ -79,8 +79,16 @@ $_SESSION['lastVisitedPage'] = $res;
               <label for="Type">Type</label>
               <select class="form-control form-control-lg form-control-a" id="Type" name="type">
                 <option value="allTypes">All Types</option>
-                <option value="flat">Flat</option>
-                <option value="house">House</option>
+                <!--PHP script to get all cities from database-->
+                <?php
+                include_once 'dbh.inc.php';
+                $sql = 'SELECT type FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+                $result = mysqli_query($conn, $sql);
+                $resultCheck = mysqli_num_rows($result);
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<option value = " . $row['type'] . ">" . $row['type'] . "</option>";
+                }
+                ?>
 
               </select>
             </div>
@@ -222,6 +230,7 @@ $_SESSION['lastVisitedPage'] = $res;
   <!--/ Nav Star /-->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container-fluid">
+
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -247,60 +256,49 @@ $_SESSION['lastVisitedPage'] = $res;
           <!--Script for the forms below so that the link can "sumbit" the form.  
           Button that doesn't require the use of the script below
           <button type="submit" class="nav-link" name="sumbit">Before and After</button>-->
-          
+
           <script type="text/javascript">
-          function submitform()
-          { 
-            document.forms["myform"].submit();
-          }
-          function submitform2()
-          { 
-            document.forms["myform2"].submit();
-          }
+            function submitform() {
+              document.forms["myform"].submit();
+            }
+
+            function submitform2() {
+              document.forms["myform2"].submit();
+            }
           </script>
-
-
           <form id="myform" class="nav-item" action="includes/renovation.inc.php" method="POST">
-            <a class="nav-link"  href="javascript: submitform()">Before and After</a>
+            <a class="nav-link" href="javascript: submitform()">Before and After</a>
           </form>
-          
-
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
           </li>
-          <?php
-          if (isset($_SESSION['userID'])) {
-            if ($_SESSION['role'] == 1) {
-              echo "<li class='nav-item'>
-                         <a class='nav-link' href='../Real-Estate-Admin/index.php'>Edit Website</a>
-                     </li>";
-              echo "<li class='nav-item'>
-                        <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
-                      </li>";
-            } else if ($_SESSION['role'] == 2) {
-              echo "<form id='myform2' class='nav-item' action='includes/favorite.inc.php' method='POST'>
-                    <a class='nav-link'  href='javascript: submitform2()'>Favorites</a>
-                    </form>";
-              echo "<li class='nav-item'>
-                         <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
-                      </li>";
-            }
-          } else {
-            echo "<li class='nav-item'>
-                     <a data-toggle='modal' class='nav-link' href='#login'>Login</a>
-                  </li>";
-            echo "<li class='nav-item'>
-                    <a data-toggle='modal' class='nav-link' href='#register'>Register</a>
-                  </li>";
-          }
-          ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Language
+              My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Greek</a>
-              <a class="dropdown-item" href="#">English</a>
+
+              <?php
+              if (isset($_SESSION['userID'])) {
+                if ($_SESSION['role'] == 1) {
+                  echo "<a class='dropdown-item' href='../Real-Estate-Admin/index.php'>Edit Website</a>";
+                  echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
+                  echo " <a class='dropdown-item' href='#'>Language</a>";
+                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
+                } else if ($_SESSION['role'] == 2) {
+                  echo "<form id='myform2' class='nav-item' action='includes/favorite.inc.php' method='POST'>
+                    <a class='dropdown-item'  href='javascript: submitform2()'>Favorites</a>
+                    </form>";
+                  echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
+                  echo " <a class='dropdown-item' href='#'>Language</a>";
+                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
+                }
+              } else {
+                echo " <a data-toggle='modal' class='dropdown-item' href='#login'>Login</a>";
+                echo " <a data-toggle='modal' class='dropdown-item' href='#register'>Register</a>";
+                echo " <a class='dropdown-item' href='#'>Language</a>";
+              }
+              ?>
             </div>
           </li>
         </ul>
@@ -308,6 +306,9 @@ $_SESSION['lastVisitedPage'] = $res;
       <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
         <span class="fa fa-search" aria-hidden="true"> Search Property</span>
       </button>
+
+
+
     </div>
   </nav>
   <!--/ Nav End /-->
@@ -316,7 +317,7 @@ $_SESSION['lastVisitedPage'] = $res;
   <div id="login" class="modal fade">
     <div class="modal-dialog ">
       <div class="modal-content ">
-        <form id = "loginForm"action="includes/login.inc.php" method="POST">
+        <form id="loginForm" action="includes/login.inc.php" method="POST">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -342,7 +343,7 @@ $_SESSION['lastVisitedPage'] = $res;
                 echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
               } else if ($_GET['error'] == 'tryAgainReset') {
                 echo '<p class = "text-danger text-center " >Reset password request went wrong. Please try again.</p>';
-              } else if ($_GET['error'] == 'none') {
+              } else if ($_GET['error'] == 'noneLogin') {
                 echo '
                     <script>
                     $(document).ready(function(){
@@ -353,7 +354,7 @@ $_SESSION['lastVisitedPage'] = $res;
                         showConfirmButton: false,
                         timer: 1500                 
                       }).then(function() {
-                        window.location.href = "index.php";
+                        
                       })
                     });                 
                     </script>
@@ -428,7 +429,7 @@ $_SESSION['lastVisitedPage'] = $res;
                 echo '<p class = "text-danger text-center " >Something went wrong, try again!</p>';
               }
 
-              if ($_GET['error'] == 'none') {
+              if ($_GET['error'] == 'noneRegister') {
                 echo '
                 <script>
                 $(document).ready(function(){
@@ -439,7 +440,7 @@ $_SESSION['lastVisitedPage'] = $res;
                     showConfirmButton: false,
                     timer: 1500                 
                   }).then(function() {
-                    window.location.href = "login.php";
+                   
                   })
                 });                 
                 </script>
