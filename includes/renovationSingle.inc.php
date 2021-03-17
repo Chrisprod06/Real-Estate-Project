@@ -2,18 +2,17 @@
 //session_start();
 require_once 'includes/dbh.inc.php';
 
-echo 'THIS IS THE ID OF THE PROPERTY FROM THE URL: ' .$_GET['id']. ''; 
 
 $id =  $_GET['id'];
-$getQuery = "SELECT * from properties WHERE propertyID=$id;  ";
-$setQuery = mysqli_query($conn, $getQuery);
+$getQuery1 = "SELECT * from properties WHERE propertyID=$id;  ";
+$setQuery1 = mysqli_query($conn, $getQuery1);
 
-$search = array();
+$searchProp = array();
 
-while ($row = mysqli_fetch_assoc($setQuery)) 
+while ($row = mysqli_fetch_assoc($setQuery1)) 
 {
 
-  $search[] = array(
+  $searchProp[] = array(
   
   'propID'=> $row['propertyID'],
   'city' => $row['town'],
@@ -27,9 +26,20 @@ while ($row = mysqli_fetch_assoc($setQuery))
   ); 
 }  
 
+$getQuery2 = "SELECT * from renovations WHERE renovationID=$id;";
+$setQuery2 = mysqli_query($conn, $getQuery2);
 
-foreach ($search as $row){
-  echo '<br>THIS IS THE ID: ' .$row['propID']. '<br>';
-  echo '<br>THIS IS THE category: ' .$row['categ']. '<br>';
-}
-    
+$searchRen = array(); 
+
+while ($row = mysqli_fetch_assoc($setQuery2)) 
+{
+
+  $searchRen[] = array(
+  
+  'renID'=> $row['renovationID'],
+  'propID' => $row['propertyID'],
+  'bfrPath' => $row['beforePicturesPath'],
+  'aftrPath' => $row['afterPicturesPath'],
+  'desc' => $row['description']
+  ); 
+}  

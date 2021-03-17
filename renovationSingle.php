@@ -45,8 +45,23 @@
   </section>
   <!--/ Intro Single End /-->
 
- <?php include_once "includes/renovationSingle.inc.php";
-       unset($search);
+ <?php 
+    include_once "includes/renovationSingle.inc.php";
+
+    foreach ($searchProp as $row){
+      echo '<br>THIS IS THE ID: ' .$row['propID']. '<br>';
+      echo '<br>THIS IS THE category: ' .$row['categ']. '<br>';
+    }
+
+    unset($searchProp);
+
+    foreach ($searchRen as $row){
+      echo '<br>THIS IS THE ID: ' .$row['renID']. '<br>';
+      echo '<br>THIS IS THE PATH: ' .$row['bfrPath']. '<br>';
+    }
+    
+    unset($searchRen);
+
   ?>
 
 
