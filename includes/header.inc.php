@@ -281,14 +281,7 @@ $_SESSION['lastVisitedPage'] = $res;
               echo "<li class='nav-item'>
                         <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
                       </li>";
-            } else if ($_SESSION['role'] == 2) {
-              echo "<li class='nav-item'>
-                        <a class='nav-link' href='favorites.php?id=".$_SESSION['userID']."'>Favorites</a>
-                      </li>";
-              echo "<li class='nav-item'>
-                         <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
-                      </li>";
-            }
+            } 
           } else {
             echo "<li class='nav-item'>
                      <a data-toggle='modal' class='nav-link' href='#login'>Login</a>
@@ -312,9 +305,7 @@ $_SESSION['lastVisitedPage'] = $res;
                   echo " <a class='dropdown-item' href='#'>Language</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
                 } else if ($_SESSION['role'] == 2) {
-                  echo "<form id='myform2' class='nav-item' action='includes/favorite.inc.php' method='POST'>
-                    <a class='dropdown-item'  href='javascript: submitform2()'>Favorites</a>
-                    </form>";
+                  echo " <a class='dropdown-item' href='favorites.php?id=".$_SESSION['userID']."'>Favorites</a> ";
                   echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
                   echo " <a class='dropdown-item' href='#'>Language</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
