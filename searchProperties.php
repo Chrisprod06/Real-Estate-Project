@@ -31,11 +31,15 @@ include_once "includes/header.inc.php";
                             //Prepare data
                             if ($row['categ'] === 'forSale') {
                                 $categ = 'Sale';
-                            } else if ($row['categ'] === 'forRentLongTerm') {
+                              } else if ($row['categ'] === 'forRentLongTerm') {
                                 $categ = 'Rent Long Term';
-                            } else if ($row['categ'] === 'forRentShortTerm') {
+                              } else if ($row['categ'] === 'forRentShortTerm') {
                                 $categ = 'Rent Short Term';
-                            }
+                              } else if ($row['categ'] === 'forRenovation') {
+                                $categ = 'Renovation'; 
+                              } else if ($row['categ'] === 'forDecoration') {
+                                $categ = 'Decoration';
+                              }
 
                             if ($row['furnished'] === '0') {
                                 $furnished = 'No';

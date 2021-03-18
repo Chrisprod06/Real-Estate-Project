@@ -38,17 +38,7 @@ include_once "includes/header.inc.php";
 
         </div>
       </div>
-      <script type="text/javascript">
-          function submitform()
-          { 
-            document.forms["myform"].submit();
-          }
-          function submitform2()
-          { 
-            document.forms["myform2"].submit();
-          }
-      </script>
-
+      
       <?php
         if (isset($_SESSION['renovations'])) {
           foreach ($_SESSION['renovations'] as $row) {

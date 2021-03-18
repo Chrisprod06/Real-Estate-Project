@@ -278,9 +278,9 @@ $_SESSION['lastVisitedPage'] = $res;
                         <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
                       </li>";
             } else if ($_SESSION['role'] == 2) {
-              echo "<form id='myform2' class='nav-item' action='includes/favorite.inc.php' method='POST'>
-                    <a class='nav-link'  href='javascript: submitform2()'>Favorites</a>
-                    </form>";
+              echo "<li class='nav-item'>
+                        <a class='nav-link' href='favorites.php?id=".$_SESSION['userID']."'>Favorites</a>
+                      </li>";
               echo "<li class='nav-item'>
                          <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
                       </li>";
