@@ -49,6 +49,6 @@ while ($row = mysqli_fetch_assoc($setQuery2))
   'propID' => $row['propertyID'],
   'bfrPath' => $row['beforePicturesPath'],
   'aftrPath' => $row['afterPicturesPath'],
-  'desc' => $row['description']
+  'renDesc' => $row['description']
   ); 
 }  

@@ -154,6 +154,9 @@
 
 <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
 
+<!--Sweet Alert-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
 
