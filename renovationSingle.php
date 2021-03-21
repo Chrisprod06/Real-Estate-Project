@@ -3,19 +3,7 @@
     $title = "Property | APM Smart Houses";
     include_once "includes/header.inc.php";
   ?>
-  <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
-  rel="stylesheet"/>
-  <link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-  <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-  rel="stylesheet"
-/>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" integrity="sha512-Bbn2GxMX2ePx4if/heU6eS4avbu2ac+V1q2jb4mlh1WofyrKV/vm6/mMWmuzgoHQlxvgg7dPuyTtTZSX/Zgk3Q==" crossorigin="anonymous"></script>
+  
   <section class="intro-single">
     <div class="container">
       <div class="row">
@@ -44,104 +32,13 @@
         </div>
       </div>
     </div>
-  </section>
-  <!--/ Intro Single End /-->
-
- <!-- Carousel wrapper -->
-<div
-  id="carouselBasicExample"
-  class="carousel slide carousel-fade"
-  data-mdb-ride="carousel"
->
-  <!-- Indicators -->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-
-  <!-- Inner -->
-  <div class="carousel-inner">
-    <!-- Single item -->
-    <div class="carousel-item active">
-      <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-        class="d-block w-100"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item">
-      <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-        class="d-block w-100"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item">
-      <img
-        src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-        class="d-block w-100"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
-  <!-- Inner -->
-
-  <!-- Controls -->
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-mdb-target="#carouselBasicExample"
-    data-mdb-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-mdb-target="#carouselBasicExample"
-    data-mdb-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!-- Carousel wrapper -->
-<br>
+    <section class="property-single nav-arrow-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+            <?php include_once "includes/updateCarouselRen.inc.php";?>
+          </div>
           <div class="row justify-content-between">
             <div class="col-md-5 col-lg-4">
               
@@ -293,36 +190,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-10 offset-md-1">
-          <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
-                aria-controls="pills-video" aria-selected="true">Video</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab"
-                aria-controls="pills-plans" aria-selected="false">Virtual Tour</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab"
-                aria-controls="pills-map" aria-selected="false">Location</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-              <iframe src="https://player.vimeo.com/video/73221098" width="100%" height="460" frameborder="0"
-                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-            <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-              <img src="img/plan2.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"
-                width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
+        
         <div class="col-md-12">
           <div class="row section-t3">
             <div class="col-sm-12">
