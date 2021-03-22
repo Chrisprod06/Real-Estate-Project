@@ -286,7 +286,7 @@ $_SESSION['lastVisitedPage'] = $res;
                   echo " <a class='dropdown-item' href='#'>Language</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
                 } else if ($_SESSION['role'] == 2) {
-                  echo " <a class='dropdown-item' href='favorites.php?id=".$_SESSION['userID']."'>Favorites</a> ";
+                  echo " <a class='dropdown-item' href='favorites.php'>Favorites</a> ";
                   echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
                   echo " <a class='dropdown-item' href='#'>Language</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
