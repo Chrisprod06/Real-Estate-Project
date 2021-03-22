@@ -1,6 +1,6 @@
    <!--Header-->
  <?php
-    $title = "Property | APM Smart Houses";
+    $title = "Favorites | APM Smart Houses";
     include_once "includes/header.inc.php";
   ?>
   <link
@@ -56,8 +56,13 @@
 //session_start();
 require_once 'includes/dbh.inc.php';
 
+if(!isset($_SESSION['userID'])) {
+  echo "<p>You need to login to view your favorites.</p> ";
+  echo "<p> <a data-toggle='modal'  href='#login'>Login</a> or <a data-toggle='modal'  href='#register'>Register</a></p>";}
+else {
 
-$userID =  $_GET['id'];
+$userID =  $_SESSION['userID'];
+
 $getQuery1 = "SELECT * from favorites WHERE userID=$userID;  ";
 $setQuery1 = mysqli_query($conn, $getQuery1);
 
@@ -71,8 +76,6 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   $pID = $row['propertyID'] 
   
   ); 
-
-  //echo '<br> TEST!::  '.$pID.'<br>';
 
   $getQuery2 = "SELECT * from properties WHERE propertyID=$pID;";
   $setQuery2 = mysqli_query($conn, $getQuery2);
@@ -136,7 +139,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
         <ul class="card-info d-flex justify-content-around">
           <li>
             <h4 class="card-info-title">Delete from Favorites</h4>
-            <a href="renovationSingle.php?id='.$row["propID"].'" class="link-a">Click here
+            <a href="includes/deleteFavorites.inc.php?id='.$row["propID"].'" class="link-a">Click here
           <span class="ion-ios-arrow-forward"></span>
           </a>
           </li>
@@ -150,7 +153,8 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   </div>';
   }
   
-}  
+} 
+} 
 
   ?>
     </div>
