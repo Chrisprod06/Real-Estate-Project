@@ -3,7 +3,12 @@
     $title = "Property | APM Smart Houses";
     include_once "includes/header.inc.php";
   ?>
-  
+  <script src="/path/to/cdn/jquery.min.js"></script>
+<script src="automatic-image-comparison-slider/js/jquery.anyimagecomparisonslider.min.js"></script>
+
+<script>$('#aics-autostart').anyImageComparisonSlider();
+</script>
+
   <section class="intro-single">
     <div class="container">
       <div class="row">
@@ -271,6 +276,8 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script src="/path/to/cdn/jquery.min.js"></script>
 
 </body>
 
