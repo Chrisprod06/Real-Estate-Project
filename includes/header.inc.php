@@ -272,25 +272,6 @@ $_SESSION['lastVisitedPage'] = $res;
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
           </li>
-          <?php
-          if (isset($_SESSION['userID'])) {
-            if ($_SESSION['role'] == 1) {
-              echo "<li class='nav-item'>
-                         <a class='nav-link' href='../Real-Estate-Admin/index.php'>Edit Website</a>
-                     </li>";
-              echo "<li class='nav-item'>
-                        <a class='nav-link' href='includes/logout.inc.php'>Logout</a>
-                      </li>";
-            } 
-          } else {
-            echo "<li class='nav-item'>
-                     <a data-toggle='modal' class='nav-link' href='#login'>Login</a>
-                  </li>";
-            echo "<li class='nav-item'>
-                    <a data-toggle='modal' class='nav-link' href='#register'>Register</a>
-                  </li>";
-          }
-          ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               My Account
@@ -300,7 +281,7 @@ $_SESSION['lastVisitedPage'] = $res;
               <?php
               if (isset($_SESSION['userID'])) {
                 if ($_SESSION['role'] == 1) {
-                  echo "<a class='dropdown-item' href='../Real-Estate-Admin/index.php'>Edit Website</a>";
+                  echo "<a class='dropdown-item' href='../Real-Estate-CMS/index.php'>Edit Website</a>";
                   echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
                   echo " <a class='dropdown-item' href='#'>Language</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
