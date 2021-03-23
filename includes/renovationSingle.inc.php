@@ -47,8 +47,6 @@ while ($row = mysqli_fetch_assoc($setQuery2))
   
   'renID'=> $row['renovationID'],
   'propID' => $row['propertyID'],
-  'bfrPath' => $row['beforePicturesPath'],
-  'aftrPath' => $row['afterPicturesPath'],
   'renDesc' => $row['description']
   ); 
 }  
