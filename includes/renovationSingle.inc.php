@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   ); 
 }  
 
-$getQuery2 = "SELECT * from renovations WHERE renovationID=$id;";
+$getQuery2 = "SELECT * from renovations WHERE propertyID=$id;";
 $setQuery2 = mysqli_query($conn, $getQuery2);
 
 $searchRen = array(); 
