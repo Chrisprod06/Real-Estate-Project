@@ -30,8 +30,8 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   'floors' => $row['floor'],
   'heat' => $row['heating'],
   'priceSqm' => $row['pricePerSqm'],
-  'desc' => $row['propertyDecription'],
-  'amen' => $row['amenitiesDescription']
+  'desc' => $row['description'],
+  'amen' => $row['amenities']
   ); 
 }  
 

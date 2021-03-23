@@ -25,28 +25,28 @@ include_once "includes/header.inc.php";
             <?php
 
 
-                //Present data
-                if (isset($_SESSION['properties'])) {
-                        foreach ($_SESSION['properties'] as $row) {
-                            //Prepare data
-                            if ($row['categ'] === 'forSale') {
-                                $categ = 'Sale';
-                              } else if ($row['categ'] === 'forRentLongTerm') {
-                                $categ = 'Rent Long Term';
-                              } else if ($row['categ'] === 'forRentShortTerm') {
-                                $categ = 'Rent Short Term';
-                              } else if ($row['categ'] === 'forRenovation') {
-                                $categ = 'Renovation'; 
-                              } else if ($row['categ'] === 'forDecoration') {
-                                $categ = 'Decoration';
-                              }
+            //Present data
+            if (isset($_SESSION['properties'])) {
+                foreach ($_SESSION['properties'] as $row) {
+                    //Prepare data
+                    if ($row['categ'] === 'forSale') {
+                        $categ = 'Sale';
+                    } else if ($row['categ'] === 'forRentLongTerm') {
+                        $categ = 'Rent Long Term';
+                    } else if ($row['categ'] === 'forRentShortTerm') {
+                        $categ = 'Rent Short Term';
+                    } else if ($row['categ'] === 'forRenovation') {
+                        $categ = 'Renovation';
+                    } else if ($row['categ'] === 'forDecoration') {
+                        $categ = 'Decoration';
+                    }
 
-                            if ($row['furnished'] === '0') {
-                                $furnished = 'No';
-                            } else if ($row['furnished'] === '1') {
-                                $furnished = 'Yes';
-                            }
-                            echo ' <div class="col-md-4">
+                    if ($row['furnished'] === '0') {
+                        $furnished = 'No';
+                    } else if ($row['furnished'] === '1') {
+                        $furnished = 'Yes';
+                    }
+                    echo ' <div class="col-md-4">
                             <div class="card-box-a card-shadow">
                             <div class="img-box-a">
                            <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
@@ -93,13 +93,13 @@ include_once "includes/header.inc.php";
                        </div>
                        </div>
                        </div>';
-                        }
-                        unset($_SESSION['properties']);
-                    }
+                }
+                unset($_SESSION['properties']);
+            }
 
 
-                    ?>
-                
+            ?>
+
         </div>
         <div class="row">
             <div class="col-sm-12">

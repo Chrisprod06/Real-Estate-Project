@@ -36,15 +36,6 @@
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
-                </li>
-                <li class="item-list-a">
                   <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
                 </li>
                 <li class="item-list-a">
@@ -121,7 +112,7 @@
         <div class="copyright-footer">
           <p class="copyright color-text-a">
             &copy; Copyright
-            <span class="color-a">EstateAgency</span> All Rights Reserved.
+            <span class="color-a">APM Smart Houses</span> All Rights Reserved.
           </p>
         </div>
         <div class="credits">
