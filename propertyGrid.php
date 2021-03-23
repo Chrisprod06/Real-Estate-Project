@@ -145,7 +145,7 @@ include_once "includes/header.inc.php";
               </li>
             <?php
             } ?>
-            <li class="page-item next <?php if($page==$total_pages){ echo 'disabled'; } ?>" ">
+            <li class="page-item next <?php if($page==$total_pages){ echo 'disabled'; } ?>" >
               <a class="page-link" href="<?php if($page==$total_pages){ echo '#';} else {?><?php echo $_SERVER['PHP_SELF']?>?page=<?php echo $page+1; }?>">
                 <span class="ion-ios-arrow-forward"></span>
               </a>
