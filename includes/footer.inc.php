@@ -15,13 +15,24 @@
           <div class="w-footer-a">
             <ul class="list-unstyled">
               <li class="color-a">
-                <span class="color-text-a">Phone .</span> +357 99436309, +357 99252247, +30 6943059942
+                <span class="color-text-a">Phone:</span>
+              <li>
+                <span class="color-text-a">+357 99436309</span>
+              </li>
+              <li>
+                <span class="color-text-a"> +357 99252247</span>
+              </li>
+              <li>
+                <span class="color-text-a">+30 6943059942</span>
+              </li>
+
+
               </li>
               <li class="color-a">
-                <span class="color-text-a">Email .</span> apm.smarthouses@gmail.com
+                <span class="color-text-a">Email: </span> apm.smarthouses@gmail.com
               </li>
               <li class="color-a">
-                <span class="color-text-a"></span>Download our app<a href="#"> here!</a>
+                <span class="color-text-a"></span><a href="#">Download our app here!</a>
               </li>
             </ul>
           </div>
@@ -93,7 +104,7 @@
         <div class="socials-a">
           <ul class="list-inline">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.facebook.com/APM-Smart-Houses-348888093013180">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
             </li>
