@@ -39,7 +39,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="about-img-box">
-            <img src="img/slide-about-1.jpg" alt="" class="img-fluid">
+            <img src="img/aboutProfile.jpg" alt="" class="img-fluid">
           </div>
           <div class="sinse-box">
             <h3 class="sinse-title">APM Smart Houses
@@ -49,20 +49,16 @@
         </div>
         <div class="col-md-12 section-t8">
           <div class="row">
-            <div class="col-md-6 col-lg-5">
-              <img src="img/agentBlank.jpg" alt="" class="img-fluid">
+            <div class="col-md-6 col-lg-7">
+              <img src="img/logo.png" alt="" class="img-fluid">
             </div>
-            <div class="col-lg-2  d-none d-lg-block">
-              <div class="title-vertical d-flex justify-content-start">
-                <span>APM Smart Houses Exclusive Property</span>
-              </div>
-            </div>
+            
             <div class="col-md-6 col-lg-5 section-md-t3">
               <div class="title-box-d">
                 <h3 class="title-d">Short message from us.
                 </h3>
               </div>
-              <p class="color-text-a">
+              <p class="color-text-a text-justify">
                 Our company is active in the real estate sector in Greece and Cyprus looking for the best possible
                 quality combined with the best price. At the same time, our team is constantly working in order to
                 provide you with updated information regarding the apartments of your choice, taking seriously the

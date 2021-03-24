@@ -252,6 +252,7 @@ $_SESSION['lastVisitedPage'] = $res;
           <li class="nav-item">
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
+          
 
           <!--Script for the forms below so that the link can "sumbit" the form.  
           Button that doesn't require the use of the script below

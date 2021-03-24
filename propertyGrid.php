@@ -80,7 +80,7 @@ include_once "includes/header.inc.php";
                                    <div class="price-box d-flex">
                                        <span class="price-a">' . $categ . ' | €' . $row["totalPrice"] . '</span>
                                    </div>
-                                   <a href="propertySingle.php" class="link-a">Click here to view
+                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">Click here to view
                                        <span class="ion-ios-arrow-forward"></span>
                                    </a>
                                </div>
@@ -88,7 +88,7 @@ include_once "includes/header.inc.php";
                                    <ul class="card-info d-flex justify-content-around">
                                        <li>
                                            <h4 class="card-info-title">Area</h4>
-                                           <span>' . $row["area"] . 'm
+                                           <span>' . $row["squarem"] . 'm
                                                <sup>2</sup>
                                            </span>
                                        </li>
