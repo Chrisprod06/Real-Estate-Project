@@ -47,7 +47,16 @@
           <div class="row justify-content-between">
             <div class="col-md-5 col-lg-4">
               
-              <?php 
+              <div class="property-summary">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="title-box-d section-t4">
+                      <h3 class="title-d">Quick Summary</h3>
+                    </div>
+                  </div>
+                </div>
+                
+                <?php 
               if ($row['categ'] === 'forRenovation') {
                 $categ = 'Yes';
               } else {
@@ -67,14 +76,7 @@
               }
 
               foreach ($searchProp as $row){
-              echo '<div class="property-summary">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="title-box-d section-t4">
-                      <h3 class="title-d">Quick Summary</h3>
-                    </div>
-                  </div>
-                </div>
+              echo '
                 <div class="summary-list">
                   <ul class="list">
                     <li class="d-flex justify-content-between">
@@ -138,8 +140,13 @@
                     <li class="d-flex justify-content-between">
                       <strong>Price per m<sup>2</sup>:</strong>
                       <span>€'.$row["priceSqm"].'</span>
-                    </li>
-                  </ul>
+                    </li><br>
+                    '; }
+
+                    require_once('includes/selectFavorites.inc.php');
+
+                    ?>
+                  </ul> 
                   <div class="post-share">
                     <span>Share: </span>
                     <ul class="list-inline socials">
@@ -162,7 +169,7 @@
                   </div>
                 </div>
               </div>
-            </div> '; }?>
+            </div> 
             
             <div class="col-md-7 col-lg-7 section-md-t3 mt-5">
               <div class="row">
@@ -173,9 +180,9 @@
                 </div>
               </div>
               <div class="property-description">
-                <?php foreach ($searchProp as $row){
+                <?php foreach ($searchRen as $row){
                 echo'<p class="description color-text-a text-justify">
-                  '.$row["desc"].'
+                  '.$row["renDesc"].'
                 </p>';}?>
               
               </div>
