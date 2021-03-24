@@ -383,7 +383,7 @@ $_SESSION['lastVisitedPage'] = $res;
             <div class="clearfix">
 
               <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
-              <a href="#register" class="pull-left">Create Account</a>
+              
             </div>
           </div>
           <div class="modal-footer">
@@ -465,12 +465,6 @@ $_SESSION['lastVisitedPage'] = $res;
               }
             }
             ?>
-
-            <div class="clearfix">
-
-
-              <a href="register.php" class="pull-left">Already have an account? Log in</a>
-            </div>
           </div>
           <div class="modal-footer">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
