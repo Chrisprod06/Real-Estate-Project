@@ -13,20 +13,26 @@ include_once 'includes/header.inc.php';
                                 <div class="e-profile">
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form class="form" novalidate="">
-                                                <div class="row">
+                                            <form class="form" novalidate="" action = "includes/editProfile.inc.php" method = "POST">
+                                                <?php
+                                                include_once 'includes/dbh.inc.php';
+                                                $sql = 'SELECT * FROM users WHERE userID = ' . $_SESSION['userID'] . ';';
+                                                $result = mysqli_query($conn, $sql);
+                                                $resultCheck = mysqli_num_rows($result);
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    echo '                                   <div class="row">
                                                     <div class="col">
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Firstname</label>
-                                                                    <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith">
+                                                                    <input class="form-control" type="text" name="firstname"value="'.$row['firstname'].'">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Lastname</label>
-                                                                    <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                                                                    <input class="form-control" type="text" name="lastname"  value="'.$row['lastname'].'">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -34,13 +40,13 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith">
+                                                                    <input class="form-control" type="email" name="email" value="'.$row['email'].'">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Telephone</label>
-                                                                    <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                                                                    <input class="form-control" type="text" name="telephone" value="'.$row['phoneNo'].'">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -54,7 +60,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Current Password</label>
-                                                                    <input class="form-control" type="password" placeholder="••••••">
+                                                                    <input class="form-control" type="password" name = "currentPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -62,7 +68,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>New Password</label>
-                                                                    <input class="form-control" type="password" placeholder="••••••">
+                                                                    <input class="form-control" type="password" name = "newPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -70,7 +76,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
-                                                                    <input class="form-control" type="password" placeholder="••••••">
+                                                                    <input class="form-control" type="password" name = "repeatNewPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -94,7 +100,10 @@ include_once 'includes/header.inc.php';
                                                     <div class="col d-flex justify-content-end">
                                                         <button class="btn btn-a" type="submit">Save Changes</button>
                                                     </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
+
                                             </form>
 
                                         </div>
