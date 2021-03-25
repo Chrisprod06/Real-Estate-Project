@@ -86,6 +86,23 @@ function sendEmail($userID, $firstname, $lastname, $telephone, $emailFrom, $subj
     }
 }
 
+function sendEmailInterest($userID, $firstname, $lastname, $telephone, $emailFrom, $message)
+{
+
+    //Prepare and send email
+    //change emails to correct
+    $emailTo = 'chrisprodromou06@gmail.com';
+    $headers = 'From: ' . $emailFrom;
+    $emailText = 'You have received a new message from' . ' Name:' . $firstname . " " . $lastname . '.\n\n' . $message;
+
+    if (mail($emailTo, $emailText, $headers)) {
+        header('Location: ../propertySingle.php?mail=send');
+        exit();
+    } else {
+        header('Location: ../propertySingle.php?message=notSend');
+    }
+}
+
 //Function to insert inquiry data in database
 function addContactUsInquiry($conn, $userID, $subject, $message)
 {

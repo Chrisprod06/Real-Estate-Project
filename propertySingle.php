@@ -261,7 +261,7 @@
                 <div class="socials-a">
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a href="#">
+                      <a href="https://www.facebook.com/APM-Smart-Houses-348888093013180">
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                       </a>
                     </li>
@@ -310,7 +310,7 @@
                         </div>
                       </div>                      
                       <div class="col-md-12">
-                        <button type="submit" class="btn btn-a">Send Message</button>
+                        <button type="submit" name="contactbutton" class="btn btn-a">Send Message</button>
                       </div>
                     </div>
                   </form>
