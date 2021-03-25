@@ -106,6 +106,24 @@ $_SESSION['lastVisitedPage'] = $res;
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
+              <label for="city">Country</label>
+              <select class="form-control form-control-lg form-control-a" id="country" name="country">
+                <option value="allCities">All Countries</option>
+                <!--PHP script to get all cities from database-->
+                <?php
+                include_once 'dbh.inc.php';
+                $sql = 'SELECT distinct country FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+                $result = mysqli_query($conn, $sql);
+                $resultCheck = mysqli_num_rows($result);
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<option value = " . $row['country'] . ">" . $row['country'] . "</option>";
+                }
+                ?>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-group">
               <label for="city">City</label>
               <select class="form-control form-control-lg form-control-a" id="city" name="city">
                 <option value="allCities">All Cities</option>
@@ -180,7 +198,7 @@ $_SESSION['lastVisitedPage'] = $res;
               </select>
             </div>
           </div>
-          <div class="col-md-12   mb-2">
+          <div class="col-md-6   mb-2">
             <label for="features">Features</label>
             <div class="form-group" id='features' name="features">
               <div class="form-check form-check-inline">
@@ -252,6 +270,7 @@ $_SESSION['lastVisitedPage'] = $res;
           <li class="nav-item">
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
+          
 
           <!--Script for the forms below so that the link can "sumbit" the form.  
           Button that doesn't require the use of the script below
@@ -364,7 +383,7 @@ $_SESSION['lastVisitedPage'] = $res;
             <div class="clearfix">
 
               <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
-              <a href="register.php" class="pull-left">Create Account</a>
+              
             </div>
           </div>
           <div class="modal-footer">
@@ -446,12 +465,6 @@ $_SESSION['lastVisitedPage'] = $res;
               }
             }
             ?>
-
-            <div class="clearfix">
-
-
-              <a href="register.php" class="pull-left">Already have an account? Log in</a>
-            </div>
           </div>
           <div class="modal-footer">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">

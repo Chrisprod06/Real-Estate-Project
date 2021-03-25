@@ -34,28 +34,36 @@ include_once "includes/header.inc.php";
   <div class="container">
     <div class="row">
       <?php
-    //Script to get data
-    $sql = 'SELECT * FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
+      require_once 'includes/dbh.inc.php';
+      $total = 6;
+      if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+      } else {
+        $page = 1;
+      }
+      $start = ($page - 1) * $total;
+      //Script to get data
+      $sql = "SELECT * FROM properties where category = 'forRentLongTerm' OR category = 'forRentShortTerm' OR category = 'forSale' LIMIT $start,$total ";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
       //Present data
-      
-      while ($row = mysqli_fetch_assoc($result)) {
-          //Prepare data
-          if ($row['category'] === 'forSale') {
-            $categ = 'Sale';
-          } else if ($row['category'] === 'forRentLongTerm') {
-            $categ = 'Rent Long Term';
-          } else if ($row['category'] === 'forRentShortTerm') {
-            $categ = 'Rent Short Term';
-          }
 
-          if ($row['furniture'] === '0') {
-            $furnished = 'No';
-          } else if ($row['furniture'] === '1') {
-            $furnished = 'Yes';
-          }
-          echo ' <div class="col-md-4">
+      while ($row = mysqli_fetch_assoc($result)) {
+        //Prepare data
+        if ($row['category'] === 'forSale') {
+          $categ = 'Sale';
+        } else if ($row['category'] === 'forRentLongTerm') {
+          $categ = 'Rent Long Term';
+        } else if ($row['category'] === 'forRentShortTerm') {
+          $categ = 'Rent Short Term';
+        }
+
+        if ($row['furniture'] === '0') {
+          $furnished = 'No';
+        } else if ($row['furniture'] === '1') {
+          $furnished = 'Yes';
+        }
+        echo ' <div class="col-md-4">
                             <div class="card-box-a card-shadow">
                             <div class="img-box-a">
                            <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
@@ -72,7 +80,7 @@ include_once "includes/header.inc.php";
                                    <div class="price-box d-flex">
                                        <span class="price-a">' . $categ . ' | €' . $row["totalPrice"] . '</span>
                                    </div>
-                                   <a href="propertySingle.php" class="link-a">Click here to view
+                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">Click here to view
                                        <span class="ion-ios-arrow-forward"></span>
                                    </a>
                                </div>
@@ -80,7 +88,7 @@ include_once "includes/header.inc.php";
                                    <ul class="card-info d-flex justify-content-around">
                                        <li>
                                            <h4 class="card-info-title">Area</h4>
-                                           <span>' . $row["area"] . 'm
+                                           <span>' . $row["squarem"] . 'm
                                                <sup>2</sup>
                                            </span>
                                        </li>
@@ -102,9 +110,9 @@ include_once "includes/header.inc.php";
                        </div>
                        </div>
                        </div>';
-        }
-        unset($_SESSION['properties']);
-      
+      }
+      unset($_SESSION['properties']);
+
 
 
       ?>
@@ -114,16 +122,31 @@ include_once "includes/header.inc.php";
       <div class="col-sm-12">
         <nav class="pagination-a">
           <ul class="pagination justify-content-end">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">
+            <li class="page-item <?php if ($page == 1) {
+                                    echo 'disabled';
+                                  } ?>">
+              <a class="page-link" href="<?php if ($page == 1) {
+                                            echo '#';
+                                          } else { ?><?php echo $_SERVER['PHP_SELF'] ?>?page=<?php echo $page - 1;
+                                                                                                                      } ?>">
                 <span class="ion-ios-arrow-back"></span>
               </a>
             </li>
-            <li class="page-item">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item next">
-              <a class="page-link" href="#">
+            <?php
+            $slt = "select * from properties";
+            $rec = mysqli_query($conn, $slt);
+            $total1 = mysqli_num_rows($rec);
+            $total_pages = ceil($total1 / $total);
+            for ($i = 1; $i <= $total_pages; $i++) { ?>
+              <li class="page-item <?php if ($_GET["page"] == $i) {
+                                      echo 'active';
+                                    } ?>">
+                <a class="page-link" href="<?php echo $_SERVER['PHP_SELF'] ?>?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+              </li>
+            <?php
+            } ?>
+            <li class="page-item next <?php if($page==$total_pages){ echo 'disabled'; } ?>" >
+              <a class="page-link" href="<?php if($page==$total_pages){ echo '#';} else {?><?php echo $_SERVER['PHP_SELF']?>?page=<?php echo $page+1; }?>">
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </li>

@@ -6,7 +6,7 @@ $userID =  $_SESSION['userID'];
 $propertyID = $_GET['id'];
 
 //In the statement use the names of the variables from the database
-$sql = 'DELETE from favorites WHERE userID=? AND propertyID=?;';
+$sql = 'INSERT INTO favorites (userID,propertyID) VALUES(?, ?);';
 $stmt = mysqli_stmt_init($conn);
 mysqli_stmt_prepare($stmt, $sql);
 //bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)

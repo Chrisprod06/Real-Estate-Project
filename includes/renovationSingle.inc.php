@@ -30,12 +30,12 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   'floors' => $row['floor'],
   'heat' => $row['heating'],
   'priceSqm' => $row['pricePerSqm'],
-  'desc' => $row['propertyDecription'],
-  'amen' => $row['amenitiesDescription']
+  'desc' => $row['description'],
+  'amen' => $row['amenities']
   ); 
 }  
 
-$getQuery2 = "SELECT * from renovations WHERE renovationID=$id;";
+$getQuery2 = "SELECT * from renovations WHERE propertyID=$id;";
 $setQuery2 = mysqli_query($conn, $getQuery2);
 
 $searchRen = array(); 
@@ -47,8 +47,6 @@ while ($row = mysqli_fetch_assoc($setQuery2))
   
   'renID'=> $row['renovationID'],
   'propID' => $row['propertyID'],
-  'bfrPath' => $row['beforePicturesPath'],
-  'aftrPath' => $row['afterPicturesPath'],
   'renDesc' => $row['description']
   ); 
 }  

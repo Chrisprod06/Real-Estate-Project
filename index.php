@@ -109,9 +109,6 @@ include_once "includes/header.inc.php";
         </p>
       </div>
       <div class="card-footer-c">
-        <a href="#" class="link-c link-icon">Read more
-          <span class="ion-ios-arrow-forward"></span>
-        </a>
       </div>
     </div>
   </div>
@@ -131,13 +128,10 @@ include_once "includes/header.inc.php";
         </p>
       </div>
       <div class="card-footer-c">
-        <a href="#" class="link-c link-icon">Read more
-          <span class="ion-ios-arrow-forward"></span>
-        </a>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="card-box-c foo">
       <div class="card-header-c d-flex">
         <div class="card-box-ico">
@@ -153,9 +147,25 @@ include_once "includes/header.inc.php";
         </p>
       </div>
       <div class="card-footer-c">
-        <a href="#" class="link-c link-icon">Read more
-          <span class="ion-ios-arrow-forward"></span>
-        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card-box-c foo">
+      <div class="card-header-c d-flex">
+        <div class="card-box-ico">
+          <span class="fa fa-home"></span>
+        </div>
+        <div class="card-title-c align-self-center">
+          <h2 class="title-c">Renovations</h2>
+        </div>
+      </div>
+      <div class="card-body-c">
+        <p class="content-c">
+          Buy your next home.
+        </p>
+      </div>
+      <div class="card-footer-c">
       </div>
     </div>
   </div>
