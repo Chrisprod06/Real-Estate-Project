@@ -329,7 +329,7 @@ include_once "includes/propertySingle.inc.php";
                         </div>
                       </div>                      
                       <div class="col-md-12">
-                        <button type="submit" class="btn btn-a">Send Message</button>
+                        <button type="submit" name="contactbutton" class="btn btn-a">Send Message</button>
                       </div>
                     </div>
                   </form>

@@ -3,6 +3,7 @@
   <?php
     $title = "Contact Us | APM Smart Houses";
     include_once "includes/header.inc.php";
+    
   ?>
 
   <!--/ Intro Single star /-->
