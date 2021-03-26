@@ -26,7 +26,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Firstname</label>
-                                                                    <input class="form-control" type="text" name="firstname"value="'.$row['firstname'].'">
+                                                                    <input class="form-control" type="text" name="firstname" value="'.$row['firstname'].'">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
@@ -88,7 +88,7 @@ include_once 'includes/header.inc.php';
                                                                 <label>Email Notifications</label>
                                                                 <div class="custom-controls-stacked px-2">
                                                                     <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                                                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked="" name = "newsletter">
                                                                         <label class="custom-control-label" for="notifications-news">Newsletter</label>
                                                                     </div>
                                                                 </div>

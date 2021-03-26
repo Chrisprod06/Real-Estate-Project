@@ -19,6 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $query[] = "category='$category'";
         }
     }
+    if (!empty($_POST['country'])) {
+        $category = $_POST['country'];
+        if ($category !== 'allCountries') {
+            $query[] = "country='$country'";
+        }
+    }
     if (!empty($_POST['city'])) {
         $city = $_POST['city'];
         if ($city !== 'allCities') {
