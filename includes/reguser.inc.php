@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			exit();
 		}
 
-		$_SESSION['lastVisitedPage'] .= '?error=noneRegister&modal=register';
+		$_SESSION['lastVisitedPage'] .= '?error=noneRegister';
 		header('location: ' . $_SESSION['lastVisitedPage']);
 		exit();
 	} else {
