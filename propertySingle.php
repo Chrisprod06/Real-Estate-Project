@@ -48,15 +48,7 @@ include_once "includes/propertySingle.inc.php";
     <div class="row">
       <div class="col-sm-12">
         <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
-          <div class="carousel-item-b">
-            <img src="img/house1_1.jpg" alt="">
-          </div>
-          <div class="carousel-item-b">
-            <img src="img/house2_2.jpg" alt="">
-          </div>
-          <div class="carousel-item-b">
-            <img src="img/house3_3.jpg" alt="">
-          </div>
+        <?php include_once 'includes/updateCarouselProperty.inc.php'; ?>
         </div>
 
         <?php
@@ -232,7 +224,8 @@ include_once "includes/propertySingle.inc.php";
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-              <iframe src="https://player.vimeo.com/video/73221098" width="100%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <?php $videoProperty = "SELECT video FROM multimediaproperties WHERE propertyID = $id;";
+              <iframe src="$videoProperty" width="100%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
             <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
               <img src="img/plan2.jpg" alt="" class="img-fluid">
@@ -320,19 +313,19 @@ include_once "includes/propertySingle.inc.php";
 
               echo ' <div class="col-md-12 col-lg-4">
                 <div class="property-contact">
-                  <form class="form-a">
-                    <div class="row">
-                      <div class="col-md-12 mb-1">
-                        <div class="form-group">
-                          <textarea id="textMessage" class="form-control" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
-                            rows="8" required></textarea>
-                        </div>
-                      </div>                      
-                      <div class="col-md-12">
-                        <button type="submit" name="contactbutton" class="btn btn-a">Send Message</button>
-                      </div>
+                <form class="form-a" action="includes/propertyContact.inc.php" method = "POST">
+                <div class="row">
+                  <div class="col-md-12 mb-1">
+                    <div class="form-group">
+                      <textarea id="textMessage" class="form-control" id = "message" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
+                        rows="8" required></textarea>
                     </div>
-                  </form>
+                  </div>                      
+                  <div class="col-md-12">
+                    <button type="submit" name="propertyContact" class="btn btn-a">Send Message</button>
+                  </div>
+                </div>
+              </form>
                 </div>
               </div>';
             }
