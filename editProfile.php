@@ -13,20 +13,21 @@ include_once 'includes/header.inc.php';
                                 <div class="e-profile">
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form class="form" novalidate="">
-                                                <div class="row">
+                                            <form class="form" novalidate="" action = "includes/editProfile.inc.php" method = "POST">
+                                                <?php                               
+                                                    echo '                                   <div class="row">
                                                     <div class="col">
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Firstname</label>
-                                                                    <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith">
+                                                                    <input class="form-control" type="text" name="firstname" value="'.$_SESSION['firstname'].'">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Lastname</label>
-                                                                    <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                                                                    <input class="form-control" type="text" name="lastname"  value="'.$_SESSION['lastname'].'">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -34,13 +35,13 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith">
+                                                                    <input class="form-control" type="email" name="email" value="'.$_SESSION['email'].'">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Telephone</label>
-                                                                    <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                                                                    <input class="form-control" type="text" name="telephone" value="'.$_SESSION['telephone'].'">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -54,7 +55,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Current Password</label>
-                                                                    <input class="form-control" type="password" placeholder="••••••">
+                                                                    <input class="form-control" type="password" name = "currentPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -62,7 +63,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>New Password</label>
-                                                                    <input class="form-control" type="password" placeholder="••••••">
+                                                                    <input class="form-control" type="password" name = "newPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -70,7 +71,7 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
-                                                                    <input class="form-control" type="password" placeholder="••••••">
+                                                                    <input class="form-control" type="password" name = "repeatNewPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -82,7 +83,7 @@ include_once 'includes/header.inc.php';
                                                                 <label>Email Notifications</label>
                                                                 <div class="custom-controls-stacked px-2">
                                                                     <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                                                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked="" name = "newsletter">
                                                                         <label class="custom-control-label" for="notifications-news">Newsletter</label>
                                                                     </div>
                                                                 </div>
@@ -92,9 +93,12 @@ include_once 'includes/header.inc.php';
                                                 </div>
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">
-                                                        <button class="btn btn-a" type="submit">Save Changes</button>
+                                                        <button class="btn btn-a" type="submit" name = "submit">Save Changes</button>
                                                     </div>
-                                                </div>
+                                                </div>';
+                                                
+                                                ?>
+
                                             </form>
 
                                         </div>

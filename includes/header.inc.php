@@ -108,7 +108,7 @@ $_SESSION['lastVisitedPage'] = $res;
             <div class="form-group">
               <label for="city">Country</label>
               <select class="form-control form-control-lg form-control-a" id="country" name="country">
-                <option value="allCities">All Countries</option>
+                <option value="allCountries">All Countries</option>
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
