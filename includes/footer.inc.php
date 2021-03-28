@@ -123,7 +123,7 @@
         <div class="copyright-footer">
           <p class="copyright color-text-a">
             &copy; Copyright
-            <span class="color-a">APM Smart Houses</span> All Rights Reserved.
+            <span class="color-a">APM Smart Houses <?php echo date("Y")?></span>
           </p>
         </div>
         <div class="credits">

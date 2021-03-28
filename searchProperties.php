@@ -29,15 +29,15 @@ include_once "includes/header.inc.php";
             if (isset($_SESSION['properties'])) {
                 foreach ($_SESSION['properties'] as $row) {
                     //Prepare data
-                    if ($row['categ'] === 'forSale') {
+                    if ($row['categ'] === 'Sale') {
                         $categ = 'Sale';
-                    } else if ($row['categ'] === 'forRentLongTerm') {
+                    } else if ($row['categ'] === 'RentLongTerm') {
                         $categ = 'Rent Long Term';
-                    } else if ($row['categ'] === 'forRentShortTerm') {
+                    } else if ($row['categ'] === 'RentShortTerm') {
                         $categ = 'Rent Short Term';
-                    } else if ($row['categ'] === 'forRenovation') {
+                    } else if ($row['categ'] === 'Renovation') {
                         $categ = 'Renovation';
-                    } else if ($row['categ'] === 'forDecoration') {
+                    } else if ($row['categ'] === 'Decoration') {
                         $categ = 'Decoration';
                     }
 

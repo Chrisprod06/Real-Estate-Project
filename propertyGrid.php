@@ -43,18 +43,18 @@ include_once "includes/header.inc.php";
       }
       $start = ($page - 1) * $total;
       //Script to get data
-      $sql = "SELECT * FROM properties where category = 'forRentLongTerm' OR category = 'forRentShortTerm' OR category = 'forSale' LIMIT $start,$total ";
+      $sql = "SELECT * FROM properties where category = 'RentLongTerm' OR category = 'RentShortTerm' OR category = 'Sale' LIMIT $start,$total ";
       $result = mysqli_query($conn, $sql);
       $resultCheck = mysqli_num_rows($result);
       //Present data
 
       while ($row = mysqli_fetch_assoc($result)) {
         //Prepare data
-        if ($row['category'] === 'forSale') {
+        if ($row['category'] === 'Sale') {
           $categ = 'Sale';
-        } else if ($row['category'] === 'forRentLongTerm') {
+        } else if ($row['category'] === 'RentLongTerm') {
           $categ = 'Rent Long Term';
-        } else if ($row['category'] === 'forRentShortTerm') {
+        } else if ($row['category'] === 'RentShortTerm') {
           $categ = 'Rent Short Term';
         }
 
