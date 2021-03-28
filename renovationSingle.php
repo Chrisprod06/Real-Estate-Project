@@ -1,6 +1,6 @@
 <!--Header-->
 <?php
-$title = "Property | APM Smart Houses";
+$title = "Renovation | APM Smart Houses";
 include_once "includes/header.inc.php";
 ?>
 <?php
@@ -174,18 +174,13 @@ include_once "includes/propertySingle.inc.php";
                     <span>Share: </span>
                     <ul class="list-inline socials">
                       <li class="list-inline-item">
-                        <a href="#">
+                        <a href="http://www.facebook.com/share.php?u=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
                           <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
                       </li>
                       <li class="list-inline-item">
-                        <a href="#">
+                        <a href="https://twitter.com/intent/tweet?url=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
                           <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
                       </li>
                     </ul>
