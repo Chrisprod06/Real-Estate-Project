@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //check if current passoword matches the one in the database
 
 
-        $sql = "SELECT password FROM users WHERE userID = $userID ";
+        $sql = "SELECT password FROM users WHERE userID = ?; ";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header('location: ../editProfile.php?error=stmtFailed1');
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $resultData = mysqli_stmt_get_result($stmt);
 
         if ($row = mysqli_fetch_assoc($resultData)) {
-            if ($currentPassword != $row['password']) {
+            if (password_verify($currentPassword, $row['password']) == false) {
                 header('location: ../editProfile.php?error=currentPasswordWrong');
                 exit();
             }
@@ -41,13 +41,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('location: ../editProfile.php?error=somethingWrong');
         }
 
-        mysqli_stmt_close($stmt);
+
 
         //check if new password and repeat new password are the same
         if ($newPassword != $repeatNewPassword) {
             header('location: ../editProfile.php?error=passwordsDontMatch ');
             exit();
+        } else {
+            $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+            $sql = "UPDATE users SET password=? WHERE userID=?;";
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header('location: ../editProfile.php?error=stmtFailed1');
+                exit();
+            }
+            mysqli_stmt_bind_param($stmt,"si",$hashedNewPassword,$userID);
+            mysqli_stmt_execute($stmt);
+
+
         }
+        mysqli_stmt_close($stmt);
+        exit();
     }
 
 
@@ -65,34 +78,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!mysqli_stmt_execute($stmt)) {
         header('Location: ../editProfile.php?stmtFailed3');
+        exit();
     } else {
+        $_SESSION['firstname'] = $firstname;
+        $_SESSION['lastname'] = $lastname;
+        $_SESSION['telephone'] = $telephone;
+        $_SESSION['email'] = $email;
+        header('Location: ../editProfile.php?update=successful');
+        exit();
     }
 
     mysqli_stmt_close($stmt);
-
-
-    //Update session variables
-    $sql = "SELECT firstname, lastname, phoneNo, email FROM users WHERE userID = ? ";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../editProfile.php?error=stmtFailed1');
-        exit();
-    }
-
-    mysqli_stmt_bind_param($stmt, "ssssi", $firstname, $lastname, $telephone, $email, $userID);
-    mysqli_stmt_execute($stmt);
-
-    $resultData = mysqli_stmt_get_result($stmt);
-
-    if ($row = mysqli_fetch_assoc($resultData)) {
-        $_SESSION['firstname'] = $row['firstname'];
-        $_SESSION['lastname'] = $row['lastname'];
-        $_SESSION['telephone'] = $row['phoneNo'];
-        $_SESSION['email'] = $row['email'];
-
-        header('Location: ../editProfile.php?update=successful');
-        exit();
-    } else {
-        header('location: ../editProfile.php?error=somethingWrong');
-    }
 }

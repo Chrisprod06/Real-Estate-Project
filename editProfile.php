@@ -13,21 +13,21 @@ include_once 'includes/header.inc.php';
                                 <div class="e-profile">
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form class="form" novalidate="" action = "includes/editProfile.inc.php" method = "POST">
-                                                <?php                               
-                                                    echo '                                   <div class="row">
+                                            <form class="form" novalidate="" action="includes/editProfile.inc.php" method="POST">
+                                                <?php
+                                                echo '                                   <div class="row">
                                                     <div class="col">
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Firstname</label>
-                                                                    <input class="form-control" type="text" name="firstname" value="'.$_SESSION['firstname'].'">
+                                                                    <input class="form-control" type="text" name="firstname" value="' . $_SESSION['firstname'] . '">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Lastname</label>
-                                                                    <input class="form-control" type="text" name="lastname"  value="'.$_SESSION['lastname'].'">
+                                                                    <input class="form-control" type="text" name="lastname"  value="' . $_SESSION['lastname'] . '">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -35,13 +35,13 @@ include_once 'includes/header.inc.php';
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input class="form-control" type="email" name="email" value="'.$_SESSION['email'].'">
+                                                                    <input class="form-control" type="email" name="email" value="' . $_SESSION['email'] . '">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Telephone</label>
-                                                                    <input class="form-control" type="text" name="telephone" value="'.$_SESSION['telephone'].'">
+                                                                    <input class="form-control" type="text" name="telephone" value="' . $_SESSION['telephone'] . '">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -96,7 +96,7 @@ include_once 'includes/header.inc.php';
                                                         <button class="btn btn-a" type="submit" name = "submit">Save Changes</button>
                                                     </div>
                                                 </div>';
-                                                
+
                                                 ?>
 
                                             </form>
@@ -111,6 +111,10 @@ include_once 'includes/header.inc.php';
 
             </div>
         </div>
+        <div class="col d-flex justify-content-end">
+        <a href="includes/deleteAccount.inc.php">Delete Account?</a>
+        </div>
+        
     </div>
 
 </section>

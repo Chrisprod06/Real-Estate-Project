@@ -255,7 +255,7 @@ $_SESSION['lastVisitedPage'] = $res;
         <span></span>
       </button>
 
-      <a class="navbar-brand text-brand" href="index.php"><img src="img/logo.png" alt="logo" width="200" height="80"> <span class="color-b"></span></a>
+      <a class="navbar-brand text-brand" href="index.php">APM <span class="color-b">Smart Houses</span></a>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
         <span class="fa fa-search" aria-hidden="true"></span>
       </button>
@@ -270,7 +270,7 @@ $_SESSION['lastVisitedPage'] = $res;
           <li class="nav-item">
             <a class="nav-link" href="propertyGrid.php">Properties</a>
           </li>
-          
+
 
           <!--Script for the forms below so that the link can "sumbit" the form.  
           Button that doesn't require the use of the script below
@@ -341,10 +341,10 @@ $_SESSION['lastVisitedPage'] = $res;
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <input type="email" name="email" class="form-control" placeholder="Email" required value=>
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
             </div>
             <div class="form-group">
-              <input type="password" name="pass" class="form-control" placeholder="Password" required="required">
+              <input type="password" name="pass" class="form-control" placeholder="Password" required>
             </div>
             <div class="form-group">
 
@@ -383,7 +383,7 @@ $_SESSION['lastVisitedPage'] = $res;
             <div class="clearfix">
 
               <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
-              
+
             </div>
           </div>
           <div class="modal-footer">
