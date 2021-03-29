@@ -90,17 +90,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
 
   foreach($searchProp as $row){
     
-    if ($row['categ'] === 'forSale') {
-      $categ = 'Sale';
-    } else if ($row['categ'] === 'forRentLongTerm') {
-      $categ = 'Rent Long Term';
-    } else if ($row['categ'] === 'forRentShortTerm') {
-      $categ = 'Rent Short Term';
-    } else if ($row['categ'] === 'forRenovation') {
-      $categ = 'Renovation'; 
-    } else if ($row['categ'] === 'forDecoration') {
-      $categ = 'Decoration';
-    }
+    
     echo '<div class="col-md-4">
     <div class="card-box-a card-shadow">
       <div class="img-box-a">
@@ -116,7 +106,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
         </div>
       <div class="card-body-a">
         <div class="price-box d-flex">
-          <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
+          <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
         </div>
           <a href="propertySingle.php?id='.$row["propID"].'"  class="link-a">Click here to view
           <span class="ion-ios-arrow-forward"></span>
