@@ -52,9 +52,11 @@ include_once "includes/propertySingle.inc.php";
         </div>
 
         <?php
+        
 
 
         foreach ($property as $row) {
+          $videoProperty = 'SELECT video FROM multimediaproperties WHERE propertyID = '.$row['propertyID'].';';
 
           if ($row['parking'] === '0') {
             $parking = 'No';
@@ -219,8 +221,8 @@ include_once "includes/propertySingle.inc.php";
           </ul>
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-            <?php $videoProperty = "SELECT video FROM multimediaproperties WHERE propertyID = $id;";
-              <iframe src="$videoProperty" width="100%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            
+              <iframe src='.$videoProperty  .' width="100%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
             <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
               <img src="img/plan2.jpg" alt="" class="img-fluid">
