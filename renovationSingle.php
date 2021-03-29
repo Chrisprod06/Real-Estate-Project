@@ -26,7 +26,10 @@ include_once "includes/renovationSingle.inc.php";
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <?php echo '<h1 class="title-single">Property no.' . $_GET['id'] . '</h1>';
+
+          <?php 
+          foreach ($searchRen as $row){
+              echo '<h1 class="title-single">Renovation no.' . $row['renID'] . '</h1>';}
           foreach ($searchProp as $row) {
             echo '<span class="color-text-a">' . $row['country'] . ', ' . $row['city'] . ', ' . $row['address'] . ', ' . $row['area'] . 'm<sup>2</sup>, €'.$row['totalPrice'].'</span>';
           }
@@ -41,11 +44,12 @@ include_once "includes/renovationSingle.inc.php";
               <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="propertyGrid.php">Properties</a>
+              <a href="renovationGrid.php">Renovations</a>
             </li>
             <?php
+            foreach ($searchRen as $row){
             echo '<li class="breadcrumb-item active" aria-current="page">
-                Property no.' . $_GET['id'] . ' '; ?>
+                Renovation no.' . $row['renID'] . ' '; }?>
             </li>
           </ol>
         </nav>
@@ -168,8 +172,9 @@ include_once "includes/renovationSingle.inc.php";
                     <li class="d-flex justify-content-between">
                       <strong>Price/m<sup>2</sup>:</strong>
                       <span>€' . $row['pricePerSqm'] . '</span>
-                    </li>
-                  </ul>
+                    </li><br> ';}
+                    include_once "includes/selectFavorites.inc.php"?> 
+                  </ul> 
                   <div class="post-share">
                     <span>Share: </span>
                     <ul class="list-inline socials">
@@ -196,7 +201,7 @@ include_once "includes/renovationSingle.inc.php";
                   </div>
                 </div>
               </div>
-              ';} foreach ($searchRen as $row){  echo '<div class="property-description">
+               <?php foreach ($searchRen as $row){  echo '<div class="property-description">
                 <p class="description color-text-a text-justify">
                   ' . $row['renDesc'] . '
                </p>';} 

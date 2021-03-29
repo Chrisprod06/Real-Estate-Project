@@ -157,7 +157,9 @@ include_once "includes/propertySingle.inc.php";
                     <li class="d-flex justify-content-between">
                       <strong>Price/m<sup>2</sup>:</strong>
                       <span>€' . $row['pricePerSqm'] . '</span>
-                    </li>
+                    </li><br>';} 
+                    include_once 'includes/selectFavorites.inc.php';
+                    foreach ($property as $row) { echo'
                   </ul>
                   <div class="post-share">
                     <span>Share: </span>
@@ -184,7 +186,7 @@ include_once "includes/propertySingle.inc.php";
                     <h3 class="title-d">Description</h3>
                   </div>
                 </div>
-              </div>
+              </div> 
               <div class="property-description">
                 <p class="description color-text-a text-justify">
                   ' . $row['description'] . '
