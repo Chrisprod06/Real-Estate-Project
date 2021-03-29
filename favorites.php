@@ -1,7 +1,10 @@
 <!--Header-->
 <?php
 $title = "Favorites | APM Smart Houses";
-include_once "includes/header.inc.php";
+session_start();
+if(!isset($_SESSION['userID'])) {header('Location: index.php');}
+else{
+include_once "includes/header.inc.php";}
 ?>
 <!--/ Intro Single star /-->
 <section class="intro-single">
@@ -43,10 +46,7 @@ include_once "includes/header.inc.php";
 //session_start();
 require_once 'includes/dbh.inc.php';
 
-if(!isset($_SESSION['userID'])) {
-  echo "<p>You need to login to view your favorites.</p> ";
-  echo "<p> <a data-toggle='modal'  href='#login'>Login</a> or <a data-toggle='modal'  href='#register'>Register</a></p>";}
-else {
+
 
 //Pagination
 $total = 6;
@@ -156,7 +156,6 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   }
   
 } 
-} 
 
   ?> 
       
@@ -165,7 +164,9 @@ while ($row = mysqli_fetch_assoc($setQuery1))
       <div class="col-sm-12">
         <nav class="pagination-a">
           <ul class="pagination justify-content-end">
-            <li class="page-item <?php if ($page == 1) {
+            <li class="page-item
+            
+            <?php if ($page == 1 ) {
                                     echo 'disabled';
                                   } ?>">
               <a class="page-link" href="<?php if ($page == 1) {
@@ -196,7 +197,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
           </ul>
         </nav>
       </div>
-    </div>
+    </div> ''
   </div>
 </section>
 <!--/ Property Grid End /-->
