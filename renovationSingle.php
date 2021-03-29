@@ -4,7 +4,7 @@ $title = "Renovation | APM Smart Houses";
 include_once "includes/header.inc.php";
 ?>
 <?php
-include_once "includes/propertySingle.inc.php";
+include_once "includes/renovationSingle.inc.php";
 ?>
 <!--/ Intro Single star /-->
 
@@ -27,7 +27,7 @@ include_once "includes/propertySingle.inc.php";
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
           <?php echo '<h1 class="title-single">Property no.' . $_GET['id'] . '</h1>';
-          foreach ($property as $row) {
+          foreach ($searchProp as $row) {
             echo '<span class="color-text-a">' . $row['country'] . ', ' . $row['city'] . ', ' . $row['address'] . ', ' . $row['area'] . 'm<sup>2</sup>, €'.$row['totalPrice'].'</span>';
           }
           ?>
@@ -67,7 +67,7 @@ include_once "includes/propertySingle.inc.php";
         <?php
 
 
-        foreach ($property as $row) {
+        foreach ($searchProp as $row) {
 
           if ($row['parking'] === '0') {
             $parking = 'No';
@@ -196,10 +196,11 @@ include_once "includes/propertySingle.inc.php";
                   </div>
                 </div>
               </div>
-              <div class="property-description">
+              ';} foreach ($searchRen as $row){  echo '<div class="property-description">
                 <p class="description color-text-a text-justify">
-                  ' . $row['description'] . '
-               </p>
+                  ' . $row['renDesc'] . '
+               </p>';} 
+               foreach ($searchProp as $row){ echo'
               </div>
               <div class="row section-t3">
                 <div class="col-sm-12">

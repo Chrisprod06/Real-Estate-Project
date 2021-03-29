@@ -14,24 +14,26 @@ while ($row = mysqli_fetch_assoc($setQuery1))
 
   $searchProp[] = array(
   
-  'propID'=> $row['propertyID'],
-  'city' => $row['town'],
-  'addr' => $row['address'],
-  'categ' => $row['category'],
-  'totPrice' => $row['totalPrice'],
-  'area' => $row['squarem'],
-  'baths' => $row['bathrooms'],
-  'beds' => $row['bedrooms'],
-  'furnished' => $row['furniture'],
-  'types' => $row['type'],
-  'garage' => $row['parking'],
-  'dateBuild' => $row['dateOfBuild'],
-  'dateAvail' => $row['availableFrom'],
-  'floors' => $row['floor'],
-  'heat' => $row['heating'],
-  'priceSqm' => $row['pricePerSqm'],
-  'desc' => $row['description'],
-  'amen' => $row['amenities']
+    'propertyID'=> $row['propertyID'],
+    'country' => $row['country'],
+    'city' => $row['town'],
+    'address' => $row['address'],
+    'category' => $row['category'],
+    'totalPrice' => $row['totalPrice'],
+    'area' => $row['squarem'],
+    'bathrooms' => $row['bathrooms'],
+    'bedrooms' => $row['bedrooms'],
+    'furniture' => $row['furniture'],
+    'type' => $row['type'],
+    'parking' => $row['parking'],
+    'dateOfBuild' => $row['dateOfBuild'],
+    'availableFrom' => $row['availableFrom'],
+    'floors' => $row['floor'],
+    'heating' => $row['heating'],
+    'pricePerSqm' => $row['pricePerSqm'],
+    'totalPrice' => $row['totalPrice'],
+    'description' => $row['description'],
+    'amenities' => $row['amenities']
   ); 
 }  
 
