@@ -5,8 +5,6 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 $res = preg_replace('/\?[^?]*$/', '', $escaped_url);
 $_SESSION['lastVisitedPage'] = $res;
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
