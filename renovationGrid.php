@@ -190,16 +190,31 @@ include_once "includes/header.inc.php";
       <div class="col-sm-12">
         <nav class="pagination-a">
           <ul class="pagination justify-content-end">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">
+            <li class="page-item <?php if ($page == 1) {
+                                    echo 'disabled';
+                                  } ?>">
+              <a class="page-link" href="<?php if ($page == 1) {
+                                            echo '#';
+                                          } else { ?><?php echo $_SERVER['PHP_SELF'] ?>?page=<?php echo $page - 1;
+                                                                                                                      } ?>">
                 <span class="ion-ios-arrow-back"></span>
               </a>
             </li>
-            <li class="page-item">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item next">
-              <a class="page-link" href="#">
+            <?php
+            $slt = "select * from renovations";
+            $rec = mysqli_query($conn, $slt);
+            $total1 = mysqli_num_rows($rec);
+            $total_pages = ceil($total1 / $total);
+            for ($i = 1; $i <= $total_pages; $i++) { ?>
+              <li class="page-item <?php if ($_GET["page"] == $i) {
+                                      echo 'active';
+                                    } ?>">
+                <a class="page-link" href="<?php echo $_SERVER['PHP_SELF'] ?>?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+              </li>
+            <?php
+            } ?>
+            <li class="page-item next <?php if($page==$total_pages){ echo 'disabled'; } ?>" >
+              <a class="page-link" href="<?php if($page==$total_pages){ echo '#';} else {?><?php echo $_SERVER['PHP_SELF']?>?page=<?php echo $page+1; }?>">
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </li>
