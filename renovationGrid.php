@@ -40,8 +40,40 @@ include_once "includes/header.inc.php";
       </div>
       
       <?php
-        if (isset($_SESSION['renovations'])) {
-          foreach ($_SESSION['renovations'] as $row) {
+        require_once 'includes/dbh.inc.php';
+    
+        $total = 6;
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        } 
+        else {
+            $page = 1;
+        }
+        $start = ($page - 1) * $total;
+        
+        $getQuery = "SELECT * from properties ";
+        $setQuery = mysqli_query($conn, $getQuery);
+    
+        $searchRenovations = array();
+    
+        while ($row = mysqli_fetch_assoc($setQuery)) 
+        {
+    
+            $searchRenovations[] = array(
+            
+            'propID'=> $row['propertyID'],
+            'city' => $row['town'],
+            'addr' => $row['address'],
+            'categ' => $row['category'],
+            'totPrice' => $row['totalPrice'],
+            'area' => $row['squarem'],
+            'baths' => $row['bathrooms'],
+            'beds' => $row['bedrooms'],
+            'furnished' => $row['furniture']
+            );
+            
+        }
+          foreach ($searchRenovations as $row) {
 
             if ($row['furnished'] === '0') {
               $furnished = 'No';
@@ -151,7 +183,7 @@ include_once "includes/header.inc.php";
               </div>';
             }
           }
-        }
+        
 
       ?> 
       
