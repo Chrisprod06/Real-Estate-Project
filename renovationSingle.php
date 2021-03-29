@@ -115,7 +115,7 @@ include_once "includes/propertySingle.inc.php";
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Location:</strong>
-                      <span>' . $row['country'] . ',' . $row['city'] . ',' . $row["address"] . '</span>
+                      <span>' . $row['country'] . ', ' . $row['city'] . ', ' . $row["address"] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Property Type:</strong>

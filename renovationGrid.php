@@ -81,8 +81,7 @@ include_once "includes/header.inc.php";
               $furnished = 'Yes';
           }
 
-            if ($row['categ'] === 'forRenovation') {
-              $categ = 'Renovation';
+            if ($row['categ'] === 'Renovation') {
               echo '
               <div class="col-md-4">
                 <div class="card-box-a card-shadow">
@@ -99,7 +98,7 @@ include_once "includes/header.inc.php";
                     </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
+                      <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
                     </div>
                       <a href="renovationSingle.php?id='.$row["propID"].'"  class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
@@ -131,8 +130,7 @@ include_once "includes/header.inc.php";
                   </div>
                 </div>
               </div>';
-            } else if ($row['categ'] === 'forDecoration') {
-              $categ = 'Decoration';
+            } else if ($row['categ'] === 'Decoration') {
               echo '
               <div class="col-md-4">
                 <div class="card-box-a card-shadow">
@@ -149,7 +147,7 @@ include_once "includes/header.inc.php";
                     </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
+                      <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
                     </div>
                       <a href="renovationSingle.php?id='.$row["propID"].'" class="link-a">Click here to view
                       <span class="ion-ios-arrow-forward"></span>
