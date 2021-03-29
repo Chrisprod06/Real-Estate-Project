@@ -80,7 +80,7 @@ $_SESSION['lastVisitedPage'] = $res;
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
-                $sql = 'SELECT distinct type FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+                $sql = 'SELECT distinct type FROM properties where category = "RentLongTerm" OR category = "RentShortTerm" OR category = "Sale"; ';
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -110,7 +110,7 @@ $_SESSION['lastVisitedPage'] = $res;
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
-                $sql = 'SELECT distinct country FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+                $sql = 'SELECT distinct country FROM properties where category = "RentLongTerm" OR category = "RentShortTerm" OR category = "Sale"; ';
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -128,7 +128,7 @@ $_SESSION['lastVisitedPage'] = $res;
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
-                $sql = 'SELECT distinct town FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+                $sql = 'SELECT distinct town FROM properties where category = "RentLongTerm" OR category = "RentShortTerm" OR category = "Sale"; ';
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -146,7 +146,7 @@ $_SESSION['lastVisitedPage'] = $res;
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
-                $sql = 'SELECT distinct area FROM properties where category = "forRentLongTerm" OR category = "forRentShortTerm" OR category = "forSale"; ';
+                $sql = 'SELECT distinct area FROM properties where category = "RentLongTerm" OR category = "RentShortTerm" OR category = "Sale"; ';
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
                 while ($row = mysqli_fetch_assoc($result)) {

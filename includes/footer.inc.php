@@ -438,6 +438,8 @@
 <!--Sweet Alert-->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
 

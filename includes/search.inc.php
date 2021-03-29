@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (!empty($_POST['country'])) {
-        $category = $_POST['country'];
+        $country = $_POST['country'];
         if ($category !== 'allCountries') {
             $query[] = "country='$country'";
         }
@@ -107,6 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $searchProperties = array();
         while ($row = mysqli_fetch_assoc($ressearch)) {
             $searchProperties[] = array(
+                'propertyID'=>$row['propertyID'],
                 'city' => $row['town'],
                 'addr' => $row['address'],
                 'categ' => $row['category'],

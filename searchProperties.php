@@ -23,6 +23,14 @@ include_once "includes/header.inc.php";
     <div class="container">
         <div class="row">
             <?php
+            require_once 'includes/dbh.inc.php';
+            $total = 6;
+            if (isset($_GET['page'])) {
+              $page = $_GET['page'];
+            } else {
+              $page = 1;
+            }
+            $start = ($page - 1) * $total;
 
 
             //Present data
@@ -63,7 +71,7 @@ include_once "includes/header.inc.php";
                                    <div class="price-box d-flex">
                                        <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
                                    </div>
-                                   <a href="propertySingle.php" class="link-a">Click here to view
+                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">Click here to view
                                        <span class="ion-ios-arrow-forward"></span>
                                    </a>
                                </div>
