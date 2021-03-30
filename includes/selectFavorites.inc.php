@@ -5,7 +5,7 @@ $userID =  $_SESSION['userID'];
 $propertyID = $_GET['id'];
 
 //In the statement use the names of the variables from the database
-$getQuery = "SELECT * from favorites WHERE propertyID=$propertyID;";
+$getQuery = "SELECT * from favorites WHERE propertyID=$propertyID AND userID=$userID;";
 $setQuery = mysqli_query($conn, $getQuery);
 
 $searchFav = array(); 

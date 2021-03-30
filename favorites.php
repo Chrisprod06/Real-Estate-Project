@@ -67,6 +67,7 @@ $userID =  $_SESSION['userID'];
 $getQuery1 = "SELECT * from favorites WHERE userID=$userID;  ";
 $setQuery1 = mysqli_query($conn, $getQuery1);
 
+
 $searchFavs = array(); 
 
 while ($row = mysqli_fetch_assoc($setQuery1)) 
@@ -153,9 +154,13 @@ while ($row = mysqli_fetch_assoc($setQuery1))
       </div>
     </div>
   </div>';
+  
   }
   
-} 
+}  if (count($searchFavs,0)== '0'){
+  echo "<p>No Favorites added yet.</p> "; }
+
+
 
   ?> 
       
