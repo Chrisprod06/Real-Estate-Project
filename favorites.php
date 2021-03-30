@@ -1,4 +1,6 @@
 <!--Header-->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 <?php
 $title = "Favorites | APM Smart Houses";
 session_start();
@@ -67,8 +69,8 @@ $userID =  $_SESSION['userID'];
 $getQuery1 = "SELECT * from favorites WHERE userID=$userID;  ";
 $setQuery1 = mysqli_query($conn, $getQuery1);
 
-
 $searchFavs = array(); 
+
 
 while ($row = mysqli_fetch_assoc($setQuery1)) 
 {
