@@ -28,8 +28,7 @@ include_once "includes/renovationSingle.inc.php";
         <div class="title-single-box">
 
           <?php 
-          foreach ($searchRen as $row){
-              echo '<h1 class="title-single">Renovation no.' . $row['renID'] . '</h1>';}
+              echo '<h1 class="title-single">Renovation no.' . $_GET['rid'] . '</h1>';
           foreach ($searchProp as $row) {
             echo '<span class="color-text-a">' . $row['country'] . ', ' . $row['city'] . ', ' . $row['address'] . ', ' . $row['area'] . 'm<sup>2</sup>, €'.$row['totalPrice'].'</span>';
           }
@@ -47,9 +46,8 @@ include_once "includes/renovationSingle.inc.php";
               <a href="renovationGrid.php">Renovations</a>
             </li>
             <?php
-            foreach ($searchRen as $row){
             echo '<li class="breadcrumb-item active" aria-current="page">
-                Renovation no.' . $row['renID'] . ' '; }?>
+                Renovation no.' . $_GET['rid'] . ' '; ?>
             </li>
           </ol>
         </nav>

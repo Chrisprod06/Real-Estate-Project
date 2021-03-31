@@ -4,6 +4,7 @@ require_once 'includes/dbh.inc.php';
 
 
 $id =  $_GET['id'];
+$rID = $_GET['rid'];
 $getQuery1 = "SELECT * from properties WHERE propertyID=$id;  ";
 $setQuery1 = mysqli_query($conn, $getQuery1);
 
@@ -37,7 +38,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   ); 
 }  
 
-$getQuery2 = "SELECT * from renovations WHERE propertyID=$id;";
+$getQuery2 = "SELECT * from renovations WHERE renovationID=$rID;";
 $setQuery2 = mysqli_query($conn, $getQuery2);
 
 $searchRen = array(); 

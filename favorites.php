@@ -66,7 +66,7 @@ $start = ($page - 1) * $total;
 $userID =  $_SESSION['userID'];
 
 
-$getQuery1 = "SELECT * from favorites WHERE userID=$userID;  ";
+$getQuery1 = "SELECT * from favorites WHERE userID=$userID LIMIT $start,$total;  ";
 $setQuery1 = mysqli_query($conn, $getQuery1);
 
 $searchFavs = array(); 
@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   
   ); 
 
-  $getQuery2 = "SELECT * from properties WHERE propertyID=$pID LIMIT $start,$total;";
+  $getQuery2 = "SELECT * from properties WHERE propertyID=$pID ;";
   $setQuery2 = mysqli_query($conn, $getQuery2);
   $searchProp = array();
 

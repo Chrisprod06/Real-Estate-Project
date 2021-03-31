@@ -40,27 +40,51 @@ include_once "includes/header.inc.php";
       </div>
       
       <?php
+        //session_start();
         require_once 'includes/dbh.inc.php';
-    
+        
+        
+        
+        //Pagination
         $total = 6;
-        if (isset($_GET['page'])) {
-            $page = $_GET['page'];
+        if (isset($_GET['page'])) 
+        {
+          $page = $_GET['page'];
         } 
-        else {
-            $page = 1;
+        else 
+        {
+          $page = 1;
         }
         $start = ($page - 1) * $total;
+        //End Pagination
         
-        $getQuery = "SELECT * from properties LIMIT $start,$total ";
-        $setQuery = mysqli_query($conn, $getQuery);
-    
-        $searchRenovations = array();
-    
-        while ($row = mysqli_fetch_assoc($setQuery)) 
+        
+        
+        $getQuery1 = "SELECT * from renovations LIMIT $start,$total;  ";
+        $setQuery1 = mysqli_query($conn, $getQuery1);
+        
+        $searchRen = array(); 
+        
+        
+        while ($row = mysqli_fetch_assoc($setQuery1)) 
         {
-    
-            $searchRenovations[] = array(
-            
+        
+          $searchRen[] = array(
+          $rID= $row['renovationID'],
+          $pID = $row['propertyID'] 
+          
+          ); 
+        
+          $getQuery2 = "SELECT * from properties WHERE propertyID=$pID ;";
+          $setQuery2 = mysqli_query($conn, $getQuery2);
+          $searchProp = array();
+        
+          foreach ($searchRen as $row){
+          while ($row = mysqli_fetch_assoc($setQuery2)) 
+          {
+        
+            $searchProp[] = array(
+          
             'propID'=> $row['propertyID'],
             'city' => $row['town'],
             'addr' => $row['address'],
@@ -70,120 +94,72 @@ include_once "includes/header.inc.php";
             'baths' => $row['bathrooms'],
             'beds' => $row['bedrooms'],
             'furnished' => $row['furniture']
-            );
+            );     
+          }
+        
+          }
+        
+          foreach($searchProp as $row){
             
-        }
-          foreach ($searchRenovations as $row) {
-
             if ($row['furnished'] === '0') {
               $furnished = 'No';
           } else if ($row['furnished'] === '1') {
               $furnished = 'Yes';
           }
-
-            if ($row['categ'] === 'Renovation') {
-              echo '
-              <div class="col-md-4">
-                <div class="card-box-a card-shadow">
-                  <div class="img-box-a">
-                  <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
-                  </div>
-                  <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                      <h2 class="card-title-a">
-                        <a href="#">' . $row["city"] . '
-                        <br />' . $row["addr"] . '</a>
-                      </h2>
-                    </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
-                    </div>
-                      <a href="renovationSingle.php?id='.$row["propID"].'"  class="link-a">Click here to view
-                      <span class="ion-ios-arrow-forward"></span>
-                      </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                          <span>' . $row["area"] . 'm
-                            <sup>2</sup>
-                          </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Bedrooms</h4>
-                        <span>' . $row["beds"] . '</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Bathrooms</h4>
-                        <span>' . $row["baths"] . '</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Furnished</h4>
-                        <span>' . $furnished . '</span>
-                      </li>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
+            
+            echo '<div class="col-md-4">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+              <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="#">' . $row["city"] . '
+                    <br />' . $row["addr"] . '</a>
+                  </h2>
                 </div>
-              </div>';
-            } else if ($row['categ'] === 'Decoration') {
-              echo '
-              <div class="col-md-4">
-                <div class="card-box-a card-shadow">
-                  <div class="img-box-a">
-                  <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
-                  </div>
-                  <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                      <h2 class="card-title-a">
-                        <a href="#">' . $row["city"] . '
-                        <br />' . $row["addr"] . '</a>
-                      </h2>
-                    </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
-                    </div>
-                      <a href="renovationSingle.php?id='.$row["propID"].'" class="link-a">Click here to view
-                      <span class="ion-ios-arrow-forward"></span>
-                      </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                          <span>' . $row["area"] . 'm
-                            <sup>2</sup>
-                          </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Bedrooms</h4>
-                        <span>' . $row["beds"] . '</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Bathrooms</h4>
-                        <span>' . $row["baths"] . '</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Furnished</h4>
-                        <span>' . $furnished . '</span>
-                      </li>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
+              <div class="card-body-a">
+                <div class="price-box d-flex">
+                  <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
                 </div>
-              </div>';
-            }
+                  <a href="renovationSingle.php?id='.$row["propID"].'&rid='.$rID.'"  class="link-a">Click here to view
+                  <span class="ion-ios-arrow-forward"></span>
+                  </a>
+              </div>
+              <div class="card-footer-a">
+                <ul class="card-info d-flex justify-content-around">
+                <li>
+                <h4 class="card-info-title">Area</h4>
+                  <span>' . $row["area"] . 'm
+                    <sup>2</sup>
+                  </span>
+              </li>
+              <li>
+                <h4 class="card-info-title">Bedrooms</h4>
+                <span>' . $row["beds"] . '</span>
+              </li>
+              <li>
+                <h4 class="card-info-title">Bathrooms</h4>
+                <span>' . $row["baths"] . '</span>
+              </li>
+              <li>
+                <h4 class="card-info-title">Furnished</h4>
+                <span>' . $furnished . '</span>
+              </li>
+                  
+                  
+                  </ul>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>';
+          
           }
-        
-
-      ?> 
+          
+        } ?> 
       
     </div>
     <div class="row">
