@@ -72,7 +72,7 @@ include_once "includes/header.inc.php";
                            <div class="card-overlay-a-content">
                                <div class="card-header-a">
                                    <h2 class="card-title-a">
-                                       <a href="#">' . $row["town"] . '
+                                       <a>' . $row["town"] . '
                                            <br />' . $row["address"] . '</a>
                                    </h2>
                                </div>
