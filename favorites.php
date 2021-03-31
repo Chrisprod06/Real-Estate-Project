@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   
   ); 
 
-  $getQuery2 = "SELECT * from properties WHERE propertyID=$pID;";
+  $getQuery2 = "SELECT * from properties WHERE propertyID=$pID LIMIT $start,$total;";
   $setQuery2 = mysqli_query($conn, $getQuery2);
   $searchProp = array();
 

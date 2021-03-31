@@ -51,7 +51,7 @@ include_once "includes/header.inc.php";
         }
         $start = ($page - 1) * $total;
         
-        $getQuery = "SELECT * from properties ";
+        $getQuery = "SELECT * from properties LIMIT $start,$total ";
         $setQuery = mysqli_query($conn, $getQuery);
     
         $searchRenovations = array();
