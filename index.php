@@ -2,8 +2,6 @@
 $title = "Home | APM Smart Houses";
 include_once "includes/header.inc.php";
 ?>
-
-
 <!--/ Carousel Star /-->
 <div class="intro intro-carousel">
 <div id="carousel" class="owl-carousel owl-theme">

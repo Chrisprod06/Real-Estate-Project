@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (!empty($_POST['country'])) {
         $country = $_POST['country'];
-        if ($category !== 'allCountries') {
+        if ($country !== 'allCountries') {
             $query[] = "country='$country'";
         }
     }

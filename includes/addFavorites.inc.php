@@ -13,5 +13,5 @@ mysqli_stmt_prepare($stmt, $sql);
 mysqli_stmt_bind_param($stmt, 'ii', $userID,$propertyID); //bind values and execute insert query
 mysqli_stmt_execute($stmt);
 
-header('location: ' . $_SESSION['lastVisitedPage'].'?id='.$propertyID.'');
+header('location:' . $_SESSION['lastVisitedPage'].'?id='.$propertyID.'');
 exit();
