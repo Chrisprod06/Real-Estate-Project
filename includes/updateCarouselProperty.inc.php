@@ -2,7 +2,7 @@
 
 include_once "dbh.inc.php";
 $id = $_GET['id'];
-$sql = "SELECT * FROM multimediaproperties WHERE propertyID = $id AND photo1 IS NOT NULL;";
+$sql = "SELECT * FROM multimediaproperties WHERE propertyID = $id;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
