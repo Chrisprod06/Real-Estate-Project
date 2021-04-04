@@ -1,4 +1,7 @@
 <!--/ footer Star /-->
+<?php
+include "configLanguage.inc.php";
+?>
 <section class="section-footer">
   <div class="container">
     <div class="row">
@@ -9,13 +12,13 @@
           </div>
           <div class="w-body-a">
             <p class="w-text-a color-text-a">
-              Send us an e-mail or phone us to resolve any problem you may ecounter.
+            <?php echo $lang['fparagraph']?>
             </p>
           </div>
           <div class="w-footer-a">
             <ul class="list-unstyled">
               <li class="color-a">
-                <span class="color-text-a">Phone:</span>
+                <span class="color-text-a"><?php echo $lang['fphone']?></span>
               <li>
                 <span class="color-text-a">+357 99436309</span>
               </li>
@@ -32,7 +35,7 @@
                 <span class="color-text-a">Email: </span> apm.smarthouses@gmail.com
               </li>
               <li class="color-a">
-                <span class="color-text-a"></span><a href="#">Download our app here!</a>
+                <span class="color-text-a"></span><a href="#"><?php echo $lang['downloadapp']?></a>
               </li>
             </ul>
           </div>
@@ -41,16 +44,16 @@
       <div class="col-sm-12 col-md-4 section-md-t3">
         <div class="widget-a">
           <div class="w-header-a">
-            <h3 class="w-title-a text-brand">The Company</h3>
+            <h3 class="w-title-a text-brand"><?php echo $lang['thecompany']?></h3>
           </div>
           <div class="w-body-a">
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#privacyPolicy'>Privacy Policy</a>
+                  <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#privacyPolicy'><?php echo $lang['privacypolicy']?></a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#termsOfService'>Terms of Service</a>
+                  <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#termsOfService'><?php echo $lang['tos']?></a>
                 </li>
               </ul>
             </div>
@@ -60,12 +63,12 @@
       <div class="col-sm-12 col-md-4 section-md-t3">
         <div class="widget-a">
           <div class="w-header-a">
-            <h3 class="w-title-a text-brand">Subscribe to our newsletter!</h3>
+            <h3 class="w-title-a text-brand"><?php echo $lang['fnewsletter']?></h3>
           </div>
           <div class="w-body-a">
             <div class="w-body-a">
               <form class="form-a contactForm" action="includes/regnews.inc.php" method="post" role="form">
-                <div id="sendmessage">You are subscribed succesfully. Thank you!</div>
+                <div id="sendmessage"><?php echo $lang['subscriptionsuccess']?></div>
                 <div id="errormessage"></div>
                 <div class="row">
                   <div class="col-md-12 mb-3">
@@ -76,7 +79,7 @@
                   </div>
                   <div class="from-group">
                     <div class="col-md-12">
-                      <input name="submit" type="submit" value="Subscribe" class="btn btn-a"></input>
+                      <input name="submit" type="submit" value="<?php echo $lang['fsubscribe']?>" class="btn btn-a"></input>
                     </div>
                   </div>
 
@@ -97,7 +100,7 @@
         <nav class="nav-footer">
           <ul class="list-inline">
             <li class="list-inline-item">
-              <a href="#">Find us on:</a>
+              <a href="#"><?php echo $lang['finduson']?></a>
             </li>
           </ul>
         </nav>

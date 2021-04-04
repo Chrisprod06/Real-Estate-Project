@@ -76,9 +76,9 @@ include "configLanguage.inc.php";
 
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="Type">Type</label>
+              <label for="Type"><?php echo $lang['type'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="Type" name="type">
-                <option value="allTypes">All Types</option>
+                <option value="allTypes"><?php echo $lang['alltypes'] ?></option>
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
@@ -95,20 +95,20 @@ include "configLanguage.inc.php";
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="Category">Category</label>
+              <label for="Category"><?php echo $lang['category'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="Category" name="category" onchange="setPriceRange()">
-                <option value="allCategories">All Categories</option>
-                <option value="forRentShort">For Rent - Short Term</option>
-                <option value="forRentLong">For Rent - Long Term</option>
-                <option value="forSale">For Sale</option>
+                <option value="allCategories"><?php echo $lang['allcategories'] ?></option>
+                <option value="forRentShort"><?php echo $lang['forrentshort'] ?></option>
+                <option value="forRentLong"><?php echo $lang['forrentlong'] ?></option>
+                <option value="forSale"><?php echo $lang['forsale'] ?></option>
               </select>
             </div>
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="city">Country</label>
+              <label for="city"><?php echo $lang['country'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="country" name="country">
-                <option value="allCountries">All Countries</option>
+                <option value="allCountries"><?php echo $lang['allcountries'] ?></option>
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
@@ -124,9 +124,9 @@ include "configLanguage.inc.php";
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="city">City</label>
+              <label for="city"><?php echo $lang['city'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="city" name="city">
-                <option value="allCities">All Cities</option>
+                <option value="allCities"><?php echo $lang['allcities'] ?></option>
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
@@ -142,9 +142,9 @@ include "configLanguage.inc.php";
           </div>
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="region">Region</label>
+              <label for="region"><?php echo $lang['region'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="region" name="region">
-                <option value="allRegions">All Regions</option>
+                <option value="allRegions"><?php echo $lang['allregions'] ?></option>
                 <!--PHP script to get all cities from database-->
                 <?php
                 include_once 'dbh.inc.php';
@@ -161,9 +161,9 @@ include "configLanguage.inc.php";
 
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="bedrooms">Bedrooms</label>
+              <label for="bedrooms"><?php echo $lang['bd'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="bedrooms" name="bedrooms">
-                <option value='any'>Any</option>
+                <option value='any'><?php echo $lang['any'] ?></option>
                 <option value='0'>0</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
@@ -181,9 +181,9 @@ include "configLanguage.inc.php";
 
           <div class="col-md-6 mb-2">
             <div class="form-group">
-              <label for="bathrooms">Bathrooms</label>
+              <label for="bathrooms"><?php echo $lang['br'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="bathrooms" name="bathrooms">
-                <option value='any'>Any</option>
+                <option value='any'><?php echo $lang['any'] ?></option>
                 <option value='0'>0</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
@@ -199,24 +199,24 @@ include "configLanguage.inc.php";
             </div>
           </div>
           <div class="col-md-6   mb-2">
-            <label for="features">Features</label>
+            <label for="features"><?php echo $lang['features'] ?></label>
             <div class="form-group" id='features' name="features">
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="parking" name="parking" value="parking">
-                <label class="form-check-label" for="inlineCheckbox1">Parking</label>
+                <label class="form-check-label" for="inlineCheckbox1"><?php echo $lang['parking'] ?></label>
               </div>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="furniture" value="furniture" name="furniture">
-                <label class="form-check-label" for="furniture">Furniture</label>
+                <label class="form-check-label" for="furniture"><?php echo $lang['furniture'] ?></label>
               </div>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="heating" name="heating" value="heating">
-                <label class="form-check-label" for="inlineCheckbox3">Heating</label>
+                <label class="form-check-label" for="inlineCheckbox3"><?php echo $lang['heating'] ?></label>
               </div>
             </div>
           </div>
           <div class="col-md-12   mb-2">
-            <label for="priceRange">Price Range</label>
+            <label for="priceRange"><?php echo $lang['pricerange'] ?></label>
             <div class="form-group" id='priceRange' name="priceRange">
               <input type="text" class="js-range-slider" name="rangePrice" value="" />
 
@@ -236,7 +236,7 @@ include "configLanguage.inc.php";
             });
           </script>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b" name="submitSearch">Search Property</button>
+            <button type="submit" class="btn btn-b" name="submitSearch"><?php echo $lang['searchproperty'] ?></button>
           </div>
         </div>
       </form>
@@ -286,11 +286,11 @@ include "configLanguage.inc.php";
               <?php
               if (isset($_SESSION['userID'])) {
                 if ($_SESSION['role'] == 1) {
-                  echo "<a class='dropdown-item' href='../Real-Estate-CMS/index.php'>Edit Website</a>";
-                  echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
+                  echo "<a class='dropdown-item' href='../Real-Estate-CMS/index.php'>".$lang['editwebsite']."</a>";
+                  echo " <a class='dropdown-item' href='editProfile.php'>".$lang['editprofile']."</a>";
                   echo "<a class='dropdown-item' href='index.php?lang=en'>English</a>";
                   echo "<a class='dropdown-item' href='index.php?lang=gr'>Greek</a>";
-                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
+                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>".$lang['logout']."</a>";
                 } else if ($_SESSION['role'] == 2) {
                   echo " <a class='dropdown-item' href='favorites.php'>Favorites</a> ";
                   echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
@@ -369,7 +369,7 @@ include "configLanguage.inc.php";
 
             <div class="clearfix">
 
-              <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
+              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword']?></a>
 
             </div>
           </div>
@@ -388,7 +388,7 @@ include "configLanguage.inc.php";
       <div class="modal-content ">
         <form action="includes/reguser.inc.php" method="POST">
           <div class="modal-header">
-            <h4 class="modal-title">Register</h4>
+            <h4 class="modal-title"><?php echo $lang['register']?></h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">

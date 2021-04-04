@@ -20,13 +20,13 @@ include_once 'includes/header.inc.php';
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>Firstname</label>
+                                                                    <label>'.$lang['firstname'].'</label>
                                                                     <input class="form-control" type="text" name="firstname" value="' . $_SESSION['firstname'] . '">
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>Lastname</label>
+                                                                    <label>'.$lang['lastname'].'</label>
                                                                     <input class="form-control" type="text" name="lastname"  value="' . $_SESSION['lastname'] . '">
                                                                 </div>
                                                             </div>
@@ -40,7 +40,7 @@ include_once 'includes/header.inc.php';
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>Telephone</label>
+                                                                    <label>'.$lang['phone'].'</label>
                                                                     <input class="form-control" type="text" name="telephone" value="' . $_SESSION['telephone'] . '">
                                                                 </div>
                                                             </div>
@@ -50,11 +50,11 @@ include_once 'includes/header.inc.php';
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6 mb-3">
-                                                        <div class="mb-2"><b>Change Password</b></div>
+                                                        <div class="mb-2"><b>'.$lang['chpassword'].'</b></div>
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>Current Password</label>
+                                                                    <label>'.$lang['cupassword'].'</label>
                                                                     <input class="form-control" type="password" name = "currentPassword">
                                                                 </div>
                                                             </div>
@@ -62,7 +62,7 @@ include_once 'includes/header.inc.php';
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>New Password</label>
+                                                                    <label>'.$lang['npassword'].'</label>
                                                                     <input class="form-control" type="password" name = "newPassword">
                                                                 </div>
                                                             </div>
@@ -70,21 +70,21 @@ include_once 'includes/header.inc.php';
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
-                                                                    <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                                                    <label>'.$lang['confirm'].' <span class="d-none d-xl-inline">'.$lang['password'].'</span></label>
                                                                     <input class="form-control" type="password" name = "repeatNewPassword">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-5 offset-sm-1 mb-3">
-                                                        <div class="mb-2"><b>Keeping in Touch</b></div>
+                                                        <div class="mb-2"><b>'.$lang['keepintouch'].'</b></div>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <label>Email Notifications</label>
+                                                                <label>'.$lang['emailnotifications'].'</label>
                                                                 <div class="custom-controls-stacked px-2">
                                                                     <div class="custom-control custom-checkbox">
                                                                         <input type="checkbox" class="custom-control-input" id="notifications-news" checked="" name = "newsletter">
-                                                                        <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                                                                        <label class="custom-control-label" for="notifications-news">'.$lang['newsletter'].'</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -93,7 +93,7 @@ include_once 'includes/header.inc.php';
                                                 </div>
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">
-                                                        <button class="btn btn-a" type="submit" name = "submit">Save Changes</button>
+                                                        <button class="btn btn-a" type="submit" name = "submit">'.$lang['savechanges'].'</button>
                                                     </div>
                                                 </div>';
 
@@ -112,7 +112,7 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
         <div class="col d-flex justify-content-end">
-        <a href="includes/deleteAccount.inc.php">Delete Account?</a>
+        <a href="includes/deleteAccount.inc.php"><?php echo $lang['deleteaccount']?></a>
         </div>
         
     </div>
