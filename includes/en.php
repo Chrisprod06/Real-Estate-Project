@@ -58,13 +58,16 @@
       "amessage" => "Our company is active in the real estate sector in Greece and Cyprus looking for the best possible quality combined with the best price. At the same time, our team is constantly working in order to provide you with updated information regarding the apartments of your choice, taking seriously the criteria that you set yourself. We also undertake renovations, partial or total, decorations, but also the design of smart homes, as well as rentals. Finally, our team will support you in all the required procedures from the very first moment, as well as in securing the required certifications. Look right, invest smart…",
       "athanks" => "Thank you for your trust.",
 
-
-
-
-
-
-
-
+      //Contact us
+      "ccontact" => "Contact Us",
+      "contactparagraph" => "Need help? Leave your message down below or send us an Email. Also you can message us to our socia media. We would love to help you out!",
+      "chome" => "Home",
+      "csubject" => "Enter subject",
+      "cmessage" => "Please login in order to send us a message about any inquiry you may have.",
+      "ctext" => "Leave us a message and we will get back to you as soon as possible!",
+      "cbutton" => "Send Message",
+      "sayhello" => "Say Hello",
+      "csocial" => "Social Networks",
 
 
 
@@ -84,45 +87,16 @@
       "emailnotifications" => "Email Notifications",
       "newsletter" => "Newsletter",
       "savechanges" => "Save Changes",
+      
+
+      //Login
       "deleteaccount" => "Delete Account?",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      "cancel" => "Cancel",
+      "login" => "Login",
+      "wronglogin" => "This user does not exist.",
+      "wrongpass" => "The password you have entered is incorrect.",
+      "stmfail" => "Something went wrong. Please try again.",
+      "resetpass" => "Reset password request went wrong. Please try again.",
 
 
 

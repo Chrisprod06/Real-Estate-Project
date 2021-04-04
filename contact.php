@@ -12,9 +12,9 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">Contact Us</h1>
+            <h1 class="title-single"><?php echo $lang['ccontact'] ?></h1>
             <span class="color-text-a">
-              <p class = "text-justify"> Need help? Leave your message down below or send us an Email. Also you can message us to our socia media. We would love to help you out!
+              <p class = "text-justify"> <?php echo $lang['contactparagraph'] ?>
             </p>
             </span>
           </div>
@@ -23,10 +23,10 @@
           <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="index.php">Home</a>
+                <a href="index.php"><?php echo $lang['chome'] ?></a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                Contact Us
+              <?php echo $lang['ccontact'] ?>
               </li>
             </ol>
           </nav>
@@ -49,7 +49,7 @@
                 <div class="property-contact">
                   <form class="form-a">
                     <div class="row text-center mt-4">
-                      Please login in order to send us a message about any inquiry you may have.
+                    '.$lang['cmessage'].'
                       </p>            
                       <div class="col-md-12 mt-5">
                         <a data-toggle = "modal" href = "#login" class="btn btn-a">Login</a>
@@ -64,14 +64,14 @@
                   <div class="property-contact">
                     <form class = "form-a" action="includes/contactUs.inc.php" method = "POST">
                       <div class="form-group">
-                        <input class = "form-control" id = "subject" type="text" name = "subject" placeholder="Enter subject" required>
+                        <input class = "form-control" id = "subject" type="text" name = "subject" placeholder="'.$lang['csubject'].'" required>
                       </div>
                       <div class="form-group">
-                      <textarea id="message" class="form-control" id = "message" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
+                      <textarea id="message" class="form-control" id = "message" placeholder="'.$lang['ctext'].'" name="message" cols="45"
                                   rows="8" required></textarea>
                       </div>
                       <div class="form-group">
-                        <input type="submit" class = "btn btn-a" value = "Send Message" name = "submit">
+                        <input type="submit" class = "btn btn-a" value = "'.$lang['cbutton'].'" name = "submit">
                       </div>
                     </form>
                 </div>
@@ -120,13 +120,13 @@
                 </div>
                 <div class="icon-box-content table-cell">
                   <div class="icon-box-title">
-                    <h4 class="icon-title">Say Hello</h4>
+                    <h4 class="icon-title"><?php echo $lang['sayhello'] ?></h4>
                   </div>
                   <div class="icon-box-content">
                     <p class="mb-1">Email.
                       <span class="color-a">apm.smarthouses@gmail.com</span>
                     </p>
-                    <p class="mb-1">Phone.
+                    <p class="mb-1"><?php echo $lang['fphone']?>
                       <span class="color-a">+357 99436309, +357 99252247, +30 6943059942</span>
                     </p>
                   </div>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="icon-box-content table-cell">
                   <div class="icon-box-title">
-                    <h4 class="icon-title">Social networks</h4>
+                    <h4 class="icon-title"><?php echo $lang['csocial'] ?></h4>
                   </div>
                   <div class="icon-box-content">
                     <div class="socials-footer">
@@ -176,7 +176,7 @@
       <div class="modal-content ">
         <form id="loginForm" action="includes/login.inc.php" method="POST">
           <div class="modal-header">
-            <h4 class="modal-title">Login</h4>
+            <h4 class="modal-title"><?php echo $lang['login']?></h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">
@@ -184,7 +184,7 @@
               <input type="email" name="email" class="form-control" placeholder="Email" required value=>
             </div>
             <div class="form-group">
-              <input type="password" name="pass" class="form-control" placeholder="Password" required="required">
+              <input type="password" name="pass" class="form-control" placeholder="<?php echo $lang['password']?>" required="required">
             </div>
             <div class="form-group">
 
@@ -193,13 +193,13 @@
             <?php
             if (isset($_GET['error'])) {
               if ($_GET['error'] == 'wrongLogin') {
-                echo '<p class = "text-danger text-center ">This user does not exist.</p>';
+                echo '<p class = "text-danger text-center ">'.$lang['wronglogin'].'</p>';
               } else if ($_GET['error'] == 'wrongPassword') {
-                echo '<p class = "text-danger text-center ">The password you have entered is incorrect.</p>';
+                echo '<p class = "text-danger text-center ">'.$lang['wrongpass'].'</p>';
               } else if ($_GET['error'] == 'stmtFailed') {
-                echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
+                echo '<p class = "text-danger text-center " >'.$lang['stmtfail'].'</p>';
               } else if ($_GET['error'] == 'tryAgainReset') {
-                echo '<p class = "text-danger text-center " >Reset password request went wrong. Please try again.</p>';
+                echo '<p class = "text-danger text-center " >'.$lang['resetpass'].'</p>';
               } else if ($_GET['error'] == 'noneLogin') {
                 echo '
                     <script>
@@ -222,13 +222,13 @@
 
             <div class="clearfix">
 
-              <a href="resetPasswordRequest.php" class="pull-right">Forgot Password?</a>
+              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword']?></a>
               
             </div>
           </div>
           <div class="modal-footer">
-            <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-a" value="Login" name="submit"></input>
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
+            <input type="submit" class="btn btn-a" value="<?php echo $lang['Login']?>" name="submit"></input>
           </div>
         </form>
       </div>
