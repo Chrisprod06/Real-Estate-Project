@@ -13,17 +13,17 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">Find your next home through us</h1>
+            <h1 class="title-single"><?php echo $lang['atitle']?></h1>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
           <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="index.php">Home</a>
+                <a href="index.php"><?php echo $lang['ahomepage']?></a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                About
+              <?php echo $lang['acompany']?>
               </li>
             </ol>
           </nav>
@@ -44,7 +44,7 @@
           <div class="sinse-box">
             <h3 class="sinse-title">APM Smart Houses
               <span></span>
-              <br> Since 2017</h3>
+              <br> <?php echo $lang['since']?></h3>
           </div>
         </div>
         <div class="col-md-12 section-t8">
@@ -55,20 +55,14 @@
             
             <div class="col-md-6 col-lg-5 section-md-t3">
               <div class="title-box-d">
-                <h3 class="title-d">Short message from us.
+                <h3 class="title-d"><?php echo $lang['companymessage']?>
                 </h3>
               </div>
               <p class="color-text-a text-justify">
-                Our company is active in the real estate sector in Greece and Cyprus looking for the best possible
-                quality combined with the best price. At the same time, our team is constantly working in order to
-                provide you with updated information regarding the apartments of your choice, taking seriously the
-                criteria that you set yourself. We also undertake renovations, partial or total, decorations, but also
-                the design of smart homes, as well as rentals. Finally, our team will support you in all the required
-                procedures from the very first moment, as well as in securing the required certifications. Look right,
-                invest smart…
+              <?php echo $lang['amessage']?>
               </p>
               <p class="color-text-a">
-                Thank you for your trust.
+              <?php echo $lang['athanks']?>
               </p>
             </div>
           </div>

@@ -49,6 +49,24 @@
       "finduson" => "Find us on:",
       "fsubscribe" => "Subscribe",
 
+      //About
+      "atitle" => "Find your next home through us",
+      "ahomepage" => "Home",
+      "acompany" => "About",
+      "since" => "Since 2017",
+      "companymessage" => "Short message from us.",
+      "amessage" => "Our company is active in the real estate sector in Greece and Cyprus looking for the best possible quality combined with the best price. At the same time, our team is constantly working in order to provide you with updated information regarding the apartments of your choice, taking seriously the criteria that you set yourself. We also undertake renovations, partial or total, decorations, but also the design of smart homes, as well as rentals. Finally, our team will support you in all the required procedures from the very first moment, as well as in securing the required certifications. Look right, invest smart…",
+      "athanks" => "Thank you for your trust.",
+
+
+
+
+
+
+
+
+
+
 
 
       //Edit profile
