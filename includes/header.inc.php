@@ -4,6 +4,8 @@ $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 $res = preg_replace('/\?[^?]*$/', '', $escaped_url);
 $_SESSION['lastVisitedPage'] = $res;
+
+include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +49,7 @@ $_SESSION['lastVisitedPage'] = $res;
 
   <!--Plugin JavaScript file-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-
+  
 
 
   <!-- =======================================================
@@ -65,7 +67,7 @@ $_SESSION['lastVisitedPage'] = $res;
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
+      <h3 class="title-d"><?php echo $lang['searchproperty'] ?></h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
@@ -260,24 +262,24 @@ $_SESSION['lastVisitedPage'] = $res;
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="index.php"><?php echo $lang['home'] ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
+            <a class="nav-link" href="about.php"><?php echo $lang['about'] ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="propertyGrid.php">Properties</a>
+            <a class="nav-link" href="propertyGrid.php"><?php echo $lang['properties'] ?></a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="renovationGrid.php">Before and After</a>
+            <a class="nav-link" href="renovationGrid.php"><?php echo $lang['beforeandafter'] ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact Us</a>
+            <a class="nav-link" href="contact.php"><?php echo $lang['contactus'] ?></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Account
+            <?php echo $lang['myaccount'] ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -286,7 +288,8 @@ $_SESSION['lastVisitedPage'] = $res;
                 if ($_SESSION['role'] == 1) {
                   echo "<a class='dropdown-item' href='../Real-Estate-CMS/index.php'>Edit Website</a>";
                   echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
-                  echo " <a class='dropdown-item' href='#'>Language</a>";
+                  echo "<a class='dropdown-item' href='index.php?lang=en'>English</a>";
+                  echo "<a class='dropdown-item' href='index.php?lang=gr'>Greek</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
                 } else if ($_SESSION['role'] == 2) {
                   echo " <a class='dropdown-item' href='favorites.php'>Favorites</a> ";
@@ -297,7 +300,7 @@ $_SESSION['lastVisitedPage'] = $res;
               } else {
                 echo " <a data-toggle='modal' class='dropdown-item' href='#login'>Login</a>";
                 echo " <a data-toggle='modal' class='dropdown-item' href='#register'>Register</a>";
-                echo " <a class='dropdown-item' href='#'>Language</a>";
+                echo " </a> <a class='dropdown-item' href='configLanguage.inc.php?lang=en'>English</a>";
               }
               ?>
             </div>
@@ -305,7 +308,7 @@ $_SESSION['lastVisitedPage'] = $res;
         </ul>
       </div>
       <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true"> Search Property</span>
+        <span class="fa fa-search" aria-hidden="true"> <?php echo $lang['searchproperties'] ?></span>
       </button>
 
 
