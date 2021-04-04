@@ -1,6 +1,7 @@
 <?php
 $title = "Home | APM Smart Houses";
 include_once "includes/header.inc.php";
+include "includes/configLanguage.inc.php";
 ?>
 <!--/ Carousel Star /-->
 <div class="intro intro-carousel">
@@ -85,7 +86,7 @@ include_once "includes/header.inc.php";
   <div class="col-md-12">
     <div class="title-wrap d-flex justify-content-between">
       <div class="title-box">
-        <h2 class="title-a">Our Services</h2>
+        <h2 class="title-a"><?php echo $lang['services']?></h2>
       </div>
     </div>
   </div>
@@ -98,12 +99,12 @@ include_once "includes/header.inc.php";
           <span class="fa fa-usd"></span>
         </div>
         <div class="card-title-c align-self-center">
-          <h2 class="title-c">Rent long-term</h2>
+          <h2 class="title-c"><?php echo $lang['rl']?></h2>
         </div>
       </div>
       <div class="card-body-c">
         <p class="content-c">
-          Rent your next home.
+        <?php echo $lang['rh']?>
         </p>
       </div>
       <div class="card-footer-c">
@@ -117,12 +118,12 @@ include_once "includes/header.inc.php";
           <span class="fa fa-home"></span>
         </div>
         <div class="card-title-c align-self-center">
-          <h2 class="title-c">Rent short-term</h2>
+          <h2 class="title-c"><?php echo $lang['rs']?></h2>
         </div>
       </div>
       <div class="card-body-c">
         <p class="content-c">
-          Buy your next home for vacation or short term stay.
+        <?php echo $lang['pi1']?>
         </p>
       </div>
       <div class="card-footer-c">
@@ -136,12 +137,12 @@ include_once "includes/header.inc.php";
           <span class="fa fa-home"></span>
         </div>
         <div class="card-title-c align-self-center">
-          <h2 class="title-c">Buy</h2>
+          <h2 class="title-c"><?php echo $lang['buy']?></h2>
         </div>
       </div>
       <div class="card-body-c">
         <p class="content-c">
-          Buy your next home.
+        <?php echo $lang['pi2']?>
         </p>
       </div>
       <div class="card-footer-c">
@@ -155,12 +156,12 @@ include_once "includes/header.inc.php";
           <span class="fa fa-home"></span>
         </div>
         <div class="card-title-c align-self-center">
-          <h2 class="title-c">Renovations</h2>
+          <h2 class="title-c"><?php echo $lang['reno']?></h2>
         </div>
       </div>
       <div class="card-body-c">
         <p class="content-c">
-          Buy your next home.
+        <?php echo $lang['pi3']?>
         </p>
       </div>
       <div class="card-footer-c">

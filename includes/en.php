@@ -96,8 +96,16 @@
       "wronglogin" => "This user does not exist.",
       "wrongpass" => "The password you have entered is incorrect.",
       "stmfail" => "Something went wrong. Please try again.",
-      "resetpass" => "Reset password request went wrong. Please try again.",
-
-
+      
+      //Home page
+      "services" => "Our Services",
+      "rl" => "Rent long-term",
+      "rh" => "Rent your next home.",
+      "rs" => "Rent short-term",
+      "pi1" => "Buy your next home for vacation or short term stay.",
+      "buy" => "Buy",
+      "pi2" => "Buy your next home.",
+      "pi3" => "Reinovated Homes.",
+      "reno" => "Renovations",
 
   );
