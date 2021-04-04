@@ -9,17 +9,17 @@ include_once "includes/header.inc.php";
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single">Our Properties</h1>
+          <h1 class="title-single"><?php echo $lang['pgourproperties']?></h1>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.php">Home</a>
+              <a href="index.php"><?php echo $lang['pghome']?></a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              Properties Grid
+            <?php echo $lang['pghproperty']?>
             </li>
           </ol>
         </nav>
@@ -80,28 +80,28 @@ include_once "includes/header.inc.php";
                                    <div class="price-box d-flex">
                                        <span class="price-a">' . $categ . ' | €' . $row["totalPrice"] . '</span>
                                    </div>
-                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">Click here to view
+                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">'.$lang['pgclick'].'
                                        <span class="ion-ios-arrow-forward"></span>
                                    </a>
                                </div>
                                <div class="card-footer-a">
                                    <ul class="card-info d-flex justify-content-around">
                                        <li>
-                                           <h4 class="card-info-title">Area</h4>
+                                           <h4 class="card-info-title">'.$lang['pgsqm'].'</h4>
                                            <span>' . $row["squarem"] . 'm
                                                <sup>2</sup>
                                            </span>
                                        </li>
                                        <li>
-                                           <h4 class="card-info-title">Bedrooms</h4>
+                                           <h4 class="card-info-title">'.$lang['propertybedrooms'].'</h4>
                                            <span>' . $row["bedrooms"] . '</span>
                                        </li>
                                        <li>
-                                           <h4 class="card-info-title">Bathrooms</h4>
+                                           <h4 class="card-info-title">'.$lang['propertybathrooms'].'</h4>
                                            <span>' . $row["bathrooms"] . '</span>
                                        </li>
                                        <li>
-                                           <h4 class="card-info-title">Furnished</h4>
+                                           <h4 class="card-info-title">'.$lang['propertyfurniture'].'</h4>
                                            <span>' . $furnished . '</span>
                                        </li>
                                    </ul>

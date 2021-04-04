@@ -106,5 +106,52 @@
       "pi3" => "Ανακαινισμένες Κατοικίες.",
       "reno" => "Ανακαινίσεις",
 
+      //Property single
+      "pshome" => "Αρχική Σελίδα",
+      "psproperties" => "Ακίνητα",
+      "propertyno" => "Αρ. ακινήτου",
+      "prdescription" => "Περιγραφή",
+      "prsummary" => "Αναλυτική περιγραφή",
+      "prsamenities" => "Ανέσεις",
+      "prcontact" => "Επικοινωνία",
+      "prcompany" => "Η Εταιρεία",
+      "prmessage" => "Παρακαλώ συνδεθείτε αν ενδιαφέρεστε γι'αυτό το ακίνητο.",
+      "propertyid" => "Αρ. Ακινήτου:",
+      "propertylocation" => "Χώρα:",
+      "propertytype" => "Τύπος Ακινήτου:",
+      "propertystatus" => "Προς:",
+      "propertybedrooms" => "Υπνοδωμάτια:",
+      "propertybathrooms" => "Μπάνια:",
+      "propertyparking" => "Χώρος Στάθμευσης:",
+      "propertyfurniture" => "Επιπλωμένο:",
+      "propertyheating" => "Κλιματισμός:",
+      "propertyfloors" => "Ορόφοι:",
+      "propertydoc" => "Χρόνος Κατασκευής:",
+      "propertyaf" => "Διαθέσιμο από:",
+      "propertyarea" => "Περιοχή:",
+      "propertypps" => "Τιμή/m<sup>2</sup>:",
+      "propertyfavs" => "Προσθήκη στα Αγαπημένα:",
+      "propertyshare" => "Κοινοποίηση:",
+      "propertyvideo" => "Βίντεο",
+      "propertylc" => "Τοποθεσία",
+      "propertyvt" => "Εικονική Ξενάγηση",
 
+      //Property Grid
+      "pgourproperties" => "Ακίνητα",
+      "pghome" => "Αρχική Σελίδα",
+      "pghproperty" => "Ακίνητα",
+      "pgclick" => "Πατήστε εδώ για προβολή",
+      "pgsqm" => "k/m<sup>2</sup>",
+
+
+
+
+
+
+
+
+
+
+
+      
   );

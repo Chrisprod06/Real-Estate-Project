@@ -2,6 +2,7 @@
 $title = "Home | APM Smart Houses";
 include_once "includes/header.inc.php";
 include "includes/configLanguage.inc.php";
+
 ?>
 <!--/ Carousel Star /-->
 <div class="intro intro-carousel">

@@ -2,9 +2,8 @@
 <?php
 $title = "Property | APM Smart Houses";
 include_once "includes/header.inc.php";
-?>
-<?php
 include_once "includes/propertySingle.inc.php";
+include "includes/configLanguage.inc.php";
 ?>
 <!--/ Intro Single star /-->
 
@@ -13,7 +12,7 @@ include_once "includes/propertySingle.inc.php";
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <?php echo '<h1 class="title-single">Property no.' . $_GET['id'] . '</h1>';
+          <?php echo '<h1 class="title-single">'.$lang['propertyno'].' ' . $_GET['id'] . '</h1>';
           foreach ($property as $row) {
             echo '<span class="color-text-a">' . $row['country'] . ', ' . $row['city'] . ', ' . $row['address'] . ', ' . $row['area'] . 'm<sup>2</sup>, €'.$row['totalPrice'].'</span>';
           }
@@ -25,14 +24,14 @@ include_once "includes/propertySingle.inc.php";
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.php">Home</a>
+              <a href="index.php"><?php echo $lang['pshome'] ?></a>
             </li>
             <li class="breadcrumb-item">
-              <a href="propertyGrid.php">Properties</a>
+              <a href="propertyGrid.php"><?php echo $lang['psproperties'] ?></a>
             </li>
             <?php
             echo '<li class="breadcrumb-item active" aria-current="page">
-                Property no.' . $_GET['id'] . ' '; ?>
+            '.$lang['propertyno'].' ' . $_GET['id'] . ' '; ?>
             </li>
           </ol>
         </nav>
@@ -93,77 +92,77 @@ include_once "includes/propertySingle.inc.php";
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="title-box-d section-t4">
-                      <h3 class="title-d">Quick Summary</h3>
+                      <h3 class="title-d">'.$lang['prsummary'].'</h3>
                     </div>
                   </div>
                 </div>
                 <div class="summary-list">
                   <ul class="list">
                     <li class="d-flex justify-content-between">
-                      <strong>Property ID:</strong>
+                      <strong>'.$lang['propertyid'].'</strong>
                       <span>' . $row['propertyID'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Location:</strong>
+                      <strong>'.$lang['propertylocation'].'</strong>
                       <span>' . $row['country'] . ', ' . $row['city'] . ', ' . $row["address"] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Property Type:</strong>
+                      <strong>'.$lang['propertytype'].'</strong>
                       <span>' . $row['type'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Status:</strong>
+                      <strong>'.$lang['propertystatus'].'</strong>
                       <span>' . $row['category'] . '</span>
                     </li>
                    
                     <li class="d-flex justify-content-between">
-                      <strong>Bedrooms:</strong>
+                      <strong>'.$lang['propertybedrooms'].'</strong>
                       <span>' . $row['bedrooms'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Bathrooms:</strong>
+                      <strong>'.$lang['propertybathrooms'].'</strong>
                       <span>' . $row['bathrooms'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Parking:</strong>
+                      <strong>'.$lang['propertyparking'].'</strong>
                       <span>' . $parking . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Furniture:</strong>
+                      <strong>'.$lang['propertyfurniture'].'</strong>
                       <span>' . $furnished . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Heating System:</strong>
+                      <strong>'.$lang['propertyheating'].'</strong>
                       <span>' . $heating . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Floors:</strong>
+                      <strong>'.$lang['propertyfloors'].'</strong>
                       <span>' . $row['floors'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Date of Construction:</strong>
+                      <strong>'.$lang['propertydoc'].'</strong>
                       <span>' . $row['dateOfBuild'] . '</span>
                     </li>
                     
                     <li class="d-flex justify-content-between">
-                      <strong>Available From:</strong>
+                      <strong>'.$lang['propertyaf'].'</strong>
                       <span>' . $row['availableFrom'] . '</span>
                     </li>      
                     <li class="d-flex justify-content-between">
-                    <strong>Area:</strong>
+                    <strong>'.$lang['propertyarea'].'</strong>
                     <span>' . $row['area'] . 'm
                       <sup>2</sup>
                     </span>
                   </li>              
                     <li class="d-flex justify-content-between">
-                      <strong>Price/m<sup>2</sup>:</strong>
+                      <strong>'.$lang['propertypps'].'</strong>
                       <span>€' . $row['pricePerSqm'] . '</span>
                     </li><br>';} 
                     include_once 'includes/selectFavorites.inc.php';
                     foreach ($property as $row) { echo'
                   </ul>
                   <div class="post-share">
-                    <span>Share: </span>
+                    <span>'.$lang['propertyshare'].' </span>
                     <ul class="list-inline socials">
                       <li class="list-inline-item">
                         <a href="http://www.facebook.com/share.php?u=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
@@ -184,7 +183,7 @@ include_once "includes/propertySingle.inc.php";
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d">
-                    <h3 class="title-d">Description</h3>
+                    <h3 class="title-d">'.$lang['prdescription'].'</h3>
                   </div>
                 </div>
               </div> 
@@ -197,7 +196,7 @@ include_once "includes/propertySingle.inc.php";
               <div class="row section-t3">
                 <div class="col-sm-12">
                   <div class="title-box-d">
-                    <h3 class="title-d">Amenities</h3>
+                    <h3 class="title-d">'.$lang['prsamenities'].'</h3>
                   </div>
                 </div>
               </div>
@@ -213,13 +212,13 @@ include_once "includes/propertySingle.inc.php";
           <div class="col-md-10 offset-md-1">
           <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true">Video</a>
+              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true">'.$lang['propertyvideo'].'</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans" aria-selected="false">Virtual Tour</a>
+              <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans" aria-selected="false">'.$lang['propertyvt'].'</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="false">Location</a>
+              <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="false">'.$lang['propertylc'].'</a>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -247,7 +246,7 @@ include_once "includes/propertySingle.inc.php";
           <div class="row section-t3">
             <div class="col-sm-12">
               <div class="title-box-d">
-                <h3 class="title-d">Contact </h3>
+                <h3 class="title-d"><?php echo $lang['prcontact'] ?> </h3>
               </div>
             </div>
           </div>
@@ -257,7 +256,7 @@ include_once "includes/propertySingle.inc.php";
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="property-agent">
-                <h4 class="title-agent">The Company</h4>
+                <h4 class="title-agent"><?php echo $lang['prcompany'] ?></h4>
 
                 <ul class="list-unstyled">
                   <li class="d-flex justify-content-between">
@@ -302,10 +301,10 @@ include_once "includes/propertySingle.inc.php";
                     <form class="form-a">
                       <div class="row text-center mt-4">
                         <p class="color-text-a">
-                        Please login to send a message about this property.
+                        '.$lang['prmessage'].'
                         </p>            
                         <div class="col-md-12 mt-5">
-                          <a href = "login.php" class="btn btn-a">Login</a>
+                          <a href = "login.php" class="btn btn-a">'.$lang['login'].'</a>
                         </div>
                       </div>
                     </form>
@@ -319,12 +318,12 @@ include_once "includes/propertySingle.inc.php";
                 <div class="row">
                   <div class="col-md-12 mb-1">
                     <div class="form-group">
-                      <textarea id="textMessage" class="form-control" id = "message" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
+                      <textarea id="textMessage" class="form-control" id = "message" placeholder="'.$lang['ctext'].'" name="message" cols="45"
                         rows="8" required></textarea>
                     </div>
                   </div>                      
                   <div class="col-md-12">
-                    <button type="submit" name="propertyContact" class="btn btn-a">Send Message</button>
+                    <button type="submit" name="propertyContact" class="btn btn-a">'.$lang['cbutton'].'</button>
                   </div>
                 </div>
               </form>

@@ -69,9 +69,6 @@
       "sayhello" => "Say Hello",
       "csocial" => "Social Networks",
 
-
-
-
       //Edit profile
       "forgotpassword" => "Forgot Passsword?",
       "register" => "Register",
@@ -107,5 +104,74 @@
       "pi2" => "Buy your next home.",
       "pi3" => "Reinovated Homes.",
       "reno" => "Renovations",
+
+      //Property Single
+      "pshome" => "Home",
+      "psproperties" => "Properties",
+      "propertyno" => "Property no",
+      "prdescription" => "Description",
+      "prsummary" => "Quick Summary",
+      "prsamenities" => "Amenities",
+      "prcontact" => "Contact",
+      "prcompany" => "The Company",
+      "prmessage" => "Please login to send a message about this property.",
+      "propertyid" => "Property ID:",
+      "propertylocation" => "Location:",
+      "propertytype" => "Property Type:",
+      "propertystatus" => "Status:",
+      "propertybedrooms" => "Bedrooms:",
+      "propertybathrooms" => "Bathrooms:",
+      "propertyparking" => "Parking:",
+      "propertyfurniture" => "Furniture:",
+      "propertyheating" => "Heating System:",
+      "propertyfloors" => "Floors:",
+      "propertydoc" => "Construction Date:",
+      "propertyaf" => "Available From:",
+      "propertyarea" => "Area:",
+      "propertypps" => "Price/m<sup>2</sup>:",
+      "propertyfavs" => "Add to Favorites:",
+      "propertyshare" => "Share:",
+      "propertyvideo" => "Video",
+      "propertylc" => "Location",
+      "propertyvt" => "Virtual Tour",
+
+      //Property Grid
+      "pgourproperties" => "Our Properties",
+      "pghome" => "Home",
+      "pghproperty" => "Properties Grid",
+      "pgclick" => "Click here to view",
+      "pgsqm" => "k/m<sup>2</sup>",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   );
