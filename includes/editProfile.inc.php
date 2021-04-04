@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
         mysqli_stmt_close($stmt);
-        exit();
+        
     }
 
 
@@ -88,6 +88,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: ../editProfile.php?update=successful');
         exit();
     }
-
-    mysqli_stmt_close($stmt);
 }

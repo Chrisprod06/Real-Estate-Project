@@ -446,6 +446,27 @@ include "configLanguage.inc.php";
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
 
+<!--Sweet alerts used in the website-->
+<?php
+if(isset($_GET['update'])){
+  if($_GET['update'] == 'successful'){
+    echo '<script>
+    $(document).ready(function(){
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Password Change Successful!",
+        showConfirmButton: false,
+        timer: 1600                 
+      }).then(function() {
+        
+      })
+    });                 
+    </script>';
+  }
+}
+?>
+
 <!--Script to show login modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'login' == $_GET['modal']) { ?>
   <script type='text/javascript'>
