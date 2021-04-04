@@ -105,7 +105,7 @@
       "pi3" => "Reinovated Homes.",
       "reno" => "Renovations",
 
-      //Property Single
+      //Property Single and Renovation Single
       "pshome" => "Home",
       "psproperties" => "Properties",
       "propertyno" => "Property no",
@@ -135,43 +135,16 @@
       "propertylc" => "Location",
       "propertyvt" => "Virtual Tour",
 
-      //Property Grid
+      //Property Grid and Renovation Grid
       "pgourproperties" => "Our Properties",
       "pghome" => "Home",
       "pghproperty" => "Properties Grid",
       "pgclick" => "Click here to view",
       "pgsqm" => "k/m<sup>2</sup>",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      //Renovation extras
+      "rrenovations" => "Renovations",
+      "rrenovationsgrid" => "Renovation Grid",
+      "renovationID" => "Renovations",
+      "renono" => "Renovation no."
   );

@@ -149,7 +149,7 @@ include "includes/configLanguage.inc.php";
                       <span>' . $row['availableFrom'] . '</span>
                     </li>      
                     <li class="d-flex justify-content-between">
-                    <strong>'.$lang['propertyarea'].'</strong>
+                    <strong>'.$lang['pgsqm'].'</strong>
                     <span>' . $row['area'] . 'm
                       <sup>2</sup>
                     </span>

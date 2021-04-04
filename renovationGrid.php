@@ -9,17 +9,17 @@ include_once "includes/header.inc.php";
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single">Renovations</h1>
+          <h1 class="title-single"><?php echo $lang['rrenovations']?></h1>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.php">Home</a>
+              <a href="index.php"><?php echo $lang['pshome']?></a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              Renovations Grid
+            <?php echo $lang['rrenovationsgrid']?>
             </li>
           </ol>
         </nav>
@@ -131,21 +131,21 @@ include_once "includes/header.inc.php";
               <div class="card-footer-a">
                 <ul class="card-info d-flex justify-content-around">
                 <li>
-                <h4 class="card-info-title">Area</h4>
+                <h4 class="card-info-title">'.$lang['pgsqm'].'</h4>
                   <span>' . $row["area"] . 'm
                     <sup>2</sup>
                   </span>
               </li>
               <li>
-                <h4 class="card-info-title">Bedrooms</h4>
+                <h4 class="card-info-title">'.$lang['propertybedrooms'].'</h4>
                 <span>' . $row["beds"] . '</span>
               </li>
               <li>
-                <h4 class="card-info-title">Bathrooms</h4>
+                <h4 class="card-info-title">'.$lang['propertybathrooms'].'</h4>
                 <span>' . $row["baths"] . '</span>
               </li>
               <li>
-                <h4 class="card-info-title">Furnished</h4>
+                <h4 class="card-info-title">'.$lang['propertyfurniture'].'</h4>
                 <span>' . $furnished . '</span>
               </li>
                   

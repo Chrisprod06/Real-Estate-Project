@@ -106,7 +106,7 @@
       "pi3" => "Ανακαινισμένες Κατοικίες.",
       "reno" => "Ανακαινίσεις",
 
-      //Property single
+      //Property single and Renovation single
       "pshome" => "Αρχική Σελίδα",
       "psproperties" => "Ακίνητα",
       "propertyno" => "Αρ. ακινήτου",
@@ -136,12 +136,22 @@
       "propertylc" => "Τοποθεσία",
       "propertyvt" => "Εικονική Ξενάγηση",
 
-      //Property Grid
+      //Property Grid and Renovation Grid
       "pgourproperties" => "Ακίνητα",
       "pghome" => "Αρχική Σελίδα",
       "pghproperty" => "Ακίνητα",
       "pgclick" => "Πατήστε εδώ για προβολή",
       "pgsqm" => "k/m<sup>2</sup>",
+
+      //Renovation extras
+      "rrenovations" => "Ανακαινίσεις",
+      "rrenovationsgrid" => "Ανακαινίσεις",
+      "renovationID" => "Αρ. ανακαίνισης",
+      "renono" => "Αρ. Ανακαίνισης"
+
+
+
+
 
 
 
