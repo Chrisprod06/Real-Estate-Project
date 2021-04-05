@@ -147,5 +147,9 @@
       "rrenovations" => "Renovations",
       "rrenovationsgrid" => "Renovation Grid",
       "renovationID" => "Renovations",
-      "renono" => "Renovation no."
+      "renono" => "Renovation no.",
+      "before" => "Before",
+      "after" => "After",
+      "videobefore" => "Video Before",
+      "videoafter" => "Video After",
   );

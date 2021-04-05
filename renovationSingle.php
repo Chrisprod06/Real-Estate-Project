@@ -123,10 +123,6 @@ include_once "includes/renovationSingle.inc.php";
                       <strong>'.$lang['propertytype'].'</strong>
                       <span>' . $row['type'] . '</span>
                     </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertystatus'].'</strong>
-                      <span>' . $row['category'] . '</span>
-                    </li>
                    
                     <li class="d-flex justify-content-between">
                       <strong>'.$lang['propertybedrooms'].'</strong>
@@ -136,41 +132,8 @@ include_once "includes/renovationSingle.inc.php";
                       <strong>'.$lang['propertybathrooms'].'</strong>
                       <span>' . $row['bathrooms'] . '</span>
                     </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertyparking'].'</strong>
-                      <span>' . $parking . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertyfurniture'].'</strong>
-                      <span>' . $furnished . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertyheating'].'</strong>
-                      <span>' . $heating . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertyfloors'].'</strong>
-                      <span>' . $row['floors'] . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertydoc'].'</strong>
-                      <span>' . $row['dateOfBuild'] . '</span>
-                    </li>
-                    
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertyaf'].'</strong>
-                      <span>' . $row['availableFrom'] . '</span>
-                    </li>      
-                    <li class="d-flex justify-content-between">
-                    <strong>'.$lang['pgsqm'].'</strong>
-                    <span>' . $row['area'] . 'm
-                      <sup>2</sup>
-                    </span>
                   </li>              
-                    <li class="d-flex justify-content-between">
-                      <strong>'.$lang['propertypps'].'</strong>
-                      <span>€' . $row['pricePerSqm'] . '</span>
-                    </li><br> ';}
+                    <br> ';}
                     include_once "includes/selectFavorites.inc.php"?> 
                   </ul> 
                   <div class="post-share">
@@ -223,13 +186,10 @@ include_once "includes/renovationSingle.inc.php";
           <div class="col-md-10 offset-md-1">
           <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true">'.$lang['propertyvideo'].'</a>
+              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true">'.$lang['videobefore'].'</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans" aria-selected="false">'.$lang['propertyvt'].'</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="false">'.$lang['propertylc'].'</a>
+            <a class="nav-link" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="false">'.$lang['videoafter'].'</a>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">

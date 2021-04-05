@@ -124,7 +124,7 @@ include_once "includes/header.inc.php";
                 <div class="price-box d-flex">
                   <span class="price-a">' . $row['categ'] . ' | €' . $row["totPrice"] . '</span>
                 </div>
-                  <a href="renovationSingle.php?id='.$row["propID"].'&rid='.$rID.'"  class="link-a">Click here to view
+                  <a href="renovationSingle.php?id='.$row["propID"].'&rid='.$rID.'"  class="link-a">'.$lang['pgclick'].'
                   <span class="ion-ios-arrow-forward"></span>
                   </a>
               </div>
