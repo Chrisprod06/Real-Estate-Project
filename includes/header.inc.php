@@ -4,12 +4,9 @@ $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 $res = preg_replace('/\?[^?]*$/', '', $escaped_url);
 $_SESSION['lastVisitedPage'] = $res;
-
 include "configLanguage.inc.php";
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

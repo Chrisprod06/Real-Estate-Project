@@ -1,12 +1,9 @@
-<!--Header-->
 <?php
 $title = "Property | APM Smart Houses";
 include_once "includes/header.inc.php";
 include_once "includes/propertySingle.inc.php";
 include "includes/configLanguage.inc.php";
-?>
-<!--/ Intro Single star /-->
-
+?><!--/ Intro Single star /-->
 <section class="intro-single">
   <div class="container">
     <div class="row">

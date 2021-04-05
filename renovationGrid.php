@@ -1,9 +1,7 @@
-<!--Header-->
 <?php
 $title = "Before and After | APM Smart Houses";
 include_once "includes/header.inc.php";
-?>
-<!--/ Intro Single star /-->
+?><!--/ Intro Single star /-->
 <section class="intro-single">
   <div class="container">
     <div class="row">

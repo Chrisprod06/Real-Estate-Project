@@ -1,11 +1,7 @@
-
-  <<!--Navbar-->
   <?php
     $title = "Contact Us | APM Smart Houses";
     include_once "includes/header.inc.php";
-    
-  ?>
-
+?>
   <!--/ Intro Single star /-->
   <section class="intro-single">
     <div class="container">

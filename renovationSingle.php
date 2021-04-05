@@ -1,13 +1,8 @@
-<!--Header-->
 <?php
 $title = "Renovation | APM Smart Houses";
 include_once "includes/header.inc.php";
-?>
-<?php
 include_once "includes/renovationSingle.inc.php";
-?>
-<!--/ Intro Single star /-->
-
+?><!--/ Intro Single star /-->
 <style>
 /* Bottom right text */
 .text-block {
@@ -20,7 +15,6 @@ include_once "includes/renovationSingle.inc.php";
   padding-right: 20px;
 }
 </style>
-
 <section class="intro-single">
   <div class="container">
     <div class="row">

@@ -2,9 +2,7 @@
 $title = "Home | APM Smart Houses";
 include_once "includes/header.inc.php";
 include "includes/configLanguage.inc.php";
-
-?>
-<!--/ Carousel Star /-->
+?><!--/ Carousel Star /-->
 <div class="intro intro-carousel">
 <div id="carousel" class="owl-carousel owl-theme">
 <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slide-1.jpg)">
