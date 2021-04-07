@@ -41,9 +41,11 @@ include_once "includes/header.inc.php";
       }
       $start = ($page - 1) * $total;
       //Script to get data
-      $sql = "SELECT * FROM properties where category = 'RentLongTerm' OR category = 'RentShortTerm' OR category = 'Sale' LIMIT $start,$total ";
+      $sql = "SELECT * FROM properties natural join multimediaproperties where category = 'RentLongTerm' OR category = 'RentShortTerm' OR category = 'Sale' LIMIT $start,$total ";
       $result = mysqli_query($conn, $sql);
       $resultCheck = mysqli_num_rows($result);
+
+
       //Present data
 
       while ($row = mysqli_fetch_assoc($result)) {
@@ -64,7 +66,7 @@ include_once "includes/header.inc.php";
         echo ' <div class="col-md-4">
                             <div class="card-box-a card-shadow">
                             <div class="img-box-a">
-                           <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+                           <img src='.$row['photo1'].' alt="" class="img-a img-fluid">
                        </div>
                        <div class="card-overlay">
                            <div class="card-overlay-a-content">
@@ -83,7 +85,7 @@ include_once "includes/header.inc.php";
                                    </a>
                                </div>
                                <div class="card-footer-a">
-                                   <ul class="card-info d-flex justify-content-around">
+                                   <ul class="card-info d-flex justify-content-around text-center">
                                        <li>
                                            <h4 class="card-info-title">'.$lang['pgsqm'].'</h4>
                                            <span>' . $row["squarem"] . 'm

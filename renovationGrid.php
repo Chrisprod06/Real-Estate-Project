@@ -73,7 +73,7 @@ include_once "includes/header.inc.php";
           
           ); 
         
-          $getQuery2 = "SELECT * from properties WHERE propertyID=$pID ;";
+          $getQuery2 = "SELECT * from properties natural join multimediaproperties WHERE propertyID=$pID ;";
           $setQuery2 = mysqli_query($conn, $getQuery2);
           $searchProp = array();
         
@@ -91,7 +91,8 @@ include_once "includes/header.inc.php";
             'area' => $row['squarem'],
             'baths' => $row['bathrooms'],
             'beds' => $row['bedrooms'],
-            'furnished' => $row['furniture']
+            'furnished' => $row['furniture'],
+            'photo1' => $row['photo1']
             );     
           }
         
@@ -108,7 +109,7 @@ include_once "includes/header.inc.php";
             echo '<div class="col-md-4">
             <div class="card-box-a card-shadow">
               <div class="img-box-a">
-              <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+              <img src='.$row['photo1'].' alt="" class="img-a img-fluid">
               </div>
               <div class="card-overlay">
                 <div class="card-overlay-a-content">

@@ -1,6 +1,19 @@
 <?php
 $title = "Edit Profile | APM Smart Houses";
 include_once 'includes/header.inc.php';
+include_once 'dbh.inc.php';
+$sql = 'SELECT email FROM  newsletter WHERE email IS EQUAL '.$_SESSION['email'].' ';
+$result = mysqli_query($conn,$sql);
+
+
+
+if($result == true){
+    $isSubscribed = true;
+}else{
+    $isSubscribed = false;
+}
+    
+
 ?>
 <section class="intro-single">
     <div class="container">
@@ -83,7 +96,14 @@ include_once 'includes/header.inc.php';
                                                                 <label>'.$lang['emailnotifications'].'</label>
                                                                 <div class="custom-controls-stacked px-2">
                                                                     <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked="" name = "newsletter">
+                                                                    ';if($isSubscribed == true){
+                                                                        echo '<input type="checkbox" class="custom-control-input" id="notifications-news" checked value="yes" name = "newsletter">';
+                                                                    }else if ($isSubscribed == false){
+                                                                        echo '<input type="checkbox" class="custom-control-input" id="notifications-news" value="no" name = "newsletter">';
+
+                                                                    }
+                                                                    echo'
+                                                                       
                                                                         <label class="custom-control-label" for="notifications-news">'.$lang['newsletter'].'</label>
                                                                     </div>
                                                                 </div>

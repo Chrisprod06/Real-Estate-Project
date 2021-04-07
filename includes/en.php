@@ -5,8 +5,8 @@
       "home" => "Home",
       "about" => "About",
       "beforeandafter" => "Before and After",
-      "contactus" => "Contact us",
-      "myaccount" => "My account",
+      "contactus" => "Contact Us",
+      "myaccount" => "My Account",
       "properties" => "Properties",
       "searchproperties" => "Search Properties",
       "searchproperty" => "Search Property",
@@ -37,6 +37,9 @@
       "editprofile" => "Edit Profile",
       "editwebsite" => "Edit Website",
       "logout" => "Logout",
+      "language" =>"Language",
+      "english" => "English",
+      "greek" => "Greek",
 
       //Footer
       "fparagraph" => "Send us an e-mail or phone us to resolve any problem you may ecounter.",

@@ -55,15 +55,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('location: ../editProfile.php?error=stmtFailed1');
                 exit();
             }
-            mysqli_stmt_bind_param($stmt,"si",$hashedNewPassword,$userID);
+            mysqli_stmt_bind_param($stmt, "si", $hashedNewPassword, $userID);
             mysqli_stmt_execute($stmt);
-
-
         }
         mysqli_stmt_close($stmt);
-        
     }
 
+
+    //Subscribe or unsubscibe from newsletter
+    $sql = 'SELECT email FROM  newsletter WHERE email IS EQUAL ' . $email . '; ';
+    $result = mysqli_query($conn, $sql);
+    if ($newsletter == 'yes' and $result == false) {
+        $sql = 'INSERT INTO newsletter values ('.$email.');';
+
+    } else if ($newsletter == 'no') {
+        $sql = 'DELETE FROM newsletter WHERE email IS EQUAL ' . $email . '; ';
+        $result = mysqli_query($conn, $sql);
+        
+    }
 
     //Update field in database
     $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ?, password=? WHERE  userID = ?";

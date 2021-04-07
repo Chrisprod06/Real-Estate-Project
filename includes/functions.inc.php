@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //Functions used in login.inc.php
 //Function to login user
 function loginUser($conn, $email, $password)

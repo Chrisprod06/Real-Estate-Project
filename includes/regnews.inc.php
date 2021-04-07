@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //Check it is comming from a form
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
@@ -20,9 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$statement->bind_param('s', $email); //bind values and execute insert query
 	
 	if($statement->execute()){
-		print "You have subscribed successfully!";
+		header("Location: ../index.php?newsletter=success");
 	}else{
-		print "Something went wrong";
+		header("Location: ../index.php?newsletter=fail");
 	}
+	exit();
 }
-?>
+
