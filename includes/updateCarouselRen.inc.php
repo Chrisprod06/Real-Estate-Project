@@ -15,15 +15,37 @@ if($resultCheck > 0){
       continue;
     }
     else{
-    echo " <div class='carousel-item-a'> <img src= '{$row['beforePhoto1']}' width='100' height='550' alt=''> <div class='text-block'> <h>".$lang['before']."</h> </div> </div>";
-    }
-    if($row['afterPhoto1']  == NULL){
+    echo " <div class='carousel-item-a'>
+     <div id='aics-autostart'>
+    <div class='images'>
+      <div class='image-rgt' data-src='{$row['beforePhoto1']}'  ></div>
+      <div class='image-lft' data-src='{$row['afterPhoto1']}'  ></div>
+    </div>
+    <div class='ui'>
+      <a class='button-rgt' alt=''>After</a>
+      <a class='button-lft' alt=''>Before</a>
+    </div>
+    </div>
+  </div>";
+    } 
+    if($row['afterPhoto2']  == NULL){
       continue;
     }
     else{
-    echo " <div class='carousel-item-a'> <img src= '{$row['afterPhoto1']}' width='100' height='550' alt=''> <div class='text-block'> <h>".$lang['after']."</h> </div> </div>";
+     echo " <div class='carousel-item-b'>
+    <div id='aics-autostart'>
+   <div class='images'>
+     <div class='image-rgt' data-src='{$row['beforePhoto4']}' ></div>
+     <div class='image-lft' data-src='{$row['afterPhoto4']}' ></div>
+   </div>
+   <div class='ui'>
+     <a class='button-rgt' alt=''>After</a>
+     <a class='button-lft' alt=''>Before</a>
+   </div>
+   </div>
+ </div>";
     }
-    if($row['beforePhoto2']  == NULL){
+   /* if($row['beforePhoto2']  == NULL){
       continue;
     }
     else{
@@ -59,6 +81,7 @@ if($resultCheck > 0){
     else{
     echo " <div class='carousel-item-a'> <img src= '{$row['afterPhoto4']}' width='100' height='550' alt=''> <div class='text-block'> <h>".$lang['after']."</h> </div> </div>";
     }
+    */
      
      
         }
