@@ -3,17 +3,21 @@ $title = "Renovation | APM Smart Houses";
 include_once "includes/header.inc.php";
 include_once "includes/renovationSingle.inc.php";
 ?><!--/ Intro Single star /-->
-<script src="/path/to/cdn/jquery.min.js"></script>
-<script src="automatic-image-comparison-slider/js/jquery.anyimagecomparisonslider.min.js"></script>
 
-<script>$('#aics-autostart').anyImageComparisonSlider();
-</script>
 <style>
-  .img {
-   max-width: 50%;
-   height: auto !important;
-  }
-  </style>
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+</style>
+      
+
 <section class="intro-single">
   <div class="container">
     <div class="row">
