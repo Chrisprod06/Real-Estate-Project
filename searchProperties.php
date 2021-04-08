@@ -55,7 +55,7 @@ include_once "includes/header.inc.php";
                     echo ' <div class="col-md-4">
                             <div class="card-box-a card-shadow">
                             <div class="img-box-a">
-                           <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+                           <img src='.$row['photo1'].' alt="" class="img-a img-fluid">
                        </div>
                        <div class="card-overlay">
                            <div class="card-overlay-a-content">

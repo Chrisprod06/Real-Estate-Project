@@ -87,17 +87,7 @@ include_once "includes/renovationSingle.inc.php";
 
           echo ' 
           <div class="row justify-content-between">
-            <div class="col-md-5 col-lg-4">
-              <div class="property-price d-flex justify-content-center foo">
-                <div class="card-header-c d-flex">
-                  <div class="card-box-ico">
-                    <span class="ion-money">€</span>
-                  </div>
-                  <div class="card-title-c align-self-center">
-                    <h5 class="title-c">' . $row['totalPrice'] . '</h5>
-                  </div>
-                </div>
-              </div>
+            <div class="col-md-12 col-lg-12">
               <div class="property-summary">
                 <div class="row">
                   <div class="col-sm-12">
@@ -151,7 +141,7 @@ include_once "includes/renovationSingle.inc.php";
                 </div>
               </div>
             </div>
-            <div class="col-md-7 col-lg-7 section-md-t3">
+            <div class="col-md-7 col-lg-7 section-md-t3 mt-5">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d">
@@ -165,18 +155,7 @@ include_once "includes/renovationSingle.inc.php";
                </p>';} 
                foreach ($searchProp as $row){ echo'
               </div>
-              <div class="row section-t3">
-                <div class="col-sm-12">
-                  <div class="title-box-d">
-                    <h3 class="title-d">'.$lang['prsamenities'].'</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="property-description">
-                <p class="description color-text-a text-justify">
-                  ' . $row['amenities'] . '
-               </p>
-              </div>
+             
             </div>
           </div>
           </div>

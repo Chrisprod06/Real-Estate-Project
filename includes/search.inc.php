@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Get data and load them into an array
 
-    $getsearch = "SELECT * FROM properties $where $searchquery;";
+    $getsearch = "SELECT * FROM properties natural join multimediaproperties $where $searchquery;";
     $ressearch = mysqli_query($conn, $getsearch);
     if (mysqli_num_rows($ressearch) === 0) {
         header("Location: ../searchProperties.php?properties=none");
@@ -118,7 +118,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'area' => $row['squarem'],
                 'baths' => $row['bathrooms'],
                 'beds' => $row['bedrooms'],
-                'furnished' => $row['furniture']
+                'furnished' => $row['furniture'],
+                'photo1'=> $row['photo1'],
 
             );
         }
