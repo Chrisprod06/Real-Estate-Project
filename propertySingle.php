@@ -159,7 +159,8 @@ include_once "includes/propertySingle.inc.php";
                       <strong>Price/m<sup>2</sup>:</strong>
                       <span>€' . $row['pricePerSqm'] . '</span>
                     </li><br>';} 
-                    include_once 'includes/selectFavorites.inc.php';
+                    if (isset($_SESSION['userID'])) {
+                    include_once 'includes/selectFavorites.inc.php';}
                     foreach ($property as $row) { echo'
                   </ul>
                   <div class="post-share">
