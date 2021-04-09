@@ -129,7 +129,7 @@ include_once "includes/renovationSingle.inc.php";
                   </ul> 
                   <div class="post-share">
                     <span><?php echo $lang['propertyshare']?> </span>
-                    <ul class="list-inline socials">
+                    <?php echo '<ul class="list-inline socials">
                       <li class="list-inline-item">
                         <a href="http://www.facebook.com/share.php?u=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
                           <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -139,7 +139,7 @@ include_once "includes/renovationSingle.inc.php";
                         <a href="https://twitter.com/intent/tweet?url=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
                           <i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
-                      </li>
+                      </li>';?>
                     </ul>
                   </div>
                 </div>

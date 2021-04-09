@@ -163,12 +163,12 @@ include "includes/configLanguage.inc.php";
                     <span>'.$lang['propertyshare'].' </span>
                     <ul class="list-inline socials">
                       <li class="list-inline-item">
-                        <a href="http://www.facebook.com/share.php?u=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
+                        <a href="http://www.facebook.com/share.php?u=localhost/Real-Estate-Website/propertySingle.php?id='.$_GET['id'].'">
                           <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
                       </li>
                       <li class="list-inline-item">
-                        <a href="https://twitter.com/intent/tweet?url=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
+                        <a href="https://twitter.com/intent/tweet?url=localhost/Real-Estate-Website/propertySingle.php?id='.$_GET['id'].'">
                           <i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
                       </li>
