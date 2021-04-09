@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //Functions used in login.inc.php
 //Function to login user
 function loginUser($conn, $email, $password)
@@ -80,7 +79,7 @@ function sendEmail($userID, $firstname, $lastname, $telephone, $emailFrom, $subj
 
     if (mail($emailTo, $subject, $emailText, $headers)) {
         header('Location: ../contact.php?mail=send');
-        exit();
+        
     } else {
         header('Location: ../contact.php?message=notSend');
     }
@@ -97,7 +96,7 @@ function sendEmailInterest($userID, $firstname, $lastname, $telephone, $emailFro
 
     if (mail($emailTo, $emailText, $headers)) {
         header('Location: ../propertySingle.php?mail=send');
-        exit();
+        
     } else {
         header('Location: ../propertySingle.php?message=notSend');
     }

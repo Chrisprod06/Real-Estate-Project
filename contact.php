@@ -1,11 +1,7 @@
-
-  <<!--Navbar-->
   <?php
-    $title = "Contact Us | APM Smart Houses";
-    include_once "includes/header.inc.php";
-    
+  $title = "Contact Us | APM Smart Houses";
+  include_once "includes/header.inc.php";
   ?>
-
   <!--/ Intro Single star /-->
   <section class="intro-single">
     <div class="container">
@@ -14,8 +10,8 @@
           <div class="title-single-box">
             <h1 class="title-single"><?php echo $lang['ccontact'] ?></h1>
             <span class="color-text-a">
-              <p class = "text-justify"> <?php echo $lang['contactparagraph'] ?>
-            </p>
+              <p class="text-justify"> <?php echo $lang['contactparagraph'] ?>
+              </p>
             </span>
           </div>
         </div>
@@ -26,7 +22,7 @@
                 <a href="index.php"><?php echo $lang['chome'] ?></a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-              <?php echo $lang['ccontact'] ?>
+                <?php echo $lang['ccontact'] ?>
               </li>
             </ol>
           </nav>
@@ -42,14 +38,14 @@
       <div class="row">
         <div class="col-sm-12 section-t8">
           <div class="row">
-            <div class="col-md-7">
-             <?php
-              if(!isset($_SESSION['userID'])){
-                echo '<div class="col-md-12 col-lg-10">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <?php
+              if (!isset($_SESSION['userID'])) {
+                echo '<div class="col-md-5 col-lg-5 text-center">
                 <div class="property-contact">
                   <form class="form-a">
-                    <div class="row text-center mt-4">
-                    '.$lang['cmessage'].'
+                    <div class="row mt-4">
+                    ' . $lang['cmessage'] . '
                       </p>            
                       <div class="col-md-12 mt-5">
                         <a data-toggle = "modal" href = "#login" class="btn btn-a">Login</a>
@@ -57,33 +53,33 @@
                     </div>
                   </form>
                 </div>
-              </div>';              
-              }else{
-                echo'
-                <div class="col-md-12 col-lg-10">
+              </div>';
+              } else {
+                echo '
+                <div class="col-md-12 col-lg-10 text-center">
                   <div class="property-contact">
                     <form class = "form-a" action="includes/contactUs.inc.php" method = "POST">
                       <div class="form-group">
-                        <input class = "form-control" id = "subject" type="text" name = "subject" placeholder="'.$lang['csubject'].'" required>
+                        <input class = "form-control" id = "subject" type="text" name = "subject" placeholder="' . $lang['csubject'] . '" required>
                       </div>
                       <div class="form-group">
-                      <textarea id="message" class="form-control" id = "message" placeholder="'.$lang['ctext'].'" name="message" cols="45"
+                      <textarea id="message" class="form-control" id = "message" placeholder="' . $lang['ctext'] . '" name="message" cols="45"
                                   rows="8" required></textarea>
                       </div>
                       <div class="form-group">
-                        <input type="submit" class = "btn btn-a" value = "'.$lang['cbutton'].'" name = "submit">
+                        <input type="submit" class = "btn btn-a" value = "' . $lang['cbutton'] . '" name = "submit">
                       </div>
                     </form>
                 </div>
                
              </div>';
-             if(isset($_GET["error"])){
-              if($_GET["error"] == "stmtFailed"){
-                echo "<p class = 'text-danger text-center lead'>Something went wrong. Please start again.</p>";
-              }
-            }else if(isset($_GET["mail"])) {
-              if($_GET["mail"] == "send" ){
-                echo'<script>
+                if (isset($_GET["error"])) {
+                  if ($_GET["error"] == "stmtFailed") {
+                    echo "<p class = 'text-danger text-center lead'>Something went wrong. Please start again.</p>";
+                  }
+                } else if (isset($_GET["mail"])) {
+                  if ($_GET["mail"] == "send") {
+                    echo '<script>
                 $(document).ready(function(){
                   Swal.fire({
                     position: "center",
@@ -94,8 +90,8 @@
                   })
                 });                 
                 </script>';
-              }else if($_GET["mail"] == "notSend") {
-                echo '<script>
+                  } else if ($_GET["mail"] == "notSend") {
+                    echo '<script>
                 $(document).ready(function(){
                   Swal.fire({
                     position: "center",
@@ -106,63 +102,12 @@
                   })
                 });                 
                 </script>';
+                  }
+                }
               }
-            }
-              }            
-             ?>
+              ?>
 
-             
-            </div>
-            <div class="col-md-5 section-md-t3">
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-paper-plane"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title"><?php echo $lang['sayhello'] ?></h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">Email.
-                      <span class="color-a">apm.smarthouses@gmail.com</span>
-                    </p>
-                    <p class="mb-1"><?php echo $lang['fphone']?>
-                      <span class="color-a">+357 99436309, +357 99252247, +30 6943059942</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="icon-box">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-redo"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title"><?php echo $lang['csocial'] ?></h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <div class="socials-footer">
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
@@ -170,13 +115,13 @@
     </div>
   </section>
   <!--/ Contact End /-->
-    <!-- Login Modal HTML -->
-    <div id="login" class="modal fade">
+  <!-- Login Modal HTML -->
+  <div id="login" class="modal fade">
     <div class="modal-dialog ">
       <div class="modal-content ">
         <form id="loginForm" action="includes/login.inc.php" method="POST">
           <div class="modal-header">
-            <h4 class="modal-title"><?php echo $lang['login']?></h4>
+            <h4 class="modal-title"><?php echo $lang['login'] ?></h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">
@@ -184,7 +129,7 @@
               <input type="email" name="email" class="form-control" placeholder="Email" required value=>
             </div>
             <div class="form-group">
-              <input type="password" name="pass" class="form-control" placeholder="<?php echo $lang['password']?>" required="required">
+              <input type="password" name="pass" class="form-control" placeholder="<?php echo $lang['password'] ?>" required="required">
             </div>
             <div class="form-group">
 
@@ -193,13 +138,13 @@
             <?php
             if (isset($_GET['error'])) {
               if ($_GET['error'] == 'wrongLogin') {
-                echo '<p class = "text-danger text-center ">'.$lang['wronglogin'].'</p>';
+                echo '<p class = "text-danger text-center ">' . $lang['wronglogin'] . '</p>';
               } else if ($_GET['error'] == 'wrongPassword') {
-                echo '<p class = "text-danger text-center ">'.$lang['wrongpass'].'</p>';
+                echo '<p class = "text-danger text-center ">' . $lang['wrongpass'] . '</p>';
               } else if ($_GET['error'] == 'stmtFailed') {
-                echo '<p class = "text-danger text-center " >'.$lang['stmtfail'].'</p>';
+                echo '<p class = "text-danger text-center " >' . $lang['stmtfail'] . '</p>';
               } else if ($_GET['error'] == 'tryAgainReset') {
-                echo '<p class = "text-danger text-center " >'.$lang['resetpass'].'</p>';
+                echo '<p class = "text-danger text-center " >' . $lang['resetpass'] . '</p>';
               } else if ($_GET['error'] == 'noneLogin') {
                 echo '
                     <script>
@@ -222,13 +167,13 @@
 
             <div class="clearfix">
 
-              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword']?></a>
-              
+              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword'] ?></a>
+
             </div>
           </div>
           <div class="modal-footer">
-            <input type="button" class="btn btn-a" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-            <input type="submit" class="btn btn-a" value="<?php echo $lang['Login']?>" name="submit"></input>
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="<?php echo $lang['cancel'] ?>">
+            <input type="submit" class="btn btn-a" value="<?php echo $lang['Login'] ?>" name="submit"></input>
           </div>
         </form>
       </div>
@@ -236,16 +181,16 @@
   </div>
 
 
-<!--Footer-->
-<?php
-      include_once "includes/footer.inc.php";
+  <!--Footer-->
+  <?php
+  include_once "includes/footer.inc.php";
   ?>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 
-  
 
-</body>
 
-</html>
+  </body>
+
+  </html>

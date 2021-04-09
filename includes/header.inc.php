@@ -4,7 +4,6 @@ $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 $res = preg_replace('/\?[^?]*$/', '', $escaped_url);
 $_SESSION['lastVisitedPage'] = $res;
-
 include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ include "configLanguage.inc.php";
 
   <!--Plugin JavaScript file-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-  
+
 
 
   <!-- =======================================================
@@ -215,26 +214,18 @@ include "configLanguage.inc.php";
               </div>
             </div>
           </div>
-          <div class="col-md-12   mb-2">
-            <label for="priceRange"><?php echo $lang['pricerange'] ?></label>
-            <div class="form-group" id='priceRange' name="priceRange">
-              <input type="text" class="js-range-slider" name="rangePrice" value="" />
-
+          <div class="col-md-6   mb-2">
+            <label for="priceRange"><?php echo $lang['priceMin'] ?></label>
+            <div class="form-group" id='priceMin'>
+              <input type="text" class="form-control form-control-lg form-control-a" name="priceMin">
             </div>
           </div>
-          <script>
-            var custom_values = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 700000, 80000, 90000, 100000, 150000, 2000000, 250000, 300000, 350000, 400000, 450000, 500000, 600000, 700000, 800000, 900000, 1000000];
-            var my_from = custom_values.indexOf(0);
-            var my_to = custom_values.indexOf(1000000);
-            $(".js-range-slider").ionRangeSlider({
-              skin: "modern",
-              type: "double",
-              min: my_from,
-              max: my_to,
-              grid: true,
-              values: custom_values
-            });
-          </script>
+          <div class="col-md-6   mb-2">
+            <label for="priceRange"><?php echo $lang['priceMax'] ?></label>
+            <div class="form-group" id='priceMax'>
+              <input type="text" class="form-control form-control-lg form-control-a" name="priceMax">
+            </div>
+          </div>
           <div class="col-md-12">
             <button type="submit" class="btn btn-b" name="submitSearch"><?php echo $lang['searchproperty'] ?></button>
           </div>
@@ -255,7 +246,7 @@ include "configLanguage.inc.php";
         <span></span>
       </button>
 
-      <a class="navbar-brand text-brand" href="index.php">APM <span class="color-b">Smart Houses</span></a>
+      <a class="navbar-brand text-brand" href="index.php"><img src="img/logoHeader.png" alt="logo"></a>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
         <span class="fa fa-search" aria-hidden="true"></span>
       </button>
@@ -279,30 +270,36 @@ include "configLanguage.inc.php";
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <?php echo $lang['myaccount'] ?>
+              <?php echo $lang['myaccount'] ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
               <?php
               if (isset($_SESSION['userID'])) {
                 if ($_SESSION['role'] == 1) {
-                  echo "<a class='dropdown-item' href='../Real-Estate-CMS/index.php'>".$lang['editwebsite']."</a>";
-                  echo " <a class='dropdown-item' href='editProfile.php'>".$lang['editprofile']."</a>";
-                  echo "<a class='dropdown-item' href='index.php?lang=en'>English</a>";
-                  echo "<a class='dropdown-item' href='index.php?lang=gr'>Greek</a>";
-                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>".$lang['logout']."</a>";
+                  echo "<a class='dropdown-item' href='../Real-Estate-CMS/index.php'>" . $lang['editwebsite'] . "</a>";
+                  echo " <a class='dropdown-item' href='editProfile.php'>" . $lang['editprofile'] . "</a>";
+                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>" . $lang['logout'] . "</a>";
                 } else if ($_SESSION['role'] == 2) {
                   echo " <a class='dropdown-item' href='favorites.php'>Favorites</a> ";
                   echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
-                  echo " <a class='dropdown-item' href='#'>Language</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
                 }
               } else {
                 echo " <a data-toggle='modal' class='dropdown-item' href='#login'>Login</a>";
                 echo " <a data-toggle='modal' class='dropdown-item' href='#register'>Register</a>";
-                echo " </a> <a class='dropdown-item' href='configLanguage.inc.php?lang=en'>English</a>";
               }
               ?>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?php echo $lang['language'] ?>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+            
+              <a class="dropdown-item" href='index.php?lang=en'><i class="flag flag-us"></i><span><?php echo $lang['english'] ?></span></a>
+              <a class="dropdown-item" href='index.php?lang=gr'><i></i><span><?php echo $lang['greek'] ?></span></a>
             </div>
           </li>
         </ul>
@@ -369,7 +366,7 @@ include "configLanguage.inc.php";
 
             <div class="clearfix">
 
-              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword']?></a>
+              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword'] ?></a>
 
             </div>
           </div>
@@ -388,7 +385,7 @@ include "configLanguage.inc.php";
       <div class="modal-content ">
         <form action="includes/reguser.inc.php" method="POST">
           <div class="modal-header">
-            <h4 class="modal-title"><?php echo $lang['register']?></h4>
+            <h4 class="modal-title"><?php echo $lang['register'] ?></h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">

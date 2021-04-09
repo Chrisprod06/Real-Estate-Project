@@ -5,8 +5,8 @@
       "home" => "Home",
       "about" => "About",
       "beforeandafter" => "Before and After",
-      "contactus" => "Contact us",
-      "myaccount" => "My account",
+      "contactus" => "Contact Us",
+      "myaccount" => "My Account",
       "properties" => "Properties",
       "searchproperties" => "Search Properties",
       "searchproperty" => "Search Property",
@@ -16,7 +16,8 @@
       "region" => "Region",
       "bd" => "Bedrooms",
       "br" => "Bathrooms",
-      "pricerange" => "Price Range",
+      "priceMin" => "Minimum Price",
+      "priceMax" => "Maximum Price",
       "features" => "Features",
       "city" => "City",
       "alltypes" => "All types",
@@ -36,6 +37,9 @@
       "editprofile" => "Edit Profile",
       "editwebsite" => "Edit Website",
       "logout" => "Logout",
+      "language" =>"Language",
+      "english" => "English",
+      "greek" => "Greek",
 
       //Footer
       "fparagraph" => "Send us an e-mail or phone us to resolve any problem you may ecounter.",
@@ -68,9 +72,6 @@
       "cbutton" => "Send Message",
       "sayhello" => "Say Hello",
       "csocial" => "Social Networks",
-
-
-
 
       //Edit profile
       "forgotpassword" => "Forgot Passsword?",
@@ -108,4 +109,50 @@
       "pi3" => "Reinovated Homes.",
       "reno" => "Renovations",
 
+      //Property Single and Renovation Single
+      "pshome" => "Home",
+      "psproperties" => "Properties",
+      "propertyno" => "Property no",
+      "prdescription" => "Description",
+      "prsummary" => "Quick Summary",
+      "prsamenities" => "Amenities",
+      "prcontact" => "Contact",
+      "prcompany" => "The Company",
+      "prmessage" => "Please login to send a message about this property.",
+      "propertyid" => "Property ID:",
+      "propertylocation" => "Location:",
+      "propertytype" => "Property Type:",
+      "propertystatus" => "Status:",
+      "propertybedrooms" => "Bedrooms:",
+      "propertybathrooms" => "Bathrooms:",
+      "propertyparking" => "Parking:",
+      "propertyfurniture" => "Furniture:",
+      "propertyheating" => "Heating System:",
+      "propertyfloors" => "Floors:",
+      "propertydoc" => "Construction Date:",
+      "propertyaf" => "Available From:",
+      "propertyarea" => "Area:",
+      "propertypps" => "Price/m<sup>2</sup>:",
+      "propertyfavs" => "Add to Favorites:",
+      "propertyshare" => "Share:",
+      "propertyvideo" => "Video",
+      "propertylc" => "Location",
+      "propertyvt" => "Virtual Tour",
+
+      //Property Grid and Renovation Grid
+      "pgourproperties" => "Our Properties",
+      "pghome" => "Home",
+      "pghproperty" => "Properties Grid",
+      "pgclick" => "Click here to view",
+      "pgsqm" => "k/m<sup>2</sup>",
+
+      //Renovation extras
+      "rrenovations" => "Renovations",
+      "rrenovationsgrid" => "Renovation Grid",
+      "renovationID" => "Renovations",
+      "renono" => "Renovation no.",
+      "before" => "Before",
+      "after" => "After",
+      "videobefore" => "Video Before",
+      "videoafter" => "Video After",
   );

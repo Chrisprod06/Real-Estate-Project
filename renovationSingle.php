@@ -1,12 +1,8 @@
-<!--Header-->
 <?php
 $title = "Renovation | APM Smart Houses";
 include_once "includes/header.inc.php";
-?>
-<?php
 include_once "includes/renovationSingle.inc.php";
-?>
-<!--/ Intro Single star /-->
+?><!--/ Intro Single star /-->
 
 <style>
 /* Bottom right text */
@@ -20,6 +16,7 @@ include_once "includes/renovationSingle.inc.php";
   padding-right: 20px;
 }
 </style>
+      
 
 <section class="intro-single">
   <div class="container">
@@ -28,7 +25,7 @@ include_once "includes/renovationSingle.inc.php";
         <div class="title-single-box">
 
           <?php 
-              echo '<h1 class="title-single">Renovation no.' . $_GET['rid'] . '</h1>';
+              echo '<h1 class="title-single">'.$lang['renono'].' ' . $_GET['rid'] . '</h1>';
           foreach ($searchProp as $row) {
             echo '<span class="color-text-a">' . $row['country'] . ', ' . $row['city'] . ', ' . $row['address'] . ', ' . $row['area'] . 'm<sup>2</sup>, €'.$row['totalPrice'].'</span>';
           }
@@ -40,14 +37,14 @@ include_once "includes/renovationSingle.inc.php";
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.php">Home</a>
+              <a href="index.php"><?php echo $lang['pshome']?></a>
             </li>
             <li class="breadcrumb-item">
-              <a href="renovationGrid.php">Renovations</a>
+              <a href="renovationGrid.php"><?php echo $lang['rrenovations']?></a>
             </li>
             <?php
             echo '<li class="breadcrumb-item active" aria-current="page">
-                Renovation no.' . $_GET['rid'] . ' '; ?>
+                '.$lang['renono'].' ' . $_GET['rid'] . ' '; ?>
             </li>
           </ol>
         </nav>
@@ -90,82 +87,38 @@ include_once "includes/renovationSingle.inc.php";
 
           echo ' 
           <div class="row justify-content-between">
-            <div class="col-md-5 col-lg-4">
-              <div class="property-price d-flex justify-content-center foo">
-                <div class="card-header-c d-flex">
-                  <div class="card-box-ico">
-                    <span class="ion-money">€</span>
-                  </div>
-                  <div class="card-title-c align-self-center">
-                    <h5 class="title-c">' . $row['totalPrice'] . '</h5>
-                  </div>
-                </div>
-              </div>
+            <div class="col-md-12 col-lg-12">
               <div class="property-summary">
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="title-box-d section-t4">
-                      <h3 class="title-d">Quick Summary</h3>
+                      <h3 class="title-d">'.$lang['prsummary'].'</h3>
                     </div>
                   </div>
                 </div>
                 <div class="summary-list">
                   <ul class="list">
                     <li class="d-flex justify-content-between">
-                      <strong>Property ID:</strong>
+                      <strong>'.$lang['propertyid'].'</strong>
                       <span>' . $row['propertyID'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Location:</strong>
+                      <strong>'.$lang['propertylocation'].'</strong>
                       <span>' . $row['country'] . ', ' . $row['city'] . ', ' . $row["address"] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Property Type:</strong>
+                      <strong>'.$lang['propertytype'].'</strong>
                       <span>' . $row['type'] . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Status:</strong>
-                      <span>' . $row['category'] . '</span>
                     </li>
                    
                     <li class="d-flex justify-content-between">
-                      <strong>Bedrooms:</strong>
+                      <strong>'.$lang['propertybedrooms'].'</strong>
                       <span>' . $row['bedrooms'] . '</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Bathrooms:</strong>
+                      <strong>'.$lang['propertybathrooms'].'</strong>
                       <span>' . $row['bathrooms'] . '</span>
                     </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Parking:</strong>
-                      <span>' . $parking . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Furniture:</strong>
-                      <span>' . $furnished . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Heating System:</strong>
-                      <span>' . $heating . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Floors:</strong>
-                      <span>' . $row['floors'] . '</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                      <strong>Date of Construction:</strong>
-                      <span>' . $row['dateOfBuild'] . '</span>
-                    </li>
-                    
-                    <li class="d-flex justify-content-between">
-                      <strong>Available From:</strong>
-                      <span>' . $row['availableFrom'] . '</span>
-                    </li>      
-                    <li class="d-flex justify-content-between">
-                    <strong>Area:</strong>
-                    <span>' . $row['area'] . 'm
-                      <sup>2</sup>
-                    </span>
                   </li>              
                     <li class="d-flex justify-content-between">
                       <strong>Price/m<sup>2</sup>:</strong>
@@ -175,7 +128,7 @@ include_once "includes/renovationSingle.inc.php";
                     include_once "includes/selectFavorites.inc.php";}?> 
                   </ul> 
                   <div class="post-share">
-                    <span>Share: </span>
+                    <span><?php echo $lang['propertyshare']?> </span>
                     <ul class="list-inline socials">
                       <li class="list-inline-item">
                         <a href="http://www.facebook.com/share.php?u=localhost/Real-Estate-Website/renovationSingle.php?id='.$_GET['id'].'">
@@ -192,11 +145,11 @@ include_once "includes/renovationSingle.inc.php";
                 </div>
               </div>
             </div>
-            <div class="col-md-7 col-lg-7 section-md-t3">
+            <div class="col-md-7 col-lg-7 section-md-t3 mt-5">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d">
-                    <h3 class="title-d">Description</h3>
+                    <h3 class="title-d"><?php echo $lang['prdescription']?></h3>
                   </div>
                 </div>
               </div>
@@ -206,31 +159,17 @@ include_once "includes/renovationSingle.inc.php";
                </p>';} 
                foreach ($searchProp as $row){ echo'
               </div>
-              <div class="row section-t3">
-                <div class="col-sm-12">
-                  <div class="title-box-d">
-                    <h3 class="title-d">Amenities</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="property-description">
-                <p class="description color-text-a text-justify">
-                  ' . $row['amenities'] . '
-               </p>
-              </div>
+             
             </div>
           </div>
           </div>
           <div class="col-md-10 offset-md-1">
           <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true">Video</a>
+              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true">'.$lang['videobefore'].'</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans" aria-selected="false">Virtual Tour</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="false">Location</a>
+            <a class="nav-link" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="false">'.$lang['videoafter'].'</a>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -250,101 +189,6 @@ include_once "includes/renovationSingle.inc.php";
 
 
         ?>
-
-        <div class="col-md-12">
-          <div class="row section-t3">
-            <div class="col-sm-12">
-              <div class="title-box-d">
-                <h3 class="title-d">Contact </h3>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <img src="img/logo.png" alt="" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="property-agent">
-                <h4 class="title-agent">The Company</h4>
-
-                <ul class="list-unstyled">
-                  <li class="d-flex justify-content-between">
-                    <strong>Office:</strong>
-                    <span class="color-text-a">+357 25778899</span>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    <strong>Email:</strong>
-                    <span class="color-text-a">apm.smarthouses@gmail.com</span>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    <strong>Skype:</strong>
-                    <span class="color-text-a">live:.cid.d64cd0a5de872755</span>
-                  </li>
-                </ul>
-                <div class="socials-a">
-                  <ul class="list-inline">
-                    <li class="list-inline-item">
-                      <a href="https://www.facebook.com/APM-Smart-Houses-348888093013180">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <?php
-            if (!isset($_SESSION['userID'])) {
-              echo '<div class="col-md-12 col-lg-4">
-                  <div class="property-contact">
-                    <form class="form-a">
-                      <div class="row text-center mt-4">
-                        <p class="color-text-a">
-                        Please login to send a message about this property.
-                        </p>            
-                        <div class="col-md-12 mt-5">
-                          <a href = "login.php" class="btn btn-a">Login</a>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>';
-            } else {
-
-              echo ' <div class="col-md-12 col-lg-4">
-                <div class="property-contact">
-                  <form class="form-a">
-                    <div class="row">
-                      <div class="col-md-12 mb-1">
-                        <div class="form-group">
-                          <textarea id="textMessage" class="form-control" placeholder="Leave us a message and we will get back to you as soon as possible!" name="message" cols="45"
-                            rows="8" required></textarea>
-                        </div>
-                      </div>                      
-                      <div class="col-md-12">
-                        <button type="submit" class="btn btn-a">Send Message</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>';
-            }
-            ?>
-
-          </div>
-        </div>
-      </div>
-    </div>
 </section>
 <!--/ Property Single End /-->
 

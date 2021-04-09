@@ -5,8 +5,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     require_once 'functions.inc.php';
 
     session_start();
-   $propertyID = $_SESSION['propertyID'];
-    $userID = $_SESSION['userID'];
+   $propertyID = (int)$_SESSION['propertyID'];
+    $userID = (int)$_SESSION['userID'];
     $firstname =$_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
     $telephone = $_SESSION['telephone'];

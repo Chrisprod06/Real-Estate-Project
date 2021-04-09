@@ -1,6 +1,3 @@
-<!--Header-->
-<link href="img/favicon.png" rel="icon">
-<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 <?php
 $title = "Favorites | APM Smart Houses";
 session_start();

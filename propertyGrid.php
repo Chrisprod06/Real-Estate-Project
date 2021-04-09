@@ -1,25 +1,23 @@
-<!--Header-->
 <?php
 $title = "Properties | APM Smart Houses";
 include_once "includes/header.inc.php";
-?>
-<!--/ Intro Single star /-->
+?><!--/ Intro Single star /-->
 <section class="intro-single">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single">Our Properties</h1>
+          <h1 class="title-single"><?php echo $lang['pgourproperties']?></h1>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.php">Home</a>
+              <a href="index.php"><?php echo $lang['pghome']?></a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              Properties Grid
+            <?php echo $lang['pghproperty']?>
             </li>
           </ol>
         </nav>
@@ -43,9 +41,11 @@ include_once "includes/header.inc.php";
       }
       $start = ($page - 1) * $total;
       //Script to get data
-      $sql = "SELECT * FROM properties where category = 'RentLongTerm' OR category = 'RentShortTerm' OR category = 'Sale' LIMIT $start,$total ";
+      $sql = "SELECT * FROM properties natural join multimediaproperties where category = 'RentLongTerm' OR category = 'RentShortTerm' OR category = 'Sale' LIMIT $start,$total ";
       $result = mysqli_query($conn, $sql);
       $resultCheck = mysqli_num_rows($result);
+
+
       //Present data
 
       while ($row = mysqli_fetch_assoc($result)) {
@@ -66,7 +66,7 @@ include_once "includes/header.inc.php";
         echo ' <div class="col-md-4">
                             <div class="card-box-a card-shadow">
                             <div class="img-box-a">
-                           <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+                           <img src='.$row['photo1'].' alt="" class="img-a img-fluid">
                        </div>
                        <div class="card-overlay">
                            <div class="card-overlay-a-content">
@@ -80,28 +80,28 @@ include_once "includes/header.inc.php";
                                    <div class="price-box d-flex">
                                        <span class="price-a">' . $categ . ' | €' . $row["totalPrice"] . '</span>
                                    </div>
-                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">Click here to view
+                                   <a href="propertySingle.php?id='.$row["propertyID"].'" class="link-a">'.$lang['pgclick'].'
                                        <span class="ion-ios-arrow-forward"></span>
                                    </a>
                                </div>
                                <div class="card-footer-a">
-                                   <ul class="card-info d-flex justify-content-around">
+                                   <ul class="card-info d-flex justify-content-around text-center">
                                        <li>
-                                           <h4 class="card-info-title">Area</h4>
+                                           <h4 class="card-info-title">'.$lang['pgsqm'].'</h4>
                                            <span>' . $row["squarem"] . 'm
                                                <sup>2</sup>
                                            </span>
                                        </li>
                                        <li>
-                                           <h4 class="card-info-title">Bedrooms</h4>
+                                           <h4 class="card-info-title">'.$lang['propertybedrooms'].'</h4>
                                            <span>' . $row["bedrooms"] . '</span>
                                        </li>
                                        <li>
-                                           <h4 class="card-info-title">Bathrooms</h4>
+                                           <h4 class="card-info-title">'.$lang['propertybathrooms'].'</h4>
                                            <span>' . $row["bathrooms"] . '</span>
                                        </li>
                                        <li>
-                                           <h4 class="card-info-title">Furnished</h4>
+                                           <h4 class="card-info-title">'.$lang['propertyfurniture'].'</h4>
                                            <span>' . $furnished . '</span>
                                        </li>
                                    </ul>
