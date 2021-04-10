@@ -106,7 +106,7 @@
       "pi1" => "Buy your next home for vacation or short term stay.",
       "buy" => "Buy",
       "pi2" => "Buy your next home.",
-      "pi3" => "Reinovated Homes.",
+      "pi3" => "Renovated Homes.",
       "reno" => "Renovations",
 
       //Property Single and Renovation Single
