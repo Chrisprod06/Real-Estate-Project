@@ -4,7 +4,7 @@
     //Header page
       "home" => "Αρχική Σελίδα",
       "about" => "H εταιρεία",
-      "beforeandafter" => "Πρίν και μετά",
+      "beforeandafter" => "Πριν και μετά",
       "contactus" => "Επικοινωνία",
       "myaccount" => "Ο λογαριασμός μου",
       "properties" => "Ακίνητα",
@@ -152,9 +152,9 @@
       "rrenovationsgrid" => "Ανακαινίσεις",
       "renovationID" => "Αρ. ανακαίνισης",
       "renono" => "Αρ. Ανακαίνισης",
-      "before" => "Πρίν",
+      "before" => "Πριν",
       "after" => "Μετά",
-      "videobefore" => "Βίντεο Πρίν",
+      "videobefore" => "Βίντεο Πριν",
       "videoafter" => "Βίντεο Μετά",
 
 
