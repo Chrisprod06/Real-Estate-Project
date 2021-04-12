@@ -213,6 +213,11 @@ include "configLanguage.inc.php";
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+<!--Panorama-->
+
+<script src="panorama\jquery.pano.js"></script>
+
+
 
 <!--Sweet alerts used in the website-->
 <?php

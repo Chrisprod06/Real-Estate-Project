@@ -34,7 +34,8 @@ while ($row = mysqli_fetch_assoc($setQuery1))
     'pricePerSqm' => $row['pricePerSqm'],
     'totalPrice' => $row['totalPrice'],
     'description' => $row['description'],
-    'amenities' => $row['amenities']
+    'amenities' => $row['amenities'],
+    
   ); 
 }  
 

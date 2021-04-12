@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-    color: #C12A31;
+    color: #386E8A;
     text-decoration: none;
 }
 
@@ -92,7 +92,7 @@ a:hover {
 }
 
 .color-b {
-    color: #C12A31;
+    color: #386E8A;
 }
 
 .color-d {
@@ -127,7 +127,7 @@ a:hover {
     bottom: -1px;
     width: 100%;
     height: 2px;
-    background-color: #C12A31;
+    background-color: #386E8A;
     z-index: 2;
 }
 
@@ -182,7 +182,7 @@ a:hover {
 .pagination-a .pagination .page-link:hover,
 .pagination-a .pagination .page-link:active,
 .pagination-a .pagination .page-link:focus {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .pagination-a .pagination .page-link span {
@@ -209,11 +209,11 @@ a:hover {
 }
 
 .pagination-a .pagination .page-item.active .page-link {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .a {
-    color: #C12A31;
+    color: #386E8A;
     font-size: 1.3rem;
 }
 
@@ -300,7 +300,7 @@ a:hover {
     position: absolute;
     width: 70px;
     height: 4px;
-    background-color: #C12A31;
+    background-color: #386E8A;
     bottom: 20px;
     left: 0;
 }
@@ -371,11 +371,11 @@ a:hover {
 }
 
 .owl-theme .owl-dots .owl-dot:hover span {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .owl-theme .owl-dots .owl-dot.active span {
-    background-color: #C12A31;
+    background-color: #386E8A;
     width: 35px;
 }
 
@@ -425,7 +425,7 @@ a:hover {
     display: inline-block;
     transition: all 0.6s ease-in-out;
     color: #ffffff;
-    background-color: #C12A31;
+    background-color: #386E8A;
     opacity: 0.9;
 }
 
@@ -457,7 +457,7 @@ a:hover {
 .back-to-top {
     position: fixed;
     display: none;
-    background: #C12A31;
+    background: #386E8A;
     color: #fff;
     width: 44px;
     height: 44px;
@@ -496,7 +496,7 @@ a:hover {
     top: calc(50% - 30px);
     left: calc(50% - 30px);
     border: 6px solid #f2f2f2;
-    border-top: 6px solid #C12A31;
+    border-top: 6px solid #386E8A;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -585,7 +585,7 @@ a:hover {
     width: 100%;
     height: 2px;
     z-index: 0;
-    background-color: #C12A31;
+    background-color: #386E8A;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: right;
@@ -621,7 +621,7 @@ a:hover {
 }
 
 .navbar-default.navbar-trans .nav-link:before {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .navbar-default.navbar-trans .nav-link:hover {
@@ -646,7 +646,7 @@ a:hover {
 }
 
 .navbar-default.navbar-reduce .nav-link:before {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .navbar-default.navbar-reduce .nav-link:hover {
@@ -666,7 +666,7 @@ a:hover {
 
 .navbar-default .dropdown .dropdown-menu {
     border-top: 0;
-    border-left: 4px solid #C12A31;
+    border-left: 4px solid #386E8A;
     border-right: 0;
     border-bottom: 0;
     -webkit-transform: translate3d(0px, -40px, 0px);
@@ -689,13 +689,13 @@ a:hover {
 
 .navbar-default .dropdown .dropdown-menu .dropdown-item:hover {
     background-color: #ffffff;
-    color: #C12A31;
+    color: #386E8A;
     transition: all 500ms ease;
 }
 
 .navbar-default .dropdown .dropdown-menu .dropdown-item.active {
     background-color: #ffffff;
-    color: #C12A31;
+    color: #386E8A;
 }
 
 .navbar-default .dropdown:hover .dropdown-menu {
@@ -894,11 +894,11 @@ a:hover {
 }
 
 .intro .owl-theme .owl-dots .owl-dot:hover span {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .intro .owl-theme .owl-dots .owl-dot.active span {
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .intro .intro-item {
@@ -925,7 +925,7 @@ a:hover {
 .intro .intro-body .price-a {
     color: #ffffff;
     padding: 1rem 1.5rem;
-    border: 2px solid #C12A31;
+    border: 2px solid #386E8A;
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -976,7 +976,7 @@ a:hover {
 }
 
 .intro-single .title-single-box {
-    border-left: 3px solid #C12A31;
+    border-left: 3px solid #386E8A;
 }
 
 .intro-single .title-single-box .title-single {
@@ -1080,7 +1080,7 @@ a:hover {
 .price-a {
     color: #ffffff;
     padding: 0.6rem 0.8rem;
-    border: 2px solid #C12A31;
+    border: 2px solid #386E8A;
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -1090,7 +1090,7 @@ a:hover {
     width: 100%;
     position: absolute;
     z-index: 2;
-    background-color: #C12A31;
+    background-color: #386E8A;
 }
 
 .card-info {
@@ -1190,7 +1190,7 @@ a:hover {
 
 .card-header-b .category-b {
     font-size: 0.9rem;
-    background-color: #C12A31;
+    background-color: #386E8A;
     padding: 0.3rem 0.7rem;
     color: #313131;
     letter-spacing: 0.03em;
@@ -1242,7 +1242,7 @@ a:hover {
 
 .post-content .blockquote {
     padding: 1rem 3rem 1.7rem 3rem;
-    border-left: 3px solid #C12A31;
+    border-left: 3px solid #386E8A;
     color: #000000;
 }
 
@@ -1331,7 +1331,7 @@ a:hover {
 
 .card-box-ico {
     padding: 1rem 3rem 1rem 2.5rem;
-    border: 5px solid #C12A31;
+    border: 5px solid #386E8A;
 }
 
 .card-box-ico span {
@@ -1393,7 +1393,7 @@ a:hover {
 }
 
 .card-box-d:hover .card-overlay-hover {
-    background-color: #C12A31;
+    background-color: #386E8A;
     opacity: 0.9;
 }
 
@@ -1441,7 +1441,7 @@ a:hover {
 }
 
 .sinse-box {
-    background-color: #C12A31;
+    background-color: #386E8A;
     padding: 1rem 2rem;
     position: absolute;
     left: 15px;
@@ -1496,7 +1496,7 @@ a:hover {
 
 .testimonial-ico span {
     font-size: 1.8rem;
-    background-color: #C12A31;
+    background-color: #386E8A;
     color: #ffffff;
     padding: 0.4rem 1rem;
     border-radius: 50px;
@@ -1554,7 +1554,7 @@ a:hover {
 .section-footer .item-list-a i {
     font-size: 18px;
     padding-right: 4px;
-    color: #C12A31;
+    color: #386E8A;
 }
 
 .section-footer .widget-a .w-title-a {
@@ -1582,7 +1582,7 @@ footer .credits {
 ======================================*/
 
 .form-a #sendmessage {
-    color: #C12A31;
+    color: #386E8A;
     border: 1px solid #26a356;
     display: none;
     text-align: center;
@@ -1636,7 +1636,7 @@ footer .credits {
 
 .form-a .form-control:focus {
     box-shadow: none;
-    border-color: #C12A31;
+    border-color: #386E8A;
 }
 
 
@@ -1661,12 +1661,12 @@ footer .credits {
 }
 
 .btn.btn-a:hover {
-    background-color: #AD1528;
+    background-color: #386E8A;
     color: #000000;
 }
 
 .btn.btn-b {
-    background-color: #AD1528;
+    background-color: #386E8A;
     color: #000000;
 }
 
@@ -1676,13 +1676,13 @@ footer .credits {
 }
 
 .btn.btn-b-n {
-    background-color: #AD1528;
+    background-color: #386E8A;
     color: #ffffff;
     border-radius: 0;
 }
 
 .btn.btn-b-n:hover {
-    background-color: #881321;
+    background-color: #315d74;
     color: #ffffff;
 }
 
@@ -1723,7 +1723,7 @@ footer .credits {
         margin-left: 15px;
     }
     .navbar-default .dropdown .dropdown-menu {
-        border-top: 4px solid #C12A31;
+        border-top: 4px solid #386E8A;
         border-left: 0;
         display: block;
         position: absolute;
@@ -2077,5 +2077,84 @@ footer .credits {
 
 .btn.dropdown-toggle:focus {
     outline: none !important;
+}
+/*Panorama styling*/
+.pano {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    cursor: move;
+  }
+  
+  .pano .controls {
+    position: relative;
+    top: 40%;
+  }
+  
+  .pano .controls a {
+    position: absolute;
+    display: inline-block;
+    text-decoration: none;
+    color: #eee;
+    font-size: 3em;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .pano .controls a.left { left: 10px; }
+  
+  .pano .controls a.right { right: 10px; }
+  
+  .pano.moving .controls a {
+    opacity: 0.4;
+    color: #eee;
+  }
+
+  /*Virtual tour gallery*/
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+.gallery {
+  position: relative;
+  z-index: 2;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+.gallery.pop {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+.gallery figure {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.gallery figure img {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.gallery figure figcaption {
+  display: none;
 }
 
