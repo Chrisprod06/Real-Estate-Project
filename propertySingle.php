@@ -173,7 +173,7 @@ include "includes/configLanguage.inc.php";
                 </div>
               </div>
             </div>
-            <div class="col-md-7 col-lg-7 section-md-t3">
+            <div class="col-md-12 col-lg-12 section-md-t3">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d">
@@ -249,64 +249,8 @@ include "includes/configLanguage.inc.php";
         echo '
               <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
               ';
-        $id = $_GET['id'];
-
-        $sql = "SELECT * FROM multimediaproperties where propertyID=25 ";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
-
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '
-            <div class="container">
-              <div class="row">
-            <div class="gallery">
-              <figure>
-                <img src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Daytona Beach <small>United States</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Териберка, gorod Severomorsk <small>Russia</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1445964047600-cdbdb873673d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>
-                  Bad Pyrmont <small>Deutschland</small>
-                </figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1439798060585-62ab242d7724?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Yellowstone National Park <small>United States</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Quiraing, Portree <small>United Kingdom</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1441906363162-903afd0d3d52?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Highlands <small>United States</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Daytona Beach <small>United States</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Териберка, gorod Severomorsk <small>Russia</small></figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1445964047600-cdbdb873673d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>
-                  Bad Pyrmont <small>Deutschland</small>
-                </figcaption>
-              </figure>
-              <figure>
-                <img src="https://images.unsplash.com/photo-1439798060585-62ab242d7724?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600" alt="" />
-                <figcaption>Yellowstone National Park <small>United States</small></figcaption>
-              </figure>
-            </div>
-            </div>';
-        }
+              include_once 'includes/updateVirtualTour.inc.php';
+       
 
         echo '</div>
 

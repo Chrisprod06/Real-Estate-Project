@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Pano demo</title>
+		<title>Virtual Tour| APM Smart Houses</title>
 		<style>
 		html,body {
 			height: 100%;
@@ -53,7 +53,7 @@
 		/* jshint jquery: true */
 		jQuery(function($){
 			$("#myPano").pano({
-				img: "../'.$_GET['photo'].'"
+				img: "../'.$_GET['path'].'"
 			});
 		});
 		</script>';
