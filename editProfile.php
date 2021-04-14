@@ -1,20 +1,8 @@
 <?php
 $title = "Edit Profile | APM Smart Houses";
 include_once 'includes/header.inc.php';
-include_once 'dbh.inc.php';
-$sql = 'SELECT email FROM  newsletter WHERE email IS EQUAL '.$_SESSION['email'].' ';
-$result = mysqli_query($conn,$sql);
-
-
-
-if($result == true){
-    $isSubscribed = true;
-}else{
-    $isSubscribed = false;
-}
-    
-
 ?>
+
 <section class="intro-single">
     <div class="container">
         <div class="row flex-lg-nowrap">
@@ -23,6 +11,23 @@ if($result == true){
                     <div class="col mb-3">
                         <div class="card">
                             <div class="card-body">
+                            <?php
+                            if(isset($_GET['error'])){
+                                if($_GET['error'] == 'stmtFailed'){
+                                    echo '<p class = "text-danger text-center " >Something went wrong! Please try again.</p>';
+                                }
+                                if($_GET['error'] == 'somethingWrong'){
+                                    echo '<p class = "text-danger text-center " >Something went wrong! Please try again.</p>';
+                                }
+                                if($_GET['error'] == 'currentPasswordWrong'){
+                                    echo '<p class = "text-danger text-center " >Current password Wrong! Please try again.</p>';
+                                }
+                                if($_GET['error'] == 'passwordsDontMatch'){
+                                    echo '<p class = "text-danger text-center " >Passwords must match! Please try again.</p>';
+                                }
+                            }
+                            
+                            ?>
                                 <div class="e-profile">
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
@@ -88,28 +93,7 @@ if($result == true){
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-5 offset-sm-1 mb-3">
-                                                        <div class="mb-2"><b>'.$lang['keepintouch'].'</b></div>
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <label>'.$lang['emailnotifications'].'</label>
-                                                                <div class="custom-controls-stacked px-2">
-                                                                    <div class="custom-control custom-checkbox">
-                                                                    ';if($isSubscribed == true){
-                                                                        echo '<input type="checkbox" class="custom-control-input" id="notifications-news" checked value="yes" name = "newsletter">';
-                                                                    }else if ($isSubscribed == false){
-                                                                        echo '<input type="checkbox" class="custom-control-input" id="notifications-news" value="no" name = "newsletter">';
-
-                                                                    }
-                                                                    echo'
-                                                                       
-                                                                        <label class="custom-control-label" for="notifications-news">'.$lang['newsletter'].'</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    </div>                                                   
                                                 </div>
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">

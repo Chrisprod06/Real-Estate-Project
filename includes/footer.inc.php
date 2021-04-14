@@ -144,8 +144,8 @@ include "configLanguage.inc.php";
             στα πλαίσια του μαθήματος “Εργασία Τεχνολογίας Λογισμικού και Επαγγελματική Πρακτική” του πτυχίου Μηχανικών Ηλεκτρονικών Υπολογιστών και Πληροφορικής.
             Λεμεσός, Μάιος 2021
             Copyright © Cyprus University of Technology
-          </p>
-          <img src="img/uni.jpg" alt="logo">
+          </p>        
+          <img src="img/uni.jpg" alt="logo">         
         </div>
 
       </div>
@@ -221,14 +221,33 @@ include "configLanguage.inc.php";
 
 <!--Sweet alerts used in the website-->
 <?php
-if (isset($_GET['update'])) {
-  if ($_GET['update'] == 'successful') {
+if (isset($_GET['updatePassword'])) {
+  if ($_GET['updatePassword'] == 'successful') {
     echo '<script>
     $(document).ready(function(){
       Swal.fire({
         position: "center",
         icon: "success",
         title: "Password Change Successful!",
+        showConfirmButton: false,
+        timer: 1600                 
+      }).then(function() {
+        
+      })
+    });                 
+    </script>';
+  }
+}
+?>
+<?php
+if (isset($_GET['updateDetails'])) {
+  if ($_GET['updateDetails'] == 'successful') {
+    echo '<script>
+    $(document).ready(function(){
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Details Change Successful!",
         showConfirmButton: false,
         timer: 1600                 
       }).then(function() {

@@ -4,7 +4,7 @@ include_once 'includes/header.inc.php';
 ?>
 <section class="intro-single">
     <div class="login-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="includes/resetPasswordRequest.inc.php" method="post">
             <h2 class="text-center">Reset your password</h2>
             <p class="text-center">Type your email and we will send you instructions on how to reset your password.</p>
             <div class="form-group">

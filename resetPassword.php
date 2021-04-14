@@ -36,13 +36,13 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="includes/resetPassword.inc.php" method="post">
         <h2 class="text-center">Change Password</h2>       
         <div class="form-group">
-            <input type="hidden" class="form-control" name = "selector">
+            <input type="hidden" class="form-control" name = "selector" value = "<?php echo $_GET['selector']?>">
         </div>
         <div class="form-group">
-            <input type="hidden" class="form-control" name = "validator">
+            <input type="hidden" class="form-control" name = "validator" value = "<?php echo $_GET['validator']?>">
         </div>
         <div class="form-group">
             <input type="password" name = "pass" class="form-control" placeholder="Password" required="required">

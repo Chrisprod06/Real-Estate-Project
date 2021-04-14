@@ -29,8 +29,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_stmt_bind_param($stmt, "iss", $propertyID, $userID, $message);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-
-    header('Location: ../propertySingle.php?error=none');
     exit();
 
 

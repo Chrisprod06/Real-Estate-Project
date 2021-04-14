@@ -1,7 +1,7 @@
 <?php
  $id = $_GET['id'];
 
- $sql = "SELECT 3DPhoto1,3DPhoto2 ,3DPhoto3 ,3DPhoto4 ,3DPhoto5 ,3DPhoto6 ,3DPhoto7 ,3DPhoto8 ,3DPhoto9 ,3DPhoto10 FROM multimediaproperties where propertyID=25 ";
+ $sql = "SELECT 3DPhoto1,3DPhoto2 ,3DPhoto3 ,3DPhoto4 ,3DPhoto5 ,3DPhoto6 ,3DPhoto7 ,3DPhoto8 ,3DPhoto9 ,3DPhoto10 FROM multimediaproperties where propertyID=$id ";
  $result = mysqli_query($conn, $sql);
  $resultCheck = mysqli_num_rows($result);
 

@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //error handlers
 
     if(empty($password) || empty($repeatPassword)){
-       header("Location: ../resetPassword.php?error=stmtFailed");
+       header("Location: ../resetPassword.php?error=emptyInput");
        exit();
 
     }else if($password!=$repeatPassword){
@@ -19,17 +19,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     //check token if it is expired
-    $currentDate = date("U");
+    $currentDate = (int)date("U");
     require_once 'dbh.inc.php';
 
-    $sql = "SELECT * passwordreset WHERE passwordResetSelector=? AND passwordResetExpires>= ? ;";
-    $stmt = mysqli_init($conn);
+    $sql = "SELECT * passwordreset WHERE passwordResetSelector = ? AND passwordResetExpires >= ? ;";
+    $stmt = mysqli_stmt_init($conn);
 
-    if(!mysqli_prepare($stmt,$sql)){
-        header("Location: ../resetPassword.php?error=stmtFailed");
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("Location: ../resetPassword.php?error=stmtFailed1");
         exit();
     }else{
-        mysqli_stmt_bind_param($stmt, "ss",$selector,$currentDate);
+        mysqli_stmt_bind_param($stmt, "si",$selector,$currentDate);
         mysqli_stmt_execute($stmt);
         
         $result = mysqli_stmt_get_result($stmt);
@@ -50,8 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $sql = "SELECT * FROM users WHERE email=?";
                 $stmt = mysqli_init($conn);
 
-                if(!mysqli_prepare($stmt,$sql)){
-                    header("Location: ../resetPassword.php?error=stmtFailed");
+                if(!mysqli_stmt_prepare($stmt,$sql)){
+                    header("Location: ../resetPassword.php?error=stmtFailed2");
                     exit();
                 }else{
                     mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
@@ -64,8 +64,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $sql = 'UPDATE users SET password =? WHERE email=?;';
                         $stmt = mysqli_init($conn);
 
-                if(!mysqli_prepare($stmt,$sql)){
-                    header("Location: ../resetPassword.php?error=stmtFailed");
+                if(!mysqli_stmt_prepare($stmt,$sql)){
+                    header("Location: ../resetPassword.php?error=stmtFailed3");
                     exit();
                 }else{
                     $newHashedPassword = password_hash($password,PASSWORD_DEFAULT);
@@ -75,8 +75,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $sql = "DELETE FROM passwordreset WHERE passwordResetEmail = ?; ";
                     $stmt = mysqli_init($conn);
                 
-                    if(!mysqli_prepare($stmt,$sql)){
-                        header("Location: ../resetPassword.php?error=stmtFailed");
+                    if(!mysqli_stmt_prepare($stmt,$sql)){
+                        header("Location: ../resetPassword.php?error=stmtFailed4");
                         exit();
                     }else{
                         mysqli_stmt_bind_param($stmt, "s",$tokenEmail);

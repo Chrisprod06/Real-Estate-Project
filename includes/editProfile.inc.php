@@ -13,8 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $currentPassword = $_POST['currentPassword'];
     $newPassword = $_POST['newPassword'];
     $repeatNewPassword = $_POST['repeatNewPassword'];
-    $newsletter = $_POST['newsletter'];
-
 
     //Error handlers
     if ($_POST['currentPassword'] != '') {
@@ -24,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "SELECT password FROM users WHERE userID = ?; ";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header('location: ../editProfile.php?error=stmtFailed1');
+            header('location: ../editProfile.php?error=stmtFailed');
             exit();
         }
 
@@ -52,49 +50,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
             $sql = "UPDATE users SET password=? WHERE userID=?;";
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                header('location: ../editProfile.php?error=stmtFailed1');
+                header('location: ../editProfile.php?error=stmtFailed');
                 exit();
             }
             mysqli_stmt_bind_param($stmt, "si", $hashedNewPassword, $userID);
-            mysqli_stmt_execute($stmt);
+            if(!mysqli_stmt_execute($stmt)){
+                header('location: ../editProfile.php?error=stmtFailed');
+
+            }else{
+                header('Location: ../editProfile.php?updatePassword=successful');
+                exit();
+            }
+            
         }
         mysqli_stmt_close($stmt);
     }
-
-
-    //Subscribe or unsubscibe from newsletter
-    $sql = 'SELECT email FROM  newsletter WHERE email IS EQUAL ' . $email . '; ';
-    $result = mysqli_query($conn, $sql);
-    if ($newsletter == 'yes' and $result == false) {
-        $sql = 'INSERT INTO newsletter values ('.$email.');';
-
-    } else if ($newsletter == 'no') {
-        $sql = 'DELETE FROM newsletter WHERE email IS EQUAL ' . $email . '; ';
-        $result = mysqli_query($conn, $sql);
-        
-    }
-
     //Update field in database
-    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ?, password=? WHERE  userID = ?";
+    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ? WHERE  userID = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../editProfile.php?error=stmtFailed2');
+        header('location: ../editProfile.php?error=stmtFailed');
         exit();
     }
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "ssissi", $firstname, $lastname, $telephone, $email, $hashedPassword, $userID);
+    mysqli_stmt_bind_param($stmt, "ssisi", $firstname, $lastname, $telephone, $email, $userID);
 
     if (!mysqli_stmt_execute($stmt)) {
-        header('Location: ../editProfile.php?stmtFailed3');
+        header('Location: ../editProfile.php?stmtFailed');
         exit();
     } else {
         $_SESSION['firstname'] = $firstname;
         $_SESSION['lastname'] = $lastname;
         $_SESSION['telephone'] = $telephone;
         $_SESSION['email'] = $email;
-        header('Location: ../editProfile.php?update=successful');
+        header('Location: ../editProfile.php?updateDetails=successful');
         exit();
     }
 }
