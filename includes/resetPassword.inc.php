@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $currentDate = (int)date("U");
     require_once 'dbh.inc.php';
 
-    $sql = "SELECT * passwordreset WHERE passwordResetSelector = ? AND passwordResetExpires >= ? ;";
+    $sql = "SELECT * passwordreset WHERE passwordResetSelector IS EQUAL ? AND passwordResetExpires >= ? ;";
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt,$sql)){
