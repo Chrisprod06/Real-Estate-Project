@@ -4,11 +4,11 @@ include_once 'includes/header.inc.php';
 ?>
 <section class="intro-single">
     <div class="login-form">
-        <form action="includes/resetPasswordRequest.inc.php" method="post">
-            <h2 class="text-center">Reset your password</h2>
-            <p class="text-center">Type your email and we will send you instructions on how to reset your password.</p>
+        <form action="includes/delnews.inc.php" method="post">
+            <h2 class="text-center">Unsubscribe from newsletter</h2>
+            <p class="text-center">Press the button below to unsubcribe.</p>
             <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+                <input type="hidden" name="email" class="form-control" value = "<?php echo $_GET['email']?>">
             </div>
             <!--Error messages-->
             <?php
@@ -18,15 +18,15 @@ include_once 'includes/header.inc.php';
                 }
             }
 
-            if (isset($_GET['request'])) {
-                if ($_GET['request'] == 'success') {
+            if (isset($_GET['unsubscribe'])) {
+                if ($_GET['unsubscribe'] == 'success') {
                     echo '
                     <script>
                     $(document).ready(function(){
                       Swal.fire({
                         position: "center",
-                        icon: "success",
-                        title: "Your request has been sent! Please check your inbox.",
+                        icon: "success", 
+                        title: "Unsubscribed successfully!",
                         showConfirmButton: false,
                         timer: 1500                 
                       }).then(function() {
@@ -42,7 +42,7 @@ include_once 'includes/header.inc.php';
             ?>
 
             <div class="form-group">
-                <button type="submit" name="submitResetPasswordRequest" class="btn btn-a">Send Request</button>
+                <button type="submit" name="submitUnsubscribe" class="btn btn-a">Unsubscribe</button>
             </div>
         </form>
 

@@ -1,29 +1,49 @@
 <?php
 session_start();
 //Check it is comming from a form
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$email = $_POST['email'];
+	require_once 'dbh.inc.php';
 
-	include_once "dbh.inc.php";
-	
+
 	//set PHP variables like this so we can use them anywhere in code below
 	$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 
-	
-	if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
-		die("Please enter valid email address");
+
+	if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$_SESSION['lastVisitedPage'] .= '?error=invalidNewsletterEmail';
+		header('location: ' . $_SESSION['lastVisitedPage']);
+		exit();
 	}
-		
+
+	$sql = 'INSERT INTO newsletter(email) VALUES (?);';
+	if(!$stmt = mysqli_stmt_init($conn)){
+		$_SESSION['lastVisitedPage'] .= '?error=stmtFailed';
+		header('location: ' . $_SESSION['lastVisitedPage']);
+		exit();
+	}
+	if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $_SESSION['lastVisitedPage'] .= '?error=stmtFailed';
+        header('location: ' . $_SESSION['lastVisitedPage']);
+    }
 	
-	$statement = $conn->prepare("INSERT INTO newsletter (email) VALUES(?)"); //prepare sql insert query
-	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
-	$statement->bind_param('s', $email); //bind values and execute insert query
-	
-	if($statement->execute()){
-		header("Location: ../index.php?newsletter=success");
+
+	mysqli_stmt_bind_param($stmt,"s",$email);
+
+	if(!mysqli_stmt_execute($stmt)){
+		$_SESSION['lastVisitedPage'] .= '?newsletter=fail';
+		header('location: ' . $_SESSION['lastVisitedPage']);
+		exit();
 	}else{
-		header("Location: ../index.php?newsletter=fail");
+		$_SESSION['lastVisitedPage'] .= '?newsletter=success';
+		header('location: ' . $_SESSION['lastVisitedPage']);
+		exit();
 	}
+
+	mysqli_stmt_close($stmt);
+	mysqli_close($conn);
+
+}else{
+	header("Location:../index.php");
 	exit();
 }
-

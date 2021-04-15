@@ -67,20 +67,22 @@ include "configLanguage.inc.php";
           </div>
           <div class="w-body-a">
             <div class="w-body-a">
-              <form class="form-a contactForm" action="includes/regnews.inc.php" method="post">
+              <form action="includes/regnews.inc.php" method="Post">
                 <div class="row">
-                  <div class="col-md-12 mb-3">
+                  <div class="col-10">
                     <div class="form-group">
-                      <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email">
+                      <input type="email" name="email" required placeholder="Please enter your email.." class="form-control">
                     </div>
-                  </div>
 
-                  <div class="col-md-12">
-                    <div class="from-group">
-                      <input name="submit" type="submit" value="<?php echo $lang['fsubscribe'] ?>" class="btn btn-a"></input>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <input type="submit" name="submit" value="Subscribe" class="btn btn-a">
                     </div>
-                  </div>
 
+                  </div>
                 </div>
               </form>
             </div>
@@ -144,8 +146,8 @@ include "configLanguage.inc.php";
             στα πλαίσια του μαθήματος “Εργασία Τεχνολογίας Λογισμικού και Επαγγελματική Πρακτική” του πτυχίου Μηχανικών Ηλεκτρονικών Υπολογιστών και Πληροφορικής.
             Λεμεσός, Μάιος 2021
             Copyright © Cyprus University of Technology
-          </p>        
-          <img src="img/uni.jpg" alt="logo">         
+          </p>
+          <img class="col-md-4 mx-auto" src="img/uni.jpg" alt="logo">
         </div>
 
       </div>
