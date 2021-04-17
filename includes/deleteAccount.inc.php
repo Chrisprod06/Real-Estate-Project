@@ -1,6 +1,6 @@
 <?php
 session_start();
-$userID = (int)$_SESSION['userID'];
+$userID =$_POST['userID'];
 
 require_once 'dbh.inc.php';
 

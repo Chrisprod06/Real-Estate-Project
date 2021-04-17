@@ -116,8 +116,34 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
         <div class="col d-flex justify-content-end">
-        <a href="includes/deleteAccount.inc.php"><?php echo $lang['deleteaccount']?></a>
+        <a href="#deleteAccount" data-toggle="modal"><?php echo $lang['deleteaccount']?></a>
         </div>
+
+         <!-- Delete Modal HTML -->
+    <div id="deleteAccount" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="includes/deleteAccount.inc.php" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Account?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>re you sure you want to delete your account?</p>
+                        <p class="text-warning"><small>This action can not be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="hidden" name="userID" value= '<?php echo $_SESSION['userID']?>'>
+                        <button type="submit" value="Yes" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
         
     </div>
 

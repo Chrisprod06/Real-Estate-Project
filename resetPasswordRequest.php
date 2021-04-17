@@ -1,5 +1,5 @@
 <?php
-$title = "Edit Profile | APM Smart Houses";
+$title = "Reset Password Request | APM Smart Houses";
 include_once 'includes/header.inc.php';
 ?>
 <section class="intro-single">
@@ -15,6 +15,8 @@ include_once 'includes/header.inc.php';
             if (isset($_GET['error'])) {
                 if ($_GET['error'] == 'stmtFailed') {
                     echo '<p class = "text-danger text-center " >Something went wrong. Please try again.</p>';
+                }else if ($_GET['error'] == 'tryAgainReset'){
+                    echo '<p class = "text-danger text-center " >Reset went wrong. Please try again.</p>';
                 }
             }
 

@@ -402,10 +402,10 @@ include "configLanguage.inc.php";
               <input name="telephone" type="tel" class="form-control" placeholder="Telephone" required="required">
             </div>
             <div class="form-group">
-              <input name="password" type="password" class="form-control" placeholder="Password" required="required">
+              <input name="password" type="password" class="form-control" placeholder="Password" minlength="6" required="required">
             </div>
             <div class="form-group">
-              <input name="rePassword" type="password" class="form-control" placeholder="Re-enter Password" required="required">
+              <input name="rePassword" type="password" class="form-control" placeholder="Re-enter Password" minlength="6" required="required">
             </div>
             <!--PHP script to display-->
             <?php
