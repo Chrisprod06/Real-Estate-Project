@@ -78,7 +78,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
   
   ); 
 
-  $getQuery2 = "SELECT * from properties WHERE propertyID=$pID ;";
+  $getQuery2 = "SELECT * from properties natural join multimediaproperties WHERE propertyID=$pID ;";
   $setQuery2 = mysqli_query($conn, $getQuery2);
   $searchProp = array();
 
@@ -96,7 +96,8 @@ while ($row = mysqli_fetch_assoc($setQuery1))
     'area' => $row['squarem'],
     'baths' => $row['bathrooms'],
     'beds' => $row['bedrooms'],
-    'furnished' => $row['furniture']
+    'furnished' => $row['furniture'],
+    'photo1' => $row['photo1']
     );     
   }
 
@@ -119,7 +120,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
     echo '<div class="col-md-4">
     <div class="card-box-a card-shadow">
       <div class="img-box-a">
-      <img src="img/property-1.jpg" alt="" class="img-a img-fluid">
+      <img src="'.$row['photo1'].'" alt="" class="img-a img-fluid">
       </div>
       <div class="card-overlay">
         <div class="card-overlay-a-content">
