@@ -97,9 +97,9 @@ include "configLanguage.inc.php";
               <label for="Category"><?php echo $lang['category'] ?></label>
               <select class="form-control form-control-lg form-control-a" id="Category" name="category" onchange="setPriceRange()">
                 <option value="allCategories"><?php echo $lang['allcategories'] ?></option>
-                <option value="forRentShort"><?php echo $lang['forrentshort'] ?></option>
-                <option value="forRentLong"><?php echo $lang['forrentlong'] ?></option>
-                <option value="forSale"><?php echo $lang['forsale'] ?></option>
+                <option value="RentShortTerm"><?php echo $lang['forrentshort'] ?></option>
+                <option value="RentLongTerm"><?php echo $lang['forrentlong'] ?></option>
+                <option value="Sale"><?php echo $lang['forsale'] ?></option>
               </select>
             </div>
           </div>

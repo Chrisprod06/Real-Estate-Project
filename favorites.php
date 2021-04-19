@@ -97,7 +97,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
     'baths' => $row['bathrooms'],
     'beds' => $row['bedrooms'],
     'furnished' => $row['furniture'],
-    'photo1' =>$row['photo1']
+    'photo1' => $row['photo1']
     );     
   }
 
@@ -120,7 +120,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
     echo '<div class="col-md-4">
     <div class="card-box-a card-shadow">
       <div class="img-box-a">
-      <img src='.$row['photo1'].' alt="" class="img-a img-fluid">
+      <img src="'.$row['photo1'].'" alt="" class="img-a img-fluid">
       </div>
       <div class="card-overlay">
         <div class="card-overlay-a-content">
