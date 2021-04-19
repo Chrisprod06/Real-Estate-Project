@@ -85,7 +85,7 @@ function sendEmail($userID, $firstname, $lastname, $telephone, $emailFrom, $subj
     }
 }
 
-function sendEmailInterest($userID, $firstname, $lastname, $telephone, $emailFrom, $message)
+function sendEmailInterest($userID, $firstname, $lastname, $telephone, $emailFrom, $message,$propertyID)
 {
 
     //Prepare and send email
@@ -95,10 +95,10 @@ function sendEmailInterest($userID, $firstname, $lastname, $telephone, $emailFro
     $emailText = 'You have received a new message from' . ' Name:' . $firstname . " " . $lastname . '.\n\n' . $message;
 
     if (mail($emailTo, $emailText, $headers)) {
-        header('Location: ../propertySingle.php?mail=send');
+        header('Location: ../propertySingle.php?mail=send&id='.$propertyID.'');
         
     } else {
-        header('Location: ../propertySingle.php?message=notSend');
+        header('Location: ../propertySingle.php?message=notSend&id='.$propertyID.'');
     }
 }
 

@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     require_once 'functions.inc.php';
 
     session_start();
-   $propertyID = (int)$_SESSION['propertyID'];
+   $propertyID = (int)$_POST['propertyID'];
     $userID = (int)$_SESSION['userID'];
     $firstname =$_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $message = $_POST['message'];
 
     //Function to send email
-    sendEmailInterest($userID,$firstname,$lastname,$telephone,$emailFrom,$message);
+    sendEmailInterest($userID,$firstname,$lastname,$telephone,$emailFrom,$message,$propertyID);
     //Function to insert inquiry data i7n database
     //addContactUsInquiry($conn,$userID,$subject,$message);
 
@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('Location: ../propertySingle.php?error=stmtFailed');
+        header('Location: ../propertySingle.php?error=stmtFailed&id='.$propertyID.'');
         exit();
     }
 

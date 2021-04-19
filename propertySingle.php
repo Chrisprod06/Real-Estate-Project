@@ -341,6 +341,7 @@ include "includes/configLanguage.inc.php";
                     </div>
                   </div>                      
                   <div class="col-md-12">
+                  <input type="hidden" value='.$_GET['id'].' name = "propertyID">
                     <button type="submit" name="propertyContact" class="btn btn-a">' . $lang['cbutton'] . '</button>
                   </div>
                 </div>
@@ -355,6 +356,7 @@ include "includes/configLanguage.inc.php";
       </div>
     </div>
 </section>
+
 <!--/ Property Single End /-->
 
 <!--Footer-->

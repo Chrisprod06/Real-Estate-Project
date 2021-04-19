@@ -235,6 +235,15 @@ include "configLanguage.inc.php";
   </div>
 
   <!--/ Form Search End /-->
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container-fluid d-flex flex-row-reverse">
+      <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none " data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
 
 
 
