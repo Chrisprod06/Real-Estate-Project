@@ -157,5 +157,10 @@
       "videobefore" => "Βίντεο Πριν",
       "videoafter" => "Βίντεο Μετά",
 
+      //Favorites
+      "favorites"=>"Αγαπημένα",
+      "deletefavorites" =>"Διαγραφή από τα Αγαπημένα",
+      "click" =>"Πατήστε Εδώ"
+
 
   );

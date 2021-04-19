@@ -155,4 +155,9 @@
       "after" => "After",
       "videobefore" => "Video Before",
       "videoafter" => "Video After",
+
+      //Favorites
+      "favorites"=>"Favorites",
+      "deletefavorites" =>"Delete from favorites",
+      "click" =>"Click Here"
   );

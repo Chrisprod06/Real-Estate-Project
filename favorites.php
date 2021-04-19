@@ -11,17 +11,17 @@ include_once "includes/header.inc.php";}
     <div class="row">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single">Favorites</h1>
+          <h1 class="title-single"><?php echo $lang['favorites']?></h1>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.php">Home</a>
+              <a href="index.php"><?php echo $lang['pghome']?></a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-              Favorites Grid
+            <?php echo $lang['favorites']?>
             </li>
           </ol>
         </nav>
@@ -134,15 +134,15 @@ while ($row = mysqli_fetch_assoc($setQuery1))
         <div class="price-box d-flex">
           <span class="price-a">' . $categ . ' | €' . $row["totPrice"] . '</span>
         </div>
-          <a href="propertySingle.php?id='.$row["propID"].'"  class="link-a">Click here to view
+          <a href="propertySingle.php?id='.$row["propID"].'"  class="link-a">'.$lang['pgclick'].'
           <span class="ion-ios-arrow-forward"></span>
           </a>
       </div>
       <div class="card-footer-a">
         <ul class="card-info d-flex justify-content-around">
           <li>
-            <h4 class="card-info-title">Delete from Favorites</h4>
-            <a href="includes/deleteFavorites.inc.php?id='.$row["propID"].'" class="link-a">Click here
+            <h4 class="card-info-title">' .$lang["deletefavorites"].'</h4>
+            <a href="includes/deleteFavorites.inc.php?id='.$row["propID"].'" class="link-a">'.$lang['click'].'
           <span class="ion-ios-arrow-forward"></span>
           </a>
           </li>
@@ -202,7 +202,7 @@ while ($row = mysqli_fetch_assoc($setQuery1))
           </ul>
         </nav>
       </div>
-    </div> ''
+    </div> 
   </div>
 </section>
 <!--/ Property Grid End /-->
