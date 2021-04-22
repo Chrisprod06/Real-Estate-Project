@@ -52,6 +52,7 @@
       "subscriptionsuccess" => "You have been subscribed succesfully. Thank you!",
       "finduson" => "Find us on:",
       "fsubscribe" => "Subscribe",
+      "help" => "Help",
 
       //About
       "atitle" => "Find your next home through us",

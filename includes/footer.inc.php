@@ -53,6 +53,9 @@ include "configLanguage.inc.php";
                   <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#privacyPolicy'><?php echo $lang['privacypolicy'] ?></a>
                 </li>
                 <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#helpManual'><?php echo $lang['help'] ?></a>
+                </li>
+                <li class="item-list-a">
                   <i class="fa fa-angle-right"></i> <a data-toggle='modal' href='#termsOfService'><?php echo $lang['tos'] ?></a>
                 </li>
               </ul>
@@ -166,7 +169,24 @@ include "configLanguage.inc.php";
         <div class="modal-body">
           <?php include_once 'privacy.html' ?>
           <div class="modal-footer">
-            <input type="button" class="btn btn-a" data-dismiss="modal" value="Ok">
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="OK">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpManual" class="modal fade">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content ">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <?php include_once 'helpManual.html' ?>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="OK">
           </div>
         </div>
       </div>
