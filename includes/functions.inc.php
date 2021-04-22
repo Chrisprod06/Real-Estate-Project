@@ -73,9 +73,10 @@ function sendEmail($userID, $firstname, $lastname, $telephone, $emailFrom, $subj
 
     //Prepare and send email
     //change emails to correct
+    $subject = "General message APM Smart Houses Website";
     $emailTo = 'chrisprodromou06@gmail.com';
     $headers = 'From: ' . $emailFrom;
-    $emailText = 'You have received a new message from' . ' Name:' . $firstname . " " . $lastname . '.\n\n' . $message;
+    $emailText = "You have recieved a new message from: $emailFrom \n\n\n $message";
 
     if (mail($emailTo, $subject, $emailText, $headers)) {
         header('Location: ../contact.php?mail=send');
@@ -90,11 +91,14 @@ function sendEmailInterest($userID, $firstname, $lastname, $telephone, $emailFro
 
     //Prepare and send email
     //change emails to correct
+    $subject= "Interest for property with ID: $propertyID APM Smart Houses Website";
     $emailTo = 'chrisprodromou06@gmail.com';
     $headers = 'From: ' . $emailFrom;
-    $emailText = 'You have received a new message from' . ' Name:' . $firstname . " " . $lastname . '.\n\n' . $message;
+    $emailText = "You have recieved a new message from: $emailFrom \n\n\n $message";
+    $emailText.= $message;
+   
 
-    if (mail($emailTo, $emailText, $headers)) {
+    if (mail($emailTo,$subject, $emailText, $headers)) {
         header('Location: ../propertySingle.php?mail=send&id='.$propertyID.'');
         
     } else {

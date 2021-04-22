@@ -94,7 +94,7 @@ $resultCheck = mysqli_num_rows($result);
         <div class="card-box-c foo">
           <div class="card-header-c d-flex">
             <div class="card-box-ico">
-              <span class="fa fa-home"></span>
+              <span class="fa fa-usd"></span>
             </div>
             <div class="card-title-c align-self-center">
               <h2 class="title-c"><?php echo $lang['rs'] ?></h2>

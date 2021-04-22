@@ -370,7 +370,7 @@ include "configLanguage.inc.php";
 
             </div>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-between">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
             <input type="submit" class="btn btn-a" value="Login" name="submit"></input>
           </div>
@@ -450,7 +450,7 @@ include "configLanguage.inc.php";
             }
             ?>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-between ">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
             <input type="submit" class="btn btn-a" value="Register" name="submit"></input>
           </div>

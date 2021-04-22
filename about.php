@@ -34,13 +34,7 @@ include_once "includes/header.inc.php";
       <div class="col-sm-12">
         <div class="about-img-box">
           <img src="img/aboutProfile.jpg" alt="" class="img-fluid">
-        </div>
-        <div class="sinse-box">
-          <h3 class="sinse-title">APM Smart Houses
-            <span></span>
-            <br> <?php echo $lang['since'] ?>
-          </h3>
-        </div>
+        </div>  
       </div>
       <div class="col-md-12 section-t8">
         <div class="row">
