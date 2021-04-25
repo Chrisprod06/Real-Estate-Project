@@ -1443,10 +1443,11 @@ a:hover {
 
 .sinse-box {
     background-color: #386E8A;
-    padding: 1rem 2rem;
     position: absolute;
-    left: 15px;
-    bottom: 10px;
+    bottom: -320px;
+    margin-left: 5%;
+    left: 60px;
+   
 }
 
 .sinse-box .sinse-title {
@@ -2171,3 +2172,7 @@ img {
 .gallery figure figcaption {
     display: none;
 }
+
+.imglogo{
+    margin-top: -80px ;
+  }

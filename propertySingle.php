@@ -253,6 +253,9 @@ include "includes/configLanguage.inc.php";
        
 
         echo '</div>
+        </div>
+        </div>
+        </div>
 
              ';
 
@@ -322,7 +325,8 @@ include "includes/configLanguage.inc.php";
                         ' . $lang['prmessage'] . '
                         </p>            
                         <div class="col-md-12 mt-5">
-                          <a href = "login.php" class="btn btn-a">' . $lang['login'] . '</a>
+                        <a data-toggle = "modal" href = "#login" class="btn btn-a">' . $lang['login'] . '</a>
+                          
                         </div>
                       </div>
                     </form>
@@ -358,6 +362,70 @@ include "includes/configLanguage.inc.php";
 </section>
 
 <!--/ Property Single End /-->
+ <!-- Login Modal HTML -->
+ <div id="login" class="modal fade">
+    <div class="modal-dialog ">
+      <div class="modal-content ">
+        <form id="loginForm" action="includes/login.inc.php" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title"><?php echo $lang['login'] ?></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email" required value=>
+            </div>
+            <div class="form-group">
+              <input type="password" name="pass" class="form-control" placeholder="<?php echo $lang['password'] ?>" required="required">
+            </div>
+            <div class="form-group">
+
+            </div>
+            <!--Error messages-->
+            <?php
+            if (isset($_GET['error'])) {
+              if ($_GET['error'] == 'wrongLogin') {
+                echo '<p class = "text-danger text-center ">' . $lang['wronglogin'] . '</p>';
+              } else if ($_GET['error'] == 'wrongPassword') {
+                echo '<p class = "text-danger text-center ">' . $lang['wrongpass'] . '</p>';
+              } else if ($_GET['error'] == 'stmtFailed') {
+                echo '<p class = "text-danger text-center " >' . $lang['stmtfail'] . '</p>';
+              } else if ($_GET['error'] == 'tryAgainReset') {
+                echo '<p class = "text-danger text-center " >' . $lang['resetpass'] . '</p>';
+              } else if ($_GET['error'] == 'noneLogin') {
+                echo '
+                    <script>
+                    $(document).ready(function(){
+                      Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Login Successful!",
+                        showConfirmButton: false,
+                        timer: 1500                 
+                      }).then(function() {
+                        
+                      })
+                    });                 
+                    </script>
+                    ';
+              }
+            }
+            ?>
+
+            <div class="clearfix">
+
+              <a href="resetPasswordRequest.php" class="pull-right"><?php echo $lang['forgotpassword'] ?></a>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-a" data-dismiss="modal" value="<?php echo $lang['cancel'] ?>">
+            <input type="submit" class="btn btn-a" value="<?php echo $lang['Login'] ?>" name="submit"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 <!--Footer-->
 <?php

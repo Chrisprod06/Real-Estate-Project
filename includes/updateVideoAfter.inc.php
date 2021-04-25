@@ -7,6 +7,10 @@ $result = mysqli_query($conn,$sql);
 
 if($resultCheck>0){
     while($row = mysqli_fetch_assoc($result)){
-        echo '<iframe src="'.$row['videoAfter'].'" width="100%" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+        echo '<div class="embed-responsive embed-responsive-16by9 hoverable">
+        <video class="embed-responsive-item" controls>
+          <source src="'.$row['videoAfter'].'" type="video/mp4">
+        </video>
+      </div>';
     }
 }

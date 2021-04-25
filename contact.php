@@ -48,7 +48,7 @@
                     ' . $lang['cmessage'] . '
                       </p>            
                       <div class="col-md-12 mt-5">
-                        <a data-toggle = "modal" href = "#login" class="btn btn-a">Login</a>
+                        <a data-toggle = "modal" href = "#login" class="btn btn-a">' . $lang['login'] . '</a>
                       </div>
                     </div>
                   </form>
