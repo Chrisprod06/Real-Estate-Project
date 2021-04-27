@@ -33,7 +33,14 @@ $resultCheck = mysqli_num_rows($result);
                       ' . $row['address'] . '
                     </h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">' . $row['category'] . ' | €' . $row['totalPrice'] . '</span></a>
+                    ';
+        if ($row['category'] == 'Sale' or $row['RentLongTerm'] or $row['RentShortTerm']) {
+          echo '<a href="propertySingle.php?id=' . $row['propertyID'] . '"><span class="price-a">' . $row['category'] . ' | €' . $row['totalPrice'] . '</span></a>';
+        } else if ($row['category'] == 'Renovation' or $row['category'] == 'Decoration') {
+          echo '<a href="renovationSingle.php?id=' . $row['propertyID'] . '"><span class="price-a">' . $row['category'] . ' | €' . $row['totalPrice'] . '</span></a>';
+        }
+        echo '
+                      
                     </p>
                   </div>
                 </div>
@@ -68,7 +75,7 @@ $resultCheck = mysqli_num_rows($result);
         <div class="card-box-c foo">
           <div class="card-header-c d-flex">
             <div class="card-box-ico">
-              <span class="fa fa-usd"></span>
+              <span class="fa fa-home"></span>
             </div>
             <div class="card-title-c align-self-center">
               <h2 class="title-c"><?php echo $lang['rl'] ?></h2>

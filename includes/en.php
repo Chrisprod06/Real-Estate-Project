@@ -33,13 +33,16 @@
       "any" => "Any",
       "parking" => "Parking",
       "heating" => "Heating",
-      "furniture" => "Heating",
+      "furniture" => "Furniture",
       "editprofile" => "Edit Profile",
       "editwebsite" => "Edit Website",
       "logout" => "Logout",
       "language" =>"Language",
       "english" => "English",
       "greek" => "Greek",
+      "favorites"=> "Favorites",
+      "login" => "Login",
+      "Register" => "Register",
 
       //Footer
       "fparagraph" => "Send us an e-mail or phone us to resolve any problem you may ecounter.",

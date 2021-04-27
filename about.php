@@ -2,6 +2,7 @@
 $title = "About | APM Smart Houses";
 include_once "includes/header.inc.php";
 ?><!--/ Intro Single star /-->
+<link rel = "stylesheet" href = "css/about.inc.css">
 <section class="intro-single">
   <div class="container">
     <div class="row">
@@ -34,18 +35,21 @@ include_once "includes/header.inc.php";
       <div class="col-sm-12">
         <div class="about-img-box">
           <img src="img/aboutProfile.jpg" alt="" class="img-fluid">
-        </div>
+          </div>
         <div class="sinse-box">
           <h3 class="sinse-title">APM Smart Houses
             <span></span>
             <br> <?php echo $lang['since'] ?>
           </h3>
         </div>
+        </div>  
       </div>
       <div class="col-md-12 section-t8">
         <div class="row">
           <div class="col-md-6 col-lg-7">
+           <div class = "imglogo">
             <img src="img/logo.png" alt="" class="img-fluid">
+             </div>
           </div>
 
           <div class="col-md-6 col-lg-5 section-md-t3">

@@ -281,13 +281,13 @@ include "configLanguage.inc.php";
                   echo " <a class='dropdown-item' href='editProfile.php'>" . $lang['editprofile'] . "</a>";
                   echo "<a class='dropdown-item' href='includes/logout.inc.php'>" . $lang['logout'] . "</a>";
                 } else if ($_SESSION['role'] == 2) {
-                  echo " <a class='dropdown-item' href='favorites.php'>Favorites</a> ";
-                  echo " <a class='dropdown-item' href='editProfile.php'>Edit Profile</a>";
-                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>Logout</a>";
+                  echo " <a class='dropdown-item' href='favorites.php'>". $lang['favorites'] ."</a> ";
+                  echo " <a class='dropdown-item' href='editProfile.php'>". $lang['editprofile'] ."</a>";
+                  echo "<a class='dropdown-item' href='includes/logout.inc.php'>". $lang['logout'] ."</a>";
                 }
               } else {
-                echo " <a data-toggle='modal' class='dropdown-item' href='#login'>Login</a>";
-                echo " <a data-toggle='modal' class='dropdown-item' href='#register'>Register</a>";
+                echo " <a data-toggle='modal' class='dropdown-item' href='#login'>". $lang['login'] ."</a>";
+                echo " <a data-toggle='modal' class='dropdown-item' href='#register'>". $lang['register'] ."</a>";
               }
               ?>
             </div>
@@ -305,7 +305,7 @@ include "configLanguage.inc.php";
         </ul>
       </div>
       <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true"> <?php echo $lang['searchproperties'] ?></span>
+        <span class="fa fa-search" aria-hidden="true"> <lead><?php echo $lang['searchproperties'] ?></lead></span>
       </button>
 
 
@@ -370,7 +370,7 @@ include "configLanguage.inc.php";
 
             </div>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-between">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
             <input type="submit" class="btn btn-a" value="Login" name="submit"></input>
           </div>
@@ -399,7 +399,7 @@ include "configLanguage.inc.php";
               <input name="email" type="email" class="form-control" placeholder="Email" required="required">
             </div>
             <div class="form-group">
-              <input name="telephone" type="tel" class="form-control" placeholder="Telephone" required="required">
+              <input name="telephone" type="number" class="form-control" placeholder="Telephone" required="required">
             </div>
             <div class="form-group">
               <input name="password" type="password" class="form-control" placeholder="Password" minlength="6" required="required">
@@ -450,7 +450,7 @@ include "configLanguage.inc.php";
             }
             ?>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer d-flex justify-content-between ">
             <input type="button" class="btn btn-a" data-dismiss="modal" value="Cancel">
             <input type="submit" class="btn btn-a" value="Register" name="submit"></input>
           </div>

@@ -91,5 +91,6 @@ while ($row = mysqli_fetch_assoc($result)) {
           </figure>';
       }
       echo ' </div>
+          </div>
           </div>';
 }
